@@ -14,6 +14,9 @@
 		2969FCC428CA1353009FBB4F /* billieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCC328CA1353009FBB4F /* billieTests.swift */; };
 		2969FCCE28CA1353009FBB4F /* billieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCCD28CA1353009FBB4F /* billieUITests.swift */; };
 		2969FCD028CA1353009FBB4F /* billieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCCF28CA1353009FBB4F /* billieUITestsLaunchTests.swift */; };
+		2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCDC28CA139C009FBB4F /* ScannerView.swift */; };
+		2969FCDF28CA13BA009FBB4F /* TextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCDE28CA13BA009FBB4F /* TextRecognizer.swift */; };
+		2969FCE128CA13D6009FBB4F /* ScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCE028CA13D6009FBB4F /* ScanData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		2969FCC928CA1353009FBB4F /* billieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = billieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2969FCCD28CA1353009FBB4F /* billieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = billieUITests.swift; sourceTree = "<group>"; };
 		2969FCCF28CA1353009FBB4F /* billieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = billieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2969FCDC28CA139C009FBB4F /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		2969FCDE28CA13BA009FBB4F /* TextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizer.swift; sourceTree = "<group>"; };
+		2969FCE028CA13D6009FBB4F /* ScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 				2969FCB428CA1351009FBB4F /* ContentView.swift */,
 				2969FCB628CA1353009FBB4F /* Assets.xcassets */,
 				2969FCB828CA1353009FBB4F /* Preview Content */,
+				2969FCDC28CA139C009FBB4F /* ScannerView.swift */,
+				2969FCDE28CA13BA009FBB4F /* TextRecognizer.swift */,
+				2969FCE028CA13D6009FBB4F /* ScanData.swift */,
 			);
 			path = billie;
 			sourceTree = "<group>";
@@ -257,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2969FCDF28CA13BA009FBB4F /* TextRecognizer.swift in Sources */,
+				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
+				2969FCE128CA13D6009FBB4F /* ScanData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

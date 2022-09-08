@@ -8,9 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showScanner = false
+    @State private var texts: [ScanData] = []
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            VStack{
+                if texts.count > 0 {
+                    List{
+                        ForEach(texts){ text in
+                            NavigationLink(destination: ScrollView{Text(text.content)}, label: {
+                                Text(text.content).lineLimit(1)
+                            })
+                        }
+                    }
+                }else{
+                    Text("No texts scanned")
+                }
+            }
+            .navigationTitle("Scan Text")
+            .toolbar(content: {
+                Button(action: {
+                    self.showScanner = true
+                }, label: {
+                    Image(systemName: "doc.text.viewfinder")
+                        .font(.title)
+                })
+                .sheet(isPresented: $showScanner, content: {
+                    makeScannerView()
+                })
+            })
+        }
+    }
+    private func makeScannerView() -> ScannerView{
+        ScannerView(completion: {
+            textPerPage in
+            if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines) {
+                let newScanData = ScanData(content: outputText)
+                self.texts.append(newScanData)
+            }
+            self.showScanner = false
+        })
     }
 }
 
@@ -19,3 +56,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
