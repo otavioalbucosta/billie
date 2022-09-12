@@ -4,51 +4,54 @@
 //
 //  Created by Otávio Albuquerque on 08/09/22.
 //
-
-import Foundation
 import SwiftUI
 import VisionKit
 
 struct ScannerView: UIViewControllerRepresentable {
-    typealias UIViewControllerType = VNDocumentCameraViewController
-    
-    private let completionHandler: ([String]?) -> Void
-    
-    init(completion: @escaping ([String]?) -> Void){
-        self.completionHandler = completion
-    }
+    var didFinishScanning: ((_ result: Result<[UIImage], Error>) -> Void)
+    var didCancelScanning: () -> Void
     
     func makeUIViewController(context: Context) -> VNDocumentCameraViewController {
-        let viewController = VNDocumentCameraViewController()
-        viewController.delegate = context.coordinator
-        return viewController
+        let scannerViewController = VNDocumentCameraViewController()
+        scannerViewController.delegate = context.coordinator
+        return scannerViewController
     }
     
-    func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: Context) {
-    }
+    func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: Context) { }
+    
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(completion: completionHandler)
+        Coordinator(with: self)
     }
     
-    final class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
-        private let completionHandler: ([String]?) -> Void
+    
+    class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
+        let scannerView: ScannerView
         
-        init(completion: @escaping ([String]?) -> Void){
-            self.completionHandler = completion
+        init(with scannerView: ScannerView) {
+            self.scannerView = scannerView
         }
         
+        
+        // MARK: - VNDocumentCameraViewControllerDelegate
+        
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
-            let recognizer = TextRecognizer(camera: scan)
-            recognizer.recognizeText(withCompletionHandler: completionHandler)
+            var scannedPages = [UIImage]()
+            
+            for i in 0..<scan.pageCount {
+                scannedPages.append(scan.imageOfPage(at: i))
+            }
+            
+            scannerView.didFinishScanning(.success(scannedPages))
+        }
+        
+        
+        func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
+            scannerView.didCancelScanning()
         }
         
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFailWithError error: Error) {
-            completionHandler(nil)
-        }
-        
-        func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
-            completionHandler(nil)
+            scannerView.didFinishScanning(.failure(error))
         }
     }
     
