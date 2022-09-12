@@ -102,14 +102,12 @@
 		2969FCB128CA1351009FBB4F /* billie */ = {
 			isa = PBXGroup;
 			children = (
+				29EF982A28CF77F40000E300 /* Service */,
+				29EF982928CF77DE0000E300 /* Model */,
+				29EF982828CF77CD0000E300 /* View */,
 				2969FCB228CA1351009FBB4F /* billieApp.swift */,
-				2969FCB428CA1351009FBB4F /* ContentView.swift */,
 				2969FCB628CA1353009FBB4F /* Assets.xcassets */,
 				2969FCB828CA1353009FBB4F /* Preview Content */,
-				2969FCDC28CA139C009FBB4F /* ScannerView.swift */,
-				2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */,
-				2969FCE028CA13D6009FBB4F /* Model.swift */,
-				29EF982628CF742A0000E300 /* TextPreviewView.swift */,
 			);
 			path = billie;
 			sourceTree = "<group>";
@@ -137,6 +135,32 @@
 				2969FCCF28CA1353009FBB4F /* billieUITestsLaunchTests.swift */,
 			);
 			path = billieUITests;
+			sourceTree = "<group>";
+		};
+		29EF982828CF77CD0000E300 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29EF982628CF742A0000E300 /* TextPreviewView.swift */,
+				2969FCB428CA1351009FBB4F /* ContentView.swift */,
+				2969FCDC28CA139C009FBB4F /* ScannerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29EF982928CF77DE0000E300 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2969FCE028CA13D6009FBB4F /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		29EF982A28CF77F40000E300 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
