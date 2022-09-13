@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2913F17A28D0B40D000CE54F /* RegexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17928D0B40D000CE54F /* RegexBuilder.swift */; };
+		2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17D28D0C4E1000CE54F /* BillListView.swift */; };
 		2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCB228CA1351009FBB4F /* billieApp.swift */; };
 		2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCB428CA1351009FBB4F /* ContentView.swift */; };
 		2969FCB728CA1353009FBB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2969FCB628CA1353009FBB4F /* Assets.xcassets */; };
@@ -18,6 +20,7 @@
 		2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */; };
 		2969FCE128CA13D6009FBB4F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCE028CA13D6009FBB4F /* Model.swift */; };
 		29EF982728CF742A0000E300 /* TextPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982628CF742A0000E300 /* TextPreviewView.swift */; };
+		29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982B28CF7AEB0000E300 /* BillListRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2913F17928D0B40D000CE54F /* RegexBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexBuilder.swift; sourceTree = "<group>"; };
+		2913F17D28D0C4E1000CE54F /* BillListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListView.swift; sourceTree = "<group>"; };
 		2969FCAF28CA1351009FBB4F /* billie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = billie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2969FCB228CA1351009FBB4F /* billieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = billieApp.swift; sourceTree = "<group>"; };
 		2969FCB428CA1351009FBB4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 		2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognition.swift; sourceTree = "<group>"; };
 		2969FCE028CA13D6009FBB4F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		29EF982628CF742A0000E300 /* TextPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewView.swift; sourceTree = "<group>"; };
+		29EF982B28CF7AEB0000E300 /* BillListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,8 @@
 				29EF982628CF742A0000E300 /* TextPreviewView.swift */,
 				2969FCB428CA1351009FBB4F /* ContentView.swift */,
 				2969FCDC28CA139C009FBB4F /* ScannerView.swift */,
+				29EF982B28CF7AEB0000E300 /* BillListRow.swift */,
+				2913F17D28D0C4E1000CE54F /* BillListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */,
+				2913F17928D0B40D000CE54F /* RegexBuilder.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -294,11 +303,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */,
+				2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
 				29EF982728CF742A0000E300 /* TextPreviewView.swift in Sources */,
 				2969FCE128CA13D6009FBB4F /* Model.swift in Sources */,
+				29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */,
+				2913F17A28D0B40D000CE54F /* RegexBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +477,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,6 +507,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
