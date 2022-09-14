@@ -17,6 +17,11 @@
 		1D89BCB328D0DEB300357248 /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAC28D0DEB300357248 /* money.json */; };
 		1D89BCB428D0DEB300357248 /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAC28D0DEB300357248 /* money.json */; };
 		1D89BCB528D0DEB300357248 /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAC28D0DEB300357248 /* money.json */; };
+		1D89BCB728D21BA800357248 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB628D21BA800357248 /* LottieView.swift */; };
+		1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB828D2459100357248 /* SplashScreenView.swift */; };
+		1D89BCBB28D257D300357248 /* moneyNewVersion.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCBA28D257D300357248 /* moneyNewVersion.json */; };
+		1D89BCBC28D257D300357248 /* moneyNewVersion.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCBA28D257D300357248 /* moneyNewVersion.json */; };
+		1D89BCBD28D257D300357248 /* moneyNewVersion.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCBA28D257D300357248 /* moneyNewVersion.json */; };
 		2913F17A28D0B40D000CE54F /* RegexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17928D0B40D000CE54F /* RegexBuilder.swift */; };
 		2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17D28D0C4E1000CE54F /* BillListView.swift */; };
 		2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCB228CA1351009FBB4F /* billieApp.swift */; };
@@ -54,6 +59,9 @@
 		1D89BCAA28D0DEB300357248 /* billieDarkMode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billieDarkMode.json; sourceTree = "<group>"; };
 		1D89BCAB28D0DEB300357248 /* billieLightMode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billieLightMode.json; sourceTree = "<group>"; };
 		1D89BCAC28D0DEB300357248 /* money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = money.json; sourceTree = "<group>"; };
+		1D89BCB628D21BA800357248 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		1D89BCB828D2459100357248 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		1D89BCBA28D257D300357248 /* moneyNewVersion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moneyNewVersion.json; sourceTree = "<group>"; };
 		2913F17928D0B40D000CE54F /* RegexBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexBuilder.swift; sourceTree = "<group>"; };
 		2913F17D28D0C4E1000CE54F /* BillListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListView.swift; sourceTree = "<group>"; };
 		2969FCAF28CA1351009FBB4F /* billie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = billie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +112,7 @@
 			children = (
 				1D89BCAA28D0DEB300357248 /* billieDarkMode.json */,
 				1D89BCAB28D0DEB300357248 /* billieLightMode.json */,
+				1D89BCBA28D257D300357248 /* moneyNewVersion.json */,
 				1D89BCAC28D0DEB300357248 /* money.json */,
 			);
 			path = "All Splash Screen animations";
@@ -176,6 +185,8 @@
 				2969FCDC28CA139C009FBB4F /* ScannerView.swift */,
 				29EF982B28CF7AEB0000E300 /* BillListRow.swift */,
 				2913F17D28D0C4E1000CE54F /* BillListView.swift */,
+				1D89BCB628D21BA800357248 /* LottieView.swift */,
+				1D89BCB828D2459100357248 /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +320,7 @@
 			files = (
 				2969FCBA28CA1353009FBB4F /* Preview Assets.xcassets in Resources */,
 				2969FCB728CA1353009FBB4F /* Assets.xcassets in Resources */,
+				1D89BCBB28D257D300357248 /* moneyNewVersion.json in Resources */,
 				1D89BCB328D0DEB300357248 /* money.json in Resources */,
 				1D89BCB028D0DEB300357248 /* billieLightMode.json in Resources */,
 				1D89BCAD28D0DEB300357248 /* billieDarkMode.json in Resources */,
@@ -319,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D89BCBC28D257D300357248 /* moneyNewVersion.json in Resources */,
 				1D89BCB128D0DEB300357248 /* billieLightMode.json in Resources */,
 				1D89BCAE28D0DEB300357248 /* billieDarkMode.json in Resources */,
 				1D89BCB428D0DEB300357248 /* money.json in Resources */,
@@ -329,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D89BCBD28D257D300357248 /* moneyNewVersion.json in Resources */,
 				1D89BCB228D0DEB300357248 /* billieLightMode.json in Resources */,
 				1D89BCAF28D0DEB300357248 /* billieDarkMode.json in Resources */,
 				1D89BCB528D0DEB300357248 /* money.json in Resources */,
@@ -345,10 +359,12 @@
 				2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */,
 				2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
+				1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */,
 				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
 				29EF982728CF742A0000E300 /* TextPreviewView.swift in Sources */,
 				2969FCE128CA13D6009FBB4F /* Model.swift in Sources */,
+				1D89BCB728D21BA800357248 /* LottieView.swift in Sources */,
 				29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */,
 				2913F17A28D0B40D000CE54F /* RegexBuilder.swift in Sources */,
 			);
@@ -509,7 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"billie/Preview Content\"";
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = JF8PTRU8N6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -539,7 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"billie/Preview Content\"";
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = JF8PTRU8N6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
