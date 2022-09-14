@@ -20,10 +20,7 @@ struct billListRow: View {
             Text(price.formatted())
                 .frame(maxWidth: .infinity,alignment: .trailing)
         }
-        .frame(height: 20)
-        .padding()
-        .background(Color(cgColor: CGColor(red: 86/255 , green: 197/255 , blue: 150/255 , alpha: 0.7)).clipShape(RoundedRectangle(cornerRadius: 20)))
-        .padding([.leading,.trailing], 10)
+
 
 
     }
