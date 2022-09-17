@@ -32,9 +32,9 @@ struct BillListView: View {
                                 .foregroundColor(Color(red: 104/255, green: 104/255, blue: 104/255))
                         }.headerProminence(.increased)
                         Section{
-                            billListRow(item: "Batata Frita", quantity: 5, price: 7.45)
-                            billListRow(item: "Itaipava 600ml", quantity: 1, price: 23.70)
-                            billListRow(item: "Bolinha de queijo", quantity: 2, price: 5.58)
+                            billListRow(code: 0001, item: "Batata Frita", quantity: 5, price: 7.45, totalPrice: 7.45*5)
+                            billListRow(code: 0002, item: "Itaipava 600ml", quantity: 1, price: 23.70, totalPrice: 2.50)
+                            billListRow(code: 0003, item: "Bolinha de queijo", quantity: 2, price: 5.58, totalPrice: 112.43)
                             HStack{
                                 Text("Subtotal").foregroundColor(.gray)
                                 Spacer()

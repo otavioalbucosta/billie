@@ -9,6 +9,7 @@ import SwiftUI
 import Lottie
 
 struct LottieView: UIViewRepresentable {
+    @Binding var isEnded: Bool
     typealias UIViewType = UIView
     var filename: String //makes this customizable: we pass the file name in the Loading View
     
@@ -19,7 +20,9 @@ struct LottieView: UIViewRepresentable {
         let animation = Animation.named(filename) //sets the file name
         animationView.animation = animation //specifies the animation for the view created
         animationView.contentMode = .scaleAspectFit //scales the animation properly
-        animationView.play()
+        animationView.play { finished in
+            isEnded.toggle()
+        }
         
         //here we deal with constraints:
         animationView.translatesAutoresizingMaskIntoConstraints = false

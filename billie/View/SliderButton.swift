@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct SliderButton: View {
     
-    
+    @State var engine: CHHapticEngine?
     @State var translation = CGSize.zero.width
     @State var sucess = false
     
@@ -55,12 +56,19 @@ struct SliderButton: View {
         }
         
     }
-}
-
-struct SliderButton_Previews: PreviewProvider {
-    static var previews: some View {
-        SliderButton()
+    func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {return }
+        
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        }catch {
+            print(error)
+        }
     }
+//    func complexSucess() {
+//        guard
+//    }
 }
 
 struct SwipeButton: View {
@@ -88,5 +96,11 @@ struct SwipeButton: View {
                 }
                 
         }
+    }
+}
+
+struct SliderButton_Previews: PreviewProvider {
+    static var previews: some View {
+        SliderButton()
     }
 }

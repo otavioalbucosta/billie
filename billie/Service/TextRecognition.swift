@@ -50,6 +50,7 @@ struct TextRecognition {
                 print(error.localizedDescription)
                 return
             }
+
             
             guard let observations = request.results as? [VNRecognizedTextObservation] else { return }
             
@@ -62,7 +63,6 @@ struct TextRecognition {
         
         request.recognitionLevel = .accurate
         request.usesLanguageCorrection = true
-        
         return request
     }
 }
