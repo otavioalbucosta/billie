@@ -10,7 +10,7 @@ import SwiftUI
 struct billListRow: View {
     var item: String
     @State var quantity: Int
-    var price: Double
+    @State var price: Double
     
     var body: some View {
         VStack(alignment: .leading) {

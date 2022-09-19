@@ -17,18 +17,19 @@ struct SplashScreenView: View {
     
     var body: some View {
         NavigationView{
-            VStack (alignment: .center){
+            VStack (alignment: .center) {
                 // MARK: This pushes the button  out of screen when using landscape mode. caused by height constant
                 //  something happened and now the background won't follow the landscape mode anymore. Cries in WTF.
-                ZStack(alignment: .top){ //embed here so a 2nd animation can come on top of the 1st
+               
+                ZStack(){ //embed here so a 2nd animation can come on top of the 1st
                     LottieView(isEnded: $isEndedFirst, filename: "moneyNewVersion")
                         .shadow(color: .indigo, radius: 2, x: 1, y: 2)
-                    
+
                     LottieView(isEnded: $isEndedLast, filename: colorScheme == .dark ? "billieLightMode" : "billieFinalAppearing")
                         .shadow(color: .indigo, radius: 2, x: 1, y: 2)
                 }
+                .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.midY)
                 .ignoresSafeArea(.all)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
                 Button (action: {
                     showScanner = true
@@ -39,15 +40,16 @@ struct SplashScreenView: View {
                 }){
                     HStack{
                         Image(systemName: "doc.text.viewfinder")
-                        Text("Iniciar escaneamento")
+                        Text("Escanear conta")
                             .fontWeight(.semibold)
                             .font(Font.title3)
                     }
                     .foregroundColor( colorScheme == .dark ? .blue: .white)
-                    .padding(.all, 10)
+                    .padding(.all, 12)
+                    .padding([.leading,.trailing])
                     
-                    
-                    .opacity(isEndedLast ? 1 : 0).animation(.easeInOut(duration: 1), value: isEndedLast)
+                    .opacity(isEndedLast ? 1
+                             : 0).animation(.easeInOut(duration: 1), value: isEndedLast)
                     .background(colorScheme == .dark ? .white : .teal
                     ).opacity(isEndedLast ? 1 : 0).animation(.easeOut(duration: 1), value: isEndedLast)
                         
@@ -55,9 +57,10 @@ struct SplashScreenView: View {
                 .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEndedLast)
                 
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(colorScheme == .light ?
                         LinearGradient(gradient: Gradient(colors: [.cyan, .clear]), startPoint: .topLeading, endPoint: .bottomTrailing):
-                            LinearGradient(gradient: Gradient(colors: [.clear, .blue]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                            LinearGradient(gradient: Gradient(colors: [.blue, .clear]), startPoint: .top, endPoint: .bottom))
         }
         .sheet(isPresented: $showScanner, content: {
             ScannerView { result in

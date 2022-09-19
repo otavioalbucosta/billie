@@ -10,6 +10,7 @@ import SwiftUI
 struct BillListView: View {
     @State private var slide = 50.0
     @State private var isEditing = false
+//    @State private var coisas: [billListRow] = []
     
     let alignment: Alignment = .bottom
     let width: CGFloat = 0.0
@@ -18,8 +19,9 @@ struct BillListView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     let foodName = ["AGUACATE", "Vatermelon","EarthMelon","fireMelon", "Airmelon", "KITUTI", "MDS N TA DANDO"]
-    var quantityRand = [1, 3, 2, 4, 2, 8, 3]
-    let priceRand = [1, 30.2, 13.2, 4.9, 22.1, 18.0, 3.0]
+    @State var quantityRand = [1, 3, 2, 4, 2, 8, 3]
+    @State var priceRand = [1, 30.2, 13.2, 4.9, 22.1, 18.0, 3.0]
+    @State var value : Double = 0.0
     
     var body: some View {
         NavigationView{
@@ -43,11 +45,13 @@ struct BillListView: View {
                             .font(.subheadline)
                             .listRowBackground(Color(.clear))
                             .listRowSeparator(.hidden)
-                        .foregroundColor(.secondary)}.headerProminence(.increased)
+                            .foregroundColor(.secondary)
+                        
+                    }.headerProminence(.increased)
                     
                     ForEach (0..<foodName.endIndex) { item in
                         billListRow(item: foodName[item], quantity: quantityRand[item], price: priceRand[item])
-                        
+                            
                     }
                     
                     HStack{
@@ -63,7 +67,7 @@ struct BillListView: View {
                     HStack (alignment: .bottom){
                         Text("Subtotal da mesa: \(priceRand[0], specifier: "%.2f")")
                         Spacer()
-                        Text("Seu total: \(priceRand[2], specifier: "%.2f")")
+                        Text("Seu total: \(priceRand[0], specifier: "%.2f")")
                     }
                 }
                 .frame(maxHeight: UIScreen.main.bounds.height/10)
@@ -79,4 +83,8 @@ struct BillListView_Previews: PreviewProvider {
     static var previews: some View {
         BillListView()
     }
+}
+
+func teste() {
+    print("asdas")
 }
