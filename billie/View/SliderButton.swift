@@ -12,7 +12,7 @@ struct SliderButton: View {
     
     @State var engine: CHHapticEngine?
     @State var translation = CGSize.zero.width
-    @State var sucess = false
+    @State var success = false
     
     let screen = UIScreen.main.bounds
     var body: some View {
@@ -24,16 +24,16 @@ struct SliderButton: View {
                     RoundedRectangle(cornerRadius: 80, style: .circular)
                 }
                 
-                SwipeButton(translation: $translation, sucess: $sucess)
+                SwipeButton(translation: $translation, sucess: $success)
                     .animation(.spring(),value: self.translation)
                     .gesture(DragGesture().onChanged({ value in
                         if(value.translation.width < 0){
                             self.translation = CGSize.zero.width
-                            self.sucess = false
+                            self.success = false
                         }else {
                             if(value.translation.width > 250) {
                                 self.translation = screen.width - 100
-                                self.sucess = true
+                                self.success = true
                             }else{
                                 self.translation = value.translation.width
                             }
@@ -43,10 +43,10 @@ struct SliderButton: View {
                         .onEnded({ value in
                             if(value.translation.width < 200) {
                                 self.translation = CGSize.zero.width
-                                self.sucess = false
+                                self.success = false
                             }else{
                                 self.translation = screen.width - 100
-                                self.sucess = true
+                                self.success = true
                             }
                             
                         })
