@@ -22,7 +22,7 @@ struct billListRow: View {
                     .lineLimit(1)
                     .padding([.trailing],15)
                 Spacer()
-                Text("R$ \(Double(quantity)*unitPrice, specifier: "%.2f")")
+                Text("R$ \(Double(quantity ?? 0)*(unitPrice ?? 0), specifier: "%.2f")")
                     .font(Font.headline.bold())
             }
             .padding([.bottom],5)

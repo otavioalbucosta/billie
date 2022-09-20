@@ -53,8 +53,8 @@ struct RegexNF {
         }
     }
 
-     func RegexToItem(str: String) -> [ItemNota] {
-        var itens: [ItemNota] = []
+     func RegexToItem(str: String) -> [TabItem] {
+        var itens: [TabItem] = []
         let titles = str.matches(of: self.regtitles)
         let qtdsandValunits = str.matches(of: self.regDigitAndValUnit)
          let valtot = str.components(separatedBy: "Total")[1].components(separatedBy: "Permanencia")[0].matches(of: self.regtotal)
@@ -62,21 +62,21 @@ struct RegexNF {
         for title in titles {
             let (_, produto) = title.output
             print(produto)
-            let item = ItemNota(product: String(produto) )
+            let item = TabItem(name: String(produto))
             itens.append(item)
         }
          for (index,qtds) in qtdsandValunits.enumerated() {
              print(index, qtds.output)
             let (_, qtd, val) = qtds.output
-             itens[index].quantity = qtd
-             itens[index].valUnit = val
+             itens[index].quantity = qtd ?? 0
+             itens[index].unitPrice = val
 //            qttyarr.append(qtd)
 //            valsarr.append(val)
         }
          for (index,total) in valtot.enumerated(){
              print(index, total.output)
             let (_, tota) = total.output
-             itens[index].valTotal = tota
+             itens[index].totalPrice = tota
         }
         return itens
     }
