@@ -21,12 +21,12 @@ struct ScannerView: UIViewControllerRepresentable {
     
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(with: self)
+        return Coordinator(with: self)
     }
     
     
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
-        let scannerView: ScannerView
+        var scannerView: ScannerView
         
         init(with scannerView: ScannerView) {
             self.scannerView = scannerView
@@ -37,7 +37,7 @@ struct ScannerView: UIViewControllerRepresentable {
         
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
             var scannedPages = [UIImage]()
-            
+            scannedPages.removeAll()
             for i in 0..<scan.pageCount {
                 scannedPages.append(scan.imageOfPage(at: i))
             }

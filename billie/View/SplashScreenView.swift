@@ -39,7 +39,7 @@ struct SplashScreenView: View {
         .sheet(isPresented: $showScanner, content: {
             ScannerView { result in
                 switch result {
-                    case .success(let scannedImages):
+                    case .success(var scannedImages):
                         
                         TextRecognition(scannedImages: scannedImages,
                                         recognizedContent: recognizedContent) {
@@ -48,15 +48,8 @@ struct SplashScreenView: View {
                             print("RESULTADO:")
                             print(recognizedContent.items[0].text)
                             print("REGEX:")
-                            let match = recognizedContent.items[0].text.matches(of: RegexNF.reg)
-                            for matches in match {
-                                let (_, codigo, produto, quantidade, valor, total) = matches.output
-                                print(codigo)
-                                print(produto)
-                                print(quantidade)
-                                print(valor)
-                                print(total)
-                            }
+                            var itens = RegexNF().RegexToItem(str: recognizedContent.items[0].text)
+                            
                         }
                         .recognizeText()
                         
