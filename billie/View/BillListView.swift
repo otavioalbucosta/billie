@@ -10,7 +10,7 @@ import SwiftUI
 struct BillListView: View {
     @State private var slide = 50.0
     @State private var isEditing = false
-//    @State private var coisas: [billListRow] = []
+    @State var tabs = Tabs()
     
     let alignment: Alignment = .bottom
     let width: CGFloat = 0.0
@@ -18,10 +18,19 @@ struct BillListView: View {
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
-    let foodName = ["AGUACATE", "Vatermelon","EarthMelon","fireMelon", "Airmelon", "KITUTI", "MDS N TA DANDO"]
-    @State var quantityRand = [1, 3, 2, 4, 2, 8, 3]
-    @State var priceRand = [1, 30.2, 13.2, 4.9, 22.1, 18.0, 3.0]
-    @State var value : Double = 0.0
+    
+    @State var items: [TabItem] = [
+        TabItem(name: "AGUACATE", quantity: 2, unitPrice: 5),
+        TabItem(name: "VVatermelon", quantity: 1, unitPrice: 5),
+        TabItem(name: "EarthMelon", quantity: 1, unitPrice: 5),
+        TabItem(name: "Firemelon", quantity: 1, unitPrice: 5),
+        TabItem(name: "Airmelon", quantity: 1, unitPrice: 5)
+    ]
+    
+    var sumOfAllItems: Double {
+        let totalPrices = items.map(\.totalPrice)
+        return totalPrices.reduce(0, +)
+    }
     
     var body: some View {
         NavigationView{
@@ -34,14 +43,14 @@ struct BillListView: View {
                             // The photo taken if possible, otherwise take the header off. =D
                         } label: {
                             HStack {
-                                Text("Conta")
+                                Text("Your tab")
                                 Spacer()
                                 Image(systemName: "photo")
                             }.foregroundColor(.primary)
                         }.padding([.leading,.trailing])
                         
                     } header: {
-                        Text("Dados escaneados com sucesso, é possível modificar os dados na lista abaixo")
+                        Text("successfully scanned, you can modify your tab below")
                             .font(.subheadline)
                             .listRowBackground(Color(.clear))
                             .listRowSeparator(.hidden)
@@ -49,9 +58,9 @@ struct BillListView: View {
                         
                     }.headerProminence(.increased)
                     
-                    ForEach (0..<foodName.endIndex) { item in
-                        billListRow(item: foodName[item], quantity: quantityRand[item], price: priceRand[item])
-                            
+                    
+                    ForEach($items) { $item in
+                        billListRow(item: item.name, quantity: $item.quantity, unitPrice: item.unitPrice)
                     }
                     
                     HStack{
@@ -62,17 +71,9 @@ struct BillListView: View {
                     }
                     .listRowSeparator(.hidden)
                 }.listStyle(.grouped)
-                
-                ZStack() {
-                    HStack (alignment: .bottom){
-                        Text("Subtotal da mesa: \(priceRand[0], specifier: "%.2f")")
-                        Spacer()
-                        Text("Seu total: \(priceRand[0], specifier: "%.2f")")
-                    }
-                }
-                .frame(maxHeight: UIScreen.main.bounds.height/10)
-                //                .background(Color.white).shadow(radius: 2, x: 0, y: -1)
-                .ignoresSafeArea()
+                    
+            
+                TotalOverView(totalPrice: sumOfAllItems)
             }
             
         }

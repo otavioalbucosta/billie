@@ -9,8 +9,10 @@ import SwiftUI
 
 struct billListRow: View {
     var item: String
-    @State var quantity: Int
-    @State var price: Double
+    
+    @Binding var quantity: Int
+    
+    let unitPrice: Double
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -20,15 +22,15 @@ struct billListRow: View {
                     .lineLimit(1)
                     .padding([.trailing],15)
                 Spacer()
-                Text("R$ \(Double(quantity)*price, specifier: "%.2f")")
+                Text("R$ \(Double(quantity)*unitPrice, specifier: "%.2f")")
                     .font(Font.headline.bold())
             }
             .padding([.bottom],5)
             HStack{
-                Text("R$ \(price,specifier: "%.2f")")
+                Text("R$ \(unitPrice,specifier: "%.2f")")
                 Spacer()
                 Button {
-                    // minus the actual value. If value equals zero, delete the row.
+                    // If value equals zero, delete the row.
                     if quantity == 0 {
                         
                     } else {
@@ -55,6 +57,6 @@ struct billListRow: View {
 struct billListRow_Previews: PreviewProvider {
     static var previews: some View {
         
-        billListRow(item: "Batata doce", quantity: 5, price: NSNumber(floatLiteral: 9.50).doubleValue )
+        billListRow(item: "Batata doce", quantity: .constant(5), unitPrice: NSNumber(floatLiteral: 9.50).doubleValue )
     }
 }
