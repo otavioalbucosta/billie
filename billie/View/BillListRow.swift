@@ -47,7 +47,9 @@ struct billListRow: View {
                 } label: {
                     Image(systemName: "minus.circle")
                 }
+                
                 Text("\(quantity)x")
+                
                 Button {
                     // plus the actual value.
                     quantity = quantity + 1
@@ -55,6 +57,7 @@ struct billListRow: View {
                     Image(systemName: "plus.circle")
                 }
             }
+            .buttonStyle(.borderless)
         }
         .buttonStyle(.borderless)
         .popover(isPresented: $isEditing){

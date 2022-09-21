@@ -18,10 +18,16 @@ struct SliderButton: View {
     var body: some View {
         HStack {
             ZStack(alignment: .leading) {
-                Color.gray.opacity(0.7)
-                .frame(width: screen.width, height: 80)
-                .mask {
-                    RoundedRectangle(cornerRadius: 80, style: .circular)
+                RoundedRectangle(cornerRadius: 100, style: .continuous)
+                    .foregroundColor(.gray).opacity(0.1)
+                    .frame(width: screen.width, height: 80, alignment: .center)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 100, style: .continuous)
+                        .stroke(lineWidth: 4).opacity(0.2)
+                        .shadow(color: .red, radius: 3, x: -3, y: -5)
+                        .clipShape(RoundedRectangle(cornerRadius: 80))
+                        .shadow(color: .blue, radius: 5, x: 2, y: 2)
+                        .clipShape(RoundedRectangle(cornerRadius: 80))
                 }
                 
                 SwipeButton(translation: $translation, sucess: $success)
@@ -47,6 +53,9 @@ struct SliderButton: View {
                             }else{
                                 self.translation = screen.width - 100
                                 self.success = true
+                                
+                                let hapSuccess = UIImpactFeedbackGenerator(style: .medium)
+                                hapSuccess.impactOccurred(intensity: 0.8)
                             }
                             
                         })
@@ -78,8 +87,8 @@ struct SwipeButton: View {
     var body: some View {
         ZStack(alignment: .trailing){
             
-            Color.blue.opacity(0.7)
-                .frame(width: 100 + translation, height: 80)
+            Color.accentColor
+                .frame(width: 100 + translation, height: 80, alignment: .center)
                 .mask({
                     RoundedRectangle(cornerRadius: 60, style: .circular)
                 })

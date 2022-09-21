@@ -28,12 +28,7 @@ struct TabItem: Identifiable, Hashable, Equatable {
     var unitPrice: Double
     var totalPrice: Double {
         get {
-            if let _totalPrice = _totalPrice{
-                return _totalPrice
-            }else{
-                return Double(quantity) * (unitPrice)
-            }
-
+            return Double(quantity) * (unitPrice)
         }
         set { _totalPrice = newValue}
     }

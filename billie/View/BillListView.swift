@@ -26,6 +26,8 @@ struct BillListView: View {
         return totalPrices.reduce(0, +)
     }
     
+    @StateObject var newTab = Tabs()
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -40,7 +42,7 @@ struct BillListView: View {
                                 Text("Your tab")
                                 Spacer()
                                 Image(systemName: "photo")
-                            }.foregroundColor(.primary)
+                            }
                         }.padding([.leading,.trailing])
                         
                     } header: {
@@ -54,23 +56,38 @@ struct BillListView: View {
                     
                     
                     ForEach($items, id: \.self) { $item in
-                        billListRow(item: $item.name, quantity: $item.quantity, unitPrice:  $item.unitPrice)
+                        billListRow(item: item.name, quantity: $item.quantity, unitPrice: item.unitPrice)
                     }
-                    
-                    HStack{
-                        Text("c/ taxa de serviço").foregroundColor(.secondary)
-                        Spacer()
-                        Image(systemName: "info.circle").foregroundColor(.secondary)
-                        Text("44.28").foregroundColor(.secondary)
-                    }
+                    .onDelete(perform: removeItems)
                     .listRowSeparator(.hidden)
-                }.listStyle(.grouped)
-                    
-            
+                }
+                .listStyle(.grouped)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Resume Tabs")
+                .toolbar {
+                    ToolbarItem (placement: .navigationBarTrailing) {
+                        Button {
+                        } label: {
+                            Text("Edit")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            let newItem = TabItem(name: "random", quantity: 2, unitPrice: 2.0)
+                            items.append(newItem)
+                        } label: {
+                            Image(systemName: "text.badge.plus")
+                        }
+                    }
+                }
                 TotalOverView(totalPrice: sumOfAllItems)
             }
             
         }
+    }
+    
+    func removeItems(at offsets: IndexSet) {
+        items.remove(atOffsets: offsets)
     }
 }
 
@@ -87,6 +104,3 @@ struct BillListView: View {
 //    }
 //}
 
-func teste() {
-    print("asdas")
-}
