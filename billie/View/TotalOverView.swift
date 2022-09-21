@@ -26,7 +26,7 @@ struct TotalOverView: View {
                             Image(systemName: "person.3")
                             Text("Taxa 10% ")
                             Spacer()
-                            Text("R$ \(totalPrice, specifier: "%.2f")")
+                            Text("R$ \(totalPrice*0.1, specifier: "%.2f")")
                         }
                         HStack{
                             Image(systemName: "star")

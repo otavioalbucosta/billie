@@ -15,6 +15,7 @@ struct SplashScreenView: View {
     @State var isEndedFirst: Bool = false
     @State var isEndedLast: Bool = false
     @State var itens: [TabItem] = []
+    @State var alertHelpButton = false
     
     var body: some View {
         NavigationStack {
@@ -56,11 +57,26 @@ struct SplashScreenView: View {
                 .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEndedLast)
                 
             }
+            .toolbar {
+                ToolbarItem {
+                    Button() {
+                        alertHelpButton = true
+                        
+                    }label: {
+                        
+                            Image(systemName: "questionmark.circle.fill")
+                                .foregroundColor(Color.white)
+                                .font(Font.body.bold())
+                                .padding(.all, 10)
+                    } .alert(isPresented: $alertHelpButton) {
+                        Alert(title: Text("Let me help you"), message: Text("Billie uses the camera to scan for the receipt so you can edit and pay everything with your phone in one simple app "), dismissButton: .default(Text("Start scanning")))
+                    }
+                }
+            }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(colorScheme == .light ?
                         LinearGradient(gradient: Gradient(colors: [.cyan, .clear]), startPoint: .topLeading, endPoint: .bottomTrailing):
                             LinearGradient(gradient: Gradient(colors: [.blue, .clear]), startPoint: .top, endPoint: .bottom))
-            
             .navigationDestination(isPresented: $isRecognized) {
                 BillListView(items: $itens)
             }
