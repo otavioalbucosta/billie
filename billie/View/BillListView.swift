@@ -19,13 +19,7 @@ struct BillListView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     
-    @State var items: [TabItem] = [
-        TabItem(name: "AGUACATE", quantity: 2, unitPrice: 5),
-        TabItem(name: "VVatermelon", quantity: 1, unitPrice: 5),
-        TabItem(name: "EarthMelon", quantity: 1, unitPrice: 5),
-        TabItem(name: "Firemelon", quantity: 1, unitPrice: 5),
-        TabItem(name: "Airmelon", quantity: 1, unitPrice: 5)
-    ]
+    @Binding var items: [TabItem]
     
     var sumOfAllItems: Double {
         let totalPrices = items.map(\.totalPrice)
@@ -97,9 +91,16 @@ struct BillListView: View {
     }
 }
 
-struct BillListView_Previews: PreviewProvider {
-    static var previews: some View {
-        BillListView()
-    }
-}
+//struct BillListView_Previews: PreviewProvider {
+//    @State var items: [TabItem] = [
+//        TabItem(name: "AGUACATE", quantity: 2, unitPrice: 5),
+//        TabItem(name: "VVatermelon", quantity: 1, unitPrice: 5),
+//        TabItem(name: "EarthMelon", quantity: 1, unitPrice: 5),
+//        TabItem(name: "Firemelon", quantity: 1, unitPrice: 5),
+//        TabItem(name: "Airmelon", quantity: 1, unitPrice: 5)
+//    ]
+//    static var previews: some View {
+//        BillListView(items: $items)
+//    }
+//}
 
