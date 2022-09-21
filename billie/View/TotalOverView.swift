@@ -16,21 +16,21 @@ struct TotalOverView: View {
                 Group{
                     HStack{
                         Image(systemName: "person.fill")
-                        Text("aaaa")
+                        Text("Seu total")
                         Spacer()
                         Text("R$ \(totalPrice, specifier: "%.2f")")
                     }
                     .font(Font.title3.bold())
                     Group {
                         HStack{
-                            Image(systemName: "star")
-                            Text("aaaa")
+                            Image(systemName: "person.3")
+                            Text("Taxa 10% ")
                             Spacer()
                             Text("R$ \(totalPrice, specifier: "%.2f")")
                         }
                         HStack{
                             Image(systemName: "star")
-                            Text("aaaa")
+                            Text("Cover")
                             Spacer()
                             Text("R$ \(totalPrice, specifier: "%.2f")")
                         }

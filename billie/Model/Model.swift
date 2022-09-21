@@ -21,13 +21,13 @@ class RecognizedContent: ObservableObject {
     @Published var items = [TextItem]()
 }
 
-struct TabItem: Identifiable {
+struct TabItem: Identifiable, Hashable, Equatable {
     var id = UUID()
     var name: String
     var quantity: Int
     var unitPrice: Double
     var totalPrice: Double {
-        get { return Double(quantity) * unitPrice}
+        get { return Double(quantity ?? 0) * (unitPrice ?? 0)}
     }
 
 }

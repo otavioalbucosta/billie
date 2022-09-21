@@ -14,6 +14,7 @@ struct SplashScreenView: View {
     @State private var isRecognized: Bool? = false
     @State var isEndedFirst: Bool = false
     @State var isEndedLast: Bool = false
+    @State private var showingHelpAlert = false
     
     var body: some View {
         NavigationView{
