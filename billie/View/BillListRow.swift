@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct billListRow: View {
-    var item: String
-    
+    @Binding var item: String
+    @State var isEditing: Bool = false
     @Binding var quantity: Int
     
-    let unitPrice: Double
+    @Binding var unitPrice: Double
+    let formatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            return formatter
+        }()
+    
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -22,7 +28,7 @@ struct billListRow: View {
                     .lineLimit(1)
                     .padding([.trailing],15)
                 Spacer()
-                Text("R$ \(Double(quantity ?? 0)*(unitPrice ?? 0), specifier: "%.2f")")
+                Text("R$ \(Double(quantity)*(unitPrice), specifier: "%.2f")")
                     .font(Font.headline.bold())
             }
             .padding([.bottom],5)
@@ -51,12 +57,22 @@ struct billListRow: View {
             }
         }
         .buttonStyle(.borderless)
+        .popover(isPresented: $isEditing){
+            VStack{
+                TextField("Nome do Item",text: $item)
+                TextField("Valor Unitário", value: $unitPrice, formatter: formatter)
+                    .keyboardType(.decimalPad)
+            }
+        }
+        .onLongPressGesture{
+            isEditing.toggle()
+        }
     }
 }
 
 struct billListRow_Previews: PreviewProvider {
     static var previews: some View {
         
-        billListRow(item: "Batata doce", quantity: .constant(5), unitPrice: NSNumber(floatLiteral: 9.50).doubleValue )
+        billListRow(item: .constant("Batata Frita"), quantity: .constant(5), unitPrice: .constant(NSNumber(floatLiteral: 9.50).doubleValue) )
     }
 }

@@ -54,7 +54,7 @@ struct BillListView: View {
                     
                     
                     ForEach($items, id: \.self) { $item in
-                        billListRow(item: item.name, quantity: $item.quantity, unitPrice:  item.unitPrice)
+                        billListRow(item: $item.name, quantity: $item.quantity, unitPrice:  $item.unitPrice)
                     }
                     
                     HStack{
