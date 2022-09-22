@@ -33,10 +33,7 @@ struct RegexNF {
         }transform: { W in
             Int(W)
         }
-        ChoiceOf{
-            CharacterClass.horizontalWhitespace
-            CharacterClass.verticalWhitespace
-        }
+        CharacterClass.verticalWhitespace
         Capture{
             One(.localizedDecimal(locale: Locale(identifier: "pt_BR")))
         } transform: {

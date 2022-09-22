@@ -84,8 +84,8 @@ struct SplashScreenView: View {
         .sheet(isPresented: $showScanner, content: {
             ScannerView { result in
                 switch result {
-                    case .success(var scannedImages):
-                        
+                case .success(let scannedImages):
+                    recognizedContent.items.removeAll()
                         TextRecognition(scannedImages: scannedImages,
                                         recognizedContent: recognizedContent) {
                             // Text recognition is finished, hide the progress indicator.
