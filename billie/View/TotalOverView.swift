@@ -12,31 +12,35 @@ struct TotalOverView: View {
     let totalPrice: Double
     
     var body: some View {
+        ZStack(alignment: .bottom) {
+            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                .foregroundColor(Color(UIColor.systemBackground))
+                .opacity(1).shadow(color: Color(UIColor.systemRed), radius: 2)
+                .frame(maxHeight: UIScreen.main.bounds.height/5)
+        }
+        .overlay {
             VStack(alignment: .leading) {
                 Group{
                     HStack{
                         Image(systemName: "person.fill")
-                        Text("Seu total")
+                        Text("Total")
                         Spacer()
                         Text("R$ \(totalPrice, specifier: "%.2f")")
                     }
                     .font(Font.title3.bold())
                     Group {
                         HStack{
-                            Image(systemName: "person.3")
-                            Text("Taxa 10% ")
+                            Image(systemName: "dollarsign.circle")
+                            Text("10% Tip")
                             Spacer()
                             Text("R$ \(totalPrice*0.1, specifier: "%.2f")")
                         }
-                        HStack{
-                            Image(systemName: "star")
-                            Text("Cover")
-                            Spacer()
-                            Text("R$ \(totalPrice, specifier: "%.2f")")
-                        }
-                    }.padding([.leading,.trailing],10).foregroundColor(.secondary)
+                    }
+                    .foregroundColor(.secondary)
                 }
+                .padding(.all)
             }
+        }
     }
 }
 

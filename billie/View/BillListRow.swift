@@ -15,6 +15,7 @@ struct billListRow: View {
     let unitPrice: Double
     
     var body: some View {
+        
         VStack(alignment: .leading) {
             HStack{
                 Text(item)
@@ -22,28 +23,30 @@ struct billListRow: View {
                     .lineLimit(1)
                     .padding([.trailing],15)
                 Spacer()
-                Text("R$ \(Double(quantity ?? 0)*(unitPrice ?? 0), specifier: "%.2f")")
+                Text("R$ \(Double(quantity)*(unitPrice), specifier: "%.2f")")
                     .font(Font.headline.bold())
+                    .foregroundColor(Double(quantity)*unitPrice == 0.0 ? Color.red : Color.primary)
             }
             .padding([.bottom],5)
             HStack{
                 Text("R$ \(unitPrice,specifier: "%.2f")")
+                    .foregroundColor(unitPrice == 0.0 ? Color.red : Color.primary)
                 Spacer()
                 Button {
                     // If value equals zero, delete the row.
                     if quantity == 0 {
-                        
+
                     } else {
-                        
+
                         quantity = quantity - 1
                     }
-                    
+
                 } label: {
                     Image(systemName: "minus.circle")
                 }
-                
+
                 Text("\(quantity)x")
-                
+
                 Button {
                     // plus the actual value.
                     quantity = quantity + 1
