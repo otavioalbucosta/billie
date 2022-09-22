@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TotalOverView: View {
     
-    let totalPrice: Double
+    var totalPrice: Double
     
     var body: some View {
         ZStack(alignment: .bottom) {

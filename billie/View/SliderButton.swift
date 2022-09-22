@@ -11,8 +11,12 @@ import CoreHaptics
 struct SliderButton: View {
     
     @State var engine: CHHapticEngine?
+    
+    @State var Player: CHHapticAdvancedPatternPlayer?
     @State var translation = CGSize.zero.width
     @State var success = false
+    @State var intensity: Float = 0.8
+    @State var sharpness: Float = 0.0
     
     let screen = UIScreen.main.bounds
     var body: some View {
@@ -31,36 +35,46 @@ struct SliderButton: View {
                 }
                 
                 SwipeButton(translation: $translation, sucess: $success)
-                    .animation(.spring(),value: self.translation)
+                    .animation(.linear(duration: 0.1),value: self.translation)
                     .gesture(DragGesture().onChanged({ value in
+                        startPlayer()
                         if(value.translation.width < 0){
                             self.translation = CGSize.zero.width
                             self.success = false
+                            
                         }else {
                             if(value.translation.width > 250) {
                                 self.translation = screen.width - 100
+                                sharpness = 0.8
+                                dynamicPattern()
                                 self.success = true
                             }else{
                                 self.translation = value.translation.width
+                                sharpness = Float(self.translation) / 300
+                                print(sharpness)
+                                dynamicPattern()
                             }
                         }
                         
                     })
                         .onEnded({ value in
-                            if(value.translation.width < 200) {
+                            if(value.translation.width < 250) {
                                 self.translation = CGSize.zero.width
                                 self.success = false
+                                stopPlayer()
                             }else{
                                 self.translation = screen.width - 100
                                 self.success = true
-                                
-                                let hapSuccess = UIImpactFeedbackGenerator(style: .medium)
-                                hapSuccess.impactOccurred(intensity: 0.8)
+                                stopPlayer()
+                                let hapSuccess = UINotificationFeedbackGenerator()
+                                hapSuccess.notificationOccurred(.success)
                             }
                             
                         })
                     )
                     
+            }.onAppear{
+                prepareHaptics()
             }
         }
         
@@ -71,13 +85,50 @@ struct SliderButton: View {
         do {
             engine = try CHHapticEngine()
             try engine?.start()
+            playerCreate()
         }catch {
             print(error)
         }
     }
-//    func complexSucess() {
-//        guard
-//    }
+    func playerCreate() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {return }
+        
+        let normalIntensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.5)
+        let normalSharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
+        
+        let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [normalIntensity,normalSharpness], relativeTime: 0, duration: 0.1)
+        do{
+            let pattern =  try CHHapticPattern(events: [event], parameters: [])
+            self.Player =  try engine?.makeAdvancedPlayer(with: pattern)
+        }catch{
+            print(error)
+        }
+
+
+    }
+    func dynamicPattern() {
+
+        var dynamicSharpness = CHHapticDynamicParameter(parameterID: .hapticSharpnessControl, value: sharpness, relativeTime: 0)
+        do{
+            try Player?.sendParameters([dynamicSharpness], atTime: CHHapticTimeImmediate)
+        }catch{
+            print(error)
+        }
+    }
+    func startPlayer(){
+        do{
+            try Player?.start(atTime: CHHapticTimeImmediate)
+        }catch{
+            print(error)
+        }
+    }
+    func stopPlayer(){
+        do{
+            try Player?.stop(atTime: CHHapticTimeImmediate)
+        }catch{
+            print(error)
+        }
+    }
 }
 
 struct SwipeButton: View {
