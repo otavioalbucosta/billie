@@ -93,6 +93,7 @@ struct SplashScreenView: View {
                             print(recognizedContent.items[0].text)
                             print("REGEX:")
                             var res = RegexNF().RegexToItem(str: recognizedContent.items[0].text)
+                            self.itens.removeAll()
                             self.itens.append(contentsOf: res)
                             print(itens)
                             if !itens.isEmpty {

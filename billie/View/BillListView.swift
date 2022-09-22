@@ -10,7 +10,6 @@ import SwiftUI
 struct BillListView: View {
     @State private var slide = 50.0
     @State private var isEditing = false
-    @State var tabs = Tabs()
     
     let alignment: Alignment = .bottom
     let width: CGFloat = 0.0
@@ -26,7 +25,6 @@ struct BillListView: View {
         return totalPrices.reduce(0, +)
     }
     
-    @StateObject var newTab = Tabs()
     
     var body: some View {
         NavigationView{
@@ -55,8 +53,8 @@ struct BillListView: View {
                     }.headerProminence(.increased)
                     
                     
-                    ForEach($items, id: \.self) { $item in
-                        billListRow(item: item.name, quantity: $item.quantity, unitPrice: item.unitPrice)
+                    ForEach($items, id: \.id) { $item in
+                        billListRow(item: $item)
                     }
                     .onDelete(perform: removeItems)
                     .listRowSeparator(.hidden)
