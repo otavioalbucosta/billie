@@ -28,12 +28,12 @@ struct billListRow: View {
                 Spacer()
                 Text("R$ \(Double(item.quantity)*(item.unitPrice), specifier: "%.2f")")
                     .font(Font.headline.bold())
-                    .foregroundColor(Double(quantity)*unitPrice == 0.0 ? Color.red : Color.primary)
+                    .foregroundColor(Double(item.quantity)*item.unitPrice == 0.0 ? Color.red : Color.primary)
             }
             .padding([.bottom],5)
             HStack{
-                Text("R$ \(unitPrice,specifier: "%.2f")")
-                    .foregroundColor(unitPrice == 0.0 ? Color.red : Color.primary)
+                Text("R$ \(item.unitPrice,specifier: "%.2f")")
+                    .foregroundColor(item.unitPrice == 0.0 ? Color.red : Color.primary)
                 Spacer()
                 Button {
                     // If value equals zero, delete the row.
