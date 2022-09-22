@@ -94,6 +94,7 @@ struct SplashScreenView: View {
         }
         .sheet(isPresented: $showScanner, content: {
             ScannerView { result in
+                recognizedContent.items.removeAll()
                 switch result {
                     case .success(var scannedImages):
                         

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class TextItem: Identifiable {
     var id: String
@@ -31,6 +32,8 @@ struct TabItem: Identifiable, Hashable, Equatable {
             return Double(quantity) * (unitPrice)
         }
     }
+    var isEditing: Bool = false
+    
     
     var _totalPrice: Double?
     

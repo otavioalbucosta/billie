@@ -12,35 +12,38 @@ struct TotalOverView: View {
     var totalPrice: Double
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .foregroundColor(Color(UIColor.systemBackground))
-                .opacity(1).shadow(color: Color(UIColor.systemRed), radius: 2)
-                .frame(maxHeight: UIScreen.main.bounds.height/5)
-        }
-        .overlay {
+        ZStack(alignment: .center) {
             VStack(alignment: .leading) {
-                Group{
-                    HStack{
-                        Image(systemName: "person.fill")
-                        Text("Total")
-                        Spacer()
-                        Text("R$ \(totalPrice, specifier: "%.2f")")
-                    }
-                    .font(Font.title3.bold())
-                    Group {
+                Group {
+                    Group{
                         HStack{
-                            Image(systemName: "dollarsign.circle")
-                            Text("10% Tip")
+                            Image(systemName: "person.fill")
+                            Text("Total")
                             Spacer()
-                            Text("R$ \(totalPrice*0.1, specifier: "%.2f")")
+                            Text("R$ \(totalPrice, specifier: "%.2f")")
                         }
+                        .font(Font.title3.bold())
+                        Group {
+                            HStack{
+                                Image(systemName: "dollarsign.circle")
+                                Text("10% Tip")
+                                Spacer()
+                                Text("R$ \(totalPrice*0.1, specifier: "%.2f")")
+                            }
+                        }
+                        .foregroundColor(.secondary)
                     }
-                    .foregroundColor(.secondary)
-                }
-                .padding(.all)
+                    SliderButton()
+                }.zIndex(0)
             }
+            .padding(.all, 20)
+            Rectangle()
+                .foregroundColor(.white)
+                .shadow(radius: 4)
+                .zIndex(-1)
         }
+        .frame(height: UIScreen.main.bounds.height/10)
+        .ignoresSafeArea()
     }
 }
 

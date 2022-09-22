@@ -29,7 +29,6 @@ struct BillListView: View {
     var body: some View {
         NavigationView{
             VStack{
-                
                 List {
                     Section{
                         Button {
@@ -55,21 +54,39 @@ struct BillListView: View {
                     
                     ForEach($items, id: \.id) { $item in
                         billListRow(item: $item)
+                            .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
+                                Button {
+                                    items.removeAll(where: {$0.id == $item.id})
+                                } label: {
+                                    Text("Delete")
+                                        .foregroundColor(.white)
+                                }.tint(.red)
+
+                            })
+                            .swipeActions(edge: .trailing,allowsFullSwipe: false, content: {
+                                Button {
+                                    item.isEditing.toggle()
+                                } label: {
+                                    Text("Edit")
+                                        .foregroundColor(.white)
+                                }.tint(.yellow)
+
+                            })
+                            
                     }
-                    .onDelete(perform: removeItems)
                     .listRowSeparator(.hidden)
                 }
                 .listStyle(.grouped)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Resume Tabs")
                 .toolbar {
-                    ToolbarItem (placement: .navigationBarTrailing) {
+                    ToolbarItem (placement: .navigationBarLeading) {
                         Button {
                         } label: {
                             Text("Edit")
                         }
                     }
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             let newItem = TabItem(name: "random", quantity: 2, unitPrice: 2.0)
                             items.append(newItem)
@@ -78,15 +95,16 @@ struct BillListView: View {
                         }
                     }
                 }
+                .background(Color.clear)
                 TotalOverView(totalPrice: sumOfAllItems)
             }
             
         }
     }
     
-    func removeItems(at offsets: IndexSet) {
-        items.remove(atOffsets: offsets)
-    }
+//    func removeItems(at offsets: IndexSet) {
+//        items.remove(atOffsets: offsets)
+//    }
 }
 
 //struct BillListView_Previews: PreviewProvider {

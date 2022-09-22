@@ -9,7 +9,8 @@ import SwiftUI
 
 struct billListRow: View {
     @Binding var item: TabItem
-    @State var isEditing: Bool = false
+//    @Binding var isEditing: Bool
+    var closure: (() -> Void)?
     let formatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
@@ -28,12 +29,12 @@ struct billListRow: View {
                 Spacer()
                 Text("R$ \(Double(item.quantity)*(item.unitPrice), specifier: "%.2f")")
                     .font(Font.headline.bold())
-                    .foregroundColor(Double(quantity)*unitPrice == 0.0 ? Color.red : Color.primary)
+                    .foregroundColor(Double(item.quantity)*item.unitPrice == 0.0 ? Color.red : Color.primary)
             }
             .padding([.bottom],5)
             HStack{
-                Text("R$ \(unitPrice,specifier: "%.2f")")
-                    .foregroundColor(unitPrice == 0.0 ? Color.red : Color.primary)
+                Text("R$ \(item.unitPrice,specifier: "%.2f")")
+                    .foregroundColor(item.unitPrice == 0.0 ? Color.red : Color.primary)
                 Spacer()
                 Button {
                     // If value equals zero, delete the row.
@@ -60,7 +61,7 @@ struct billListRow: View {
             .buttonStyle(.borderless)
         }
         .buttonStyle(.borderless)
-        .sheet(isPresented: $isEditing){
+        .sheet(isPresented: $item.isEditing){
             VStack{
                 TextField("Nome do Item",text: $item.name)
                     .textFieldStyle(.roundedBorder)
@@ -71,7 +72,9 @@ struct billListRow: View {
             }
         }
         .onLongPressGesture{
-            isEditing.toggle()
+            let pressedHap = UISelectionFeedbackGenerator()
+            pressedHap.selectionChanged()
+            item.isEditing.toggle()
         }
     }
 //    func updateitemName() {
