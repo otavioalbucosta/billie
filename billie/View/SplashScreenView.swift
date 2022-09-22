@@ -96,8 +96,8 @@ struct SplashScreenView: View {
             ScannerView { result in
                 recognizedContent.items.removeAll()
                 switch result {
-                    case .success(var scannedImages):
-                        
+                case .success(let scannedImages):
+                    recognizedContent.items.removeAll()
                         TextRecognition(scannedImages: scannedImages,
                                         recognizedContent: recognizedContent) {
                             // Text recognition is finished, hide the progress indicator.

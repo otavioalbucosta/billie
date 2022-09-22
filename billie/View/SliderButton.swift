@@ -11,20 +11,24 @@ import CoreHaptics
 struct SliderButton: View {
     
     @State var engine: CHHapticEngine?
-    
+    var screen: CGRect {
+        get{
+            UIScreen.main.bounds
+        }
+    }
     @State var Player: CHHapticAdvancedPatternPlayer?
     @State var translation = CGSize.zero.width
     @State var success = false
     @State var intensity: Float = 0.8
     @State var sharpness: Float = 0.0
     
-    let screen = UIScreen.main.bounds
+    
     var body: some View {
         HStack {
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 100, style: .continuous)
                     .foregroundColor(.clear).opacity(0.1)
-                    .frame(width: screen.width, height: 80, alignment: .center)
+                    .frame(height: 80, alignment: .center)
                 .overlay {
                     RoundedRectangle(cornerRadius: 100, style: .continuous)
                         .stroke(lineWidth: 4).opacity(0.1)
@@ -43,7 +47,7 @@ struct SliderButton: View {
                             self.success = false
                             
                         }else {
-                            if(value.translation.width > 250) {
+                            if(value.translation.width > screen.width - 150) {
                                 self.translation = screen.width - 100
                                 sharpness = 0.8
                                 dynamicPattern()
@@ -58,7 +62,7 @@ struct SliderButton: View {
                         
                     })
                         .onEnded({ value in
-                            if(value.translation.width < 250) {
+                            if(value.translation.width < screen.width - 150) {
                                 self.translation = CGSize.zero.width
                                 self.success = false
                                 stopPlayer()
