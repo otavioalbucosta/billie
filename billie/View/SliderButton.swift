@@ -23,14 +23,14 @@ struct SliderButton: View {
         HStack {
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 100, style: .continuous)
-                    .foregroundColor(.gray).opacity(0.1)
+                    .foregroundColor(.clear).opacity(0.1)
                     .frame(width: screen.width, height: 80, alignment: .center)
                 .overlay {
                     RoundedRectangle(cornerRadius: 100, style: .continuous)
-                        .stroke(lineWidth: 4).opacity(0.2)
-                        .shadow(color: .red, radius: 3, x: -3, y: -5)
+                        .stroke(lineWidth: 4).opacity(0.1)
+                        .shadow(color: .gray, radius: 3, x: -3, y: -5)
                         .clipShape(RoundedRectangle(cornerRadius: 80))
-                        .shadow(color: .blue, radius: 5, x: 2, y: 2)
+                        .shadow(color: .gray, radius: 3, x: -2, y: 5 )
                         .clipShape(RoundedRectangle(cornerRadius: 80))
                 }
                 

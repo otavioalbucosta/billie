@@ -90,6 +90,8 @@ struct BillListView: View {
 }
 
 //struct BillListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        
 //    @State var items: [TabItem] = [
 //        TabItem(name: "AGUACATE", quantity: 2, unitPrice: 5),
 //        TabItem(name: "VVatermelon", quantity: 1, unitPrice: 5),
@@ -97,8 +99,5 @@ struct BillListView: View {
 //        TabItem(name: "Firemelon", quantity: 1, unitPrice: 5),
 //        TabItem(name: "Airmelon", quantity: 1, unitPrice: 5)
 //    ]
-//    static var previews: some View {
-//        BillListView(items: $items)
-//    }
 //}
 

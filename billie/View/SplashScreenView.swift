@@ -40,22 +40,22 @@ struct SplashScreenView: View {
                 }){
                     HStack{
                         Image(systemName: "doc.text.viewfinder")
-                        Text("Escanear conta")
+                        Text("Scan the receipt")
                             .fontWeight(.semibold)
                             .font(Font.title3)
                     }
-                    .foregroundColor( colorScheme == .dark ? .blue: .white)
+                    .foregroundColor( colorScheme == .dark ? .blue:
+                                        Color(red: 36/255, green: 123/255, blue: 160/255))
                     .padding(.all, 12)
                     .padding([.leading,.trailing])
                     
                     .opacity(isEndedLast ? 1
                              : 0).animation(.easeInOut(duration: 1), value: isEndedLast)
-                    .background(colorScheme == .dark ? .white : .teal
+                    .background(colorScheme == .dark ? .white : .white
                     ).opacity(isEndedLast ? 1 : 0).animation(.easeOut(duration: 1), value: isEndedLast)
                         
                 }
                 .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEndedLast)
-                
             }
             .toolbar {
                 ToolbarItem {
@@ -66,17 +66,28 @@ struct SplashScreenView: View {
                         
                             Image(systemName: "questionmark.circle.fill")
                                 .foregroundColor(Color.white)
-                                .font(Font.body.bold())
+                                .font(Font.body)
                                 .padding(.all, 10)
                     } .alert(isPresented: $alertHelpButton) {
-                        Alert(title: Text("Let me help you"), message: Text("Billie uses the camera to scan for the receipt so you can edit and pay everything with your phone in one simple app "), dismissButton: .default(Text("Start scanning")))
+                        Alert(title: Text("Let me help you"),
+                              message: Text("Billie uses the camera to scan for the receipt so you can edit and pay everything with your phone in one simple app "),
+                              dismissButton: .default(Text("Start scanning")))
                     }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(colorScheme == .light ?
-                        LinearGradient(gradient: Gradient(colors: [.cyan, .clear]), startPoint: .topLeading, endPoint: .bottomTrailing):
-                            LinearGradient(gradient: Gradient(colors: [.blue, .clear]), startPoint: .top, endPoint: .bottom))
+                        LinearGradient(gradient: Gradient(colors: [
+                            Color(red: 126/255, green: 184/255, blue: 231/255),
+                            Color(red: 184/255, green: 216/255, blue: 242/255),
+                            Color(red: 184/255, green: 216/255, blue: 242/255).opacity(0.7),]),
+                                       startPoint: .top,
+                                       endPoint: .bottom):
+                            LinearGradient(gradient: Gradient(colors: [
+                                .blue,
+                                .clear]),
+                                           startPoint: .top,
+                                           endPoint: .bottom))
             .navigationDestination(isPresented: $isRecognized) {
                 BillListView(items: $itens)
             }
