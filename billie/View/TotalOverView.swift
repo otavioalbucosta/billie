@@ -38,12 +38,12 @@ struct TotalOverView: View {
             }
             .padding(.all, 20)
             Rectangle()
-                .foregroundColor(.white)
+                .foregroundColor(Color(UIColor.systemGroupedBackground))
                 .shadow(radius: 4)
                 .zIndex(-1)
         }
         .frame(height: UIScreen.main.bounds.height/10)
-        .ignoresSafeArea()
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 
