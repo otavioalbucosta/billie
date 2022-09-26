@@ -44,8 +44,6 @@ struct SplashScreenView: View {
                                         Color(red: 36/255, green: 123/255, blue: 160/255))
                     .padding(.all, 12)
                     .padding([.leading,.trailing])
-                    
-<<<<<<< HEAD
                     .opacity(isEnded ? 1
                              : 0).animation(.easeInOut(duration: 1), value: isEnded)
                     .background(colorScheme == .dark ? .white : .teal
@@ -54,15 +52,7 @@ struct SplashScreenView: View {
                 }
                 .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEnded)
                 
-=======
-                    .opacity(isEndedLast ? 1
-                             : 0).animation(.easeInOut(duration: 1), value: isEndedLast)
-                    .background(colorScheme == .dark ? .white : .white
-                    ).opacity(isEndedLast ? 1 : 0).animation(.easeOut(duration: 1), value: isEndedLast)
-                        
-                }
-                .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEndedLast)
->>>>>>> db246247ac1c4f4db483e63f442072c31f9205e1
+
             }
             .toolbar {
                 ToolbarItem {

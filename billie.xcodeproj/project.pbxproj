@@ -29,6 +29,7 @@
 		2969FCE128CA13D6009FBB4F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCE028CA13D6009FBB4F /* Model.swift */; };
 		29EF982728CF742A0000E300 /* TextPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982628CF742A0000E300 /* TextPreviewView.swift */; };
 		29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982B28CF7AEB0000E300 /* BillListRow.swift */; };
+		4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943E16928DE320800803CB7 /* LottieSuccessView.swift */; };
 		7E26326A28D7C4F600FD049B /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326928D7C4F600FD049B /* ActionButton.swift */; };
 		7E26327028D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
 		7E26327128D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
@@ -75,6 +76,7 @@
 		2969FCE028CA13D6009FBB4F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		29EF982628CF742A0000E300 /* TextPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewView.swift; sourceTree = "<group>"; };
 		29EF982B28CF7AEB0000E300 /* BillListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListRow.swift; sourceTree = "<group>"; };
+		4943E16928DE320800803CB7 /* LottieSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSuccessView.swift; sourceTree = "<group>"; };
 		7E26326928D7C4F600FD049B /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		7E26326F28D8FDE500FD049B /* TotalOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +188,7 @@
 				7E26326928D7C4F600FD049B /* ActionButton.swift */,
 				7E26326F28D8FDE500FD049B /* TotalOverView.swift */,
 				293AEAB128DCDFDC00FB8942 /* CheckoutView.swift */,
+				4943E16928DE320800803CB7 /* LottieSuccessView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */,
 				2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */,
 				7E26326A28D7C4F600FD049B /* ActionButton.swift in Sources */,
+				4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */,
 				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,
@@ -521,7 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"billie/Preview Content\"";
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = JF8PTRU8N6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -552,7 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"billie/Preview Content\"";
-				DEVELOPMENT_TEAM = 44U668YQTW;
+				DEVELOPMENT_TEAM = JF8PTRU8N6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
