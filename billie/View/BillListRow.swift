@@ -9,7 +9,6 @@ import SwiftUI
 
 struct billListRow: View {
     @Binding var item: TabItem
-//    @Binding var isEditing: Bool
     var closure: (() -> Void)?
     let formatter: NumberFormatter = {
             let formatter = NumberFormatter()

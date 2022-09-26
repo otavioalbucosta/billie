@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TotalOverView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     var totalPrice: Double
     
     var body: some View {
@@ -34,16 +35,18 @@ struct TotalOverView: View {
                         .foregroundColor(.secondary)
                     }
                     SliderButton()
+                        .frame(maxHeight: 70)
+                        .padding([.bottom], 30)
                 }.zIndex(0)
             }
             .padding(.all, 20)
             Rectangle()
-                .foregroundColor(Color(UIColor.systemGroupedBackground))
+                .foregroundColor(colorScheme == .light ? Color(UIColor.white): Color(UIColor.systemGray6) )
                 .shadow(radius: 4)
                 .zIndex(-1)
         }
         .frame(height: UIScreen.main.bounds.height/10)
-        .ignoresSafeArea(edges: .bottom)
+        .ignoresSafeArea(edges: [.bottom, .leading, .trailing])
     }
 }
 

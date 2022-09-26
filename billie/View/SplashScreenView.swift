@@ -40,7 +40,7 @@ struct SplashScreenView: View {
                 }){
                     HStack{
                         Image(systemName: "doc.text.viewfinder")
-                        Text("Scan the receipt")
+                        Text("Scan receipt")
                             .fontWeight(.semibold)
                             .font(Font.title3)
                     }

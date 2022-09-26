@@ -11,6 +11,7 @@ import Foundation
 struct BillListView: View {
     @State private var slide = 50.0
     @State private var isEditing = false
+    @Binding var items: [TabItem]
     
     let alignment: Alignment = .bottom
     let width: CGFloat = 0.0
@@ -19,7 +20,6 @@ struct BillListView: View {
     let screenHeight = UIScreen.main.bounds.height
     
     
-    @Binding var items: [TabItem]
     
     var sumOfAllItems: Double {
         let totalPrices = items.map(\.totalPrice)
@@ -85,7 +85,9 @@ struct BillListView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            let newItem = TabItem(name: "Please edit this item", quantity: 0, unitPrice: 0.0)
+                            var newItem = TabItem(name: "Please edit this item", quantity: 0, unitPrice: 0.0)
+                            newItem.isEditing.toggle()
+                            newItem.quantity = 1
                             items.append(newItem)
                         } label: {
                             Image(systemName: "text.badge.plus")
