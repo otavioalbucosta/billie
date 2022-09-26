@@ -67,7 +67,7 @@ struct SplashScreenView: View {
                                 .padding(.all, 10)
                     } .alert(isPresented: $alertHelpButton) {
                         Alert(title: Text("Let me help you"),
-                              message: Text("Billie uses the camera to scan for the receipt so you can edit and pay everything with your phone in one simple app "),
+                              message: Text("Billie uses the camera to scan for the receipt so you can edit and pay everything with your phone in one simple app"),
                               dismissButton: .default(Text("Start scanning")))
                     }
                 }

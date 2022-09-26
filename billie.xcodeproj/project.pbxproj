@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D762B4D28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D762B4C28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json */; };
-		1D762B4E28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D762B4C28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json */; };
-		1D762B4F28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D762B4C28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json */; };
+		1D762B5128E1E3A700A65797 /* BillieMoneySupposedlyFinal.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */; };
 		1D89BCA328D0D22800357248 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1D89BCA228D0D22800357248 /* Lottie */; };
 		1D89BCB728D21BA800357248 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB628D21BA800357248 /* LottieView.swift */; };
 		1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB828D2459100357248 /* SplashScreenView.swift */; };
@@ -54,7 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D762B4C28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BillieMoneySupposedlyFinal.json; path = "../../../../../Pictures/Artes/Billie Supposedly Final/BillieMoneySupposedlyFinal.json"; sourceTree = "<group>"; };
+		1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BillieMoneySupposedlyFinal.json; sourceTree = "<group>"; };
 		1D89BCB628D21BA800357248 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		1D89BCB828D2459100357248 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		2913F17928D0B40D000CE54F /* RegexBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexBuilder.swift; sourceTree = "<group>"; };
@@ -110,7 +108,7 @@
 		1D89BCA928D0DEB300357248 /* All Splash Screen animations */ = {
 			isa = PBXGroup;
 			children = (
-				1D762B4C28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json */,
+				1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */,
 			);
 			path = "All Splash Screen animations";
 			sourceTree = "<group>";
@@ -322,7 +320,7 @@
 			files = (
 				2969FCBA28CA1353009FBB4F /* Preview Assets.xcassets in Resources */,
 				2969FCB728CA1353009FBB4F /* Assets.xcassets in Resources */,
-				1D762B4D28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json in Resources */,
+				1D762B5128E1E3A700A65797 /* BillieMoneySupposedlyFinal.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +328,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D762B4E28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +335,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D762B4F28E1CCCD00A65797 /* BillieMoneySupposedlyFinal.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
