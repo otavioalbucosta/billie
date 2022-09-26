@@ -33,10 +33,7 @@ struct RegexNF {
         }transform: { W in
             Int(W)
         }
-        ChoiceOf{
-            CharacterClass.horizontalWhitespace
-            CharacterClass.verticalWhitespace
-        }
+        CharacterClass.verticalWhitespace
         Capture{
             One(.localizedDecimal(locale: Locale(identifier: "pt_BR")))
         } transform: {
@@ -57,7 +54,6 @@ struct RegexNF {
         var itens: [TabItem] = []
         let titles = str.matches(of: self.regtitles)
         let qtdsandValunits = str.matches(of: self.regDigitAndValUnit)
-         let valtot = str.components(separatedBy: "Total")[1].components(separatedBy: "Permanencia")[0].matches(of: self.regtotal)
         
         for title in titles {
             let (_, produto) = title.output
@@ -72,11 +68,6 @@ struct RegexNF {
              itens[index].unitPrice = val
 //            qttyarr.append(qtd)
 //            valsarr.append(val)
-        }
-         for (index,total) in valtot.enumerated(){
-             print(index, total.output)
-            let (_, tota) = total.output
-             itens[index].totalPrice = tota
         }
         return itens
     }

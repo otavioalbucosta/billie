@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class TextItem: Identifiable {
     var id: String
@@ -30,17 +31,17 @@ struct TabItem: Identifiable, Hashable, Equatable {
         get {
             return Double(quantity) * (unitPrice)
         }
-        set { _totalPrice = newValue}
     }
+    var isEditing: Bool = false
+    
     
     var _totalPrice: Double?
     
-    init(id: UUID = UUID(), name: String = "Erro na leitura", quantity: Int = 0, unitPrice: Double = 0, totalPrice: Double = 0) {
+    init(id: UUID = UUID(), name: String = "Erro na leitura", quantity: Int = 0, unitPrice: Double = 0) {
         self.id = id
         self.name = name
         self.quantity = quantity
         self.unitPrice = unitPrice
-        self.totalPrice = totalPrice
     }
 
 }
@@ -48,4 +49,8 @@ struct TabItem: Identifiable, Hashable, Equatable {
 
 class Tabs: ObservableObject {
     @Published var itemsTab = [TabItem]()
+}
+
+extension Bool {
+    
 }

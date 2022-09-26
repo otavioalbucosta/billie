@@ -16,6 +16,7 @@
 		2913F17A28D0B40D000CE54F /* RegexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17928D0B40D000CE54F /* RegexBuilder.swift */; };
 		2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17D28D0C4E1000CE54F /* BillListView.swift */; };
 		2913F18028D21B9F000CE54F /* SliderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17F28D21B9F000CE54F /* SliderButton.swift */; };
+		293AEAB228DCDFDC00FB8942 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293AEAB128DCDFDC00FB8942 /* CheckoutView.swift */; };
 		2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCB228CA1351009FBB4F /* billieApp.swift */; };
 		2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCB428CA1351009FBB4F /* ContentView.swift */; };
 		2969FCB728CA1353009FBB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2969FCB628CA1353009FBB4F /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		2913F17928D0B40D000CE54F /* RegexBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexBuilder.swift; sourceTree = "<group>"; };
 		2913F17D28D0C4E1000CE54F /* BillListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListView.swift; sourceTree = "<group>"; };
 		2913F17F28D21B9F000CE54F /* SliderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButton.swift; sourceTree = "<group>"; };
+		293AEAB128DCDFDC00FB8942 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		2969FCAF28CA1351009FBB4F /* billie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = billie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2969FCB228CA1351009FBB4F /* billieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = billieApp.swift; sourceTree = "<group>"; };
 		2969FCB428CA1351009FBB4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				2913F17F28D21B9F000CE54F /* SliderButton.swift */,
 				7E26326928D7C4F600FD049B /* ActionButton.swift */,
 				7E26326F28D8FDE500FD049B /* TotalOverView.swift */,
+				293AEAB128DCDFDC00FB8942 /* CheckoutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */,
 				2913F17A28D0B40D000CE54F /* RegexBuilder.swift in Sources */,
 				7E26327028D8FDE500FD049B /* TotalOverView.swift in Sources */,
+				293AEAB228DCDFDC00FB8942 /* CheckoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,59 +11,80 @@ import CoreHaptics
 struct SliderButton: View {
     
     @State var engine: CHHapticEngine?
+    var screen: CGRect {
+        get{
+            UIScreen.main.bounds
+        }
+    }
+    @State var Player: CHHapticAdvancedPatternPlayer?
     @State var translation = CGSize.zero.width
     @State var success = false
+    @State var intensity: Float = 0.8
+    @State var sharpness: Float = 0.0
     
-    let screen = UIScreen.main.bounds
+    
     var body: some View {
-        HStack {
-            ZStack(alignment: .leading) {
-                RoundedRectangle(cornerRadius: 100, style: .continuous)
-                    .foregroundColor(.gray).opacity(0.1)
-                    .frame(width: screen.width, height: 80, alignment: .center)
-                .overlay {
+        GeometryReader{ geometry in
+            HStack {
+                ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 100, style: .continuous)
-                        .stroke(lineWidth: 4).opacity(0.2)
-                        .shadow(color: .red, radius: 3, x: -3, y: -5)
-                        .clipShape(RoundedRectangle(cornerRadius: 80))
-                        .shadow(color: .blue, radius: 5, x: 2, y: 2)
-                        .clipShape(RoundedRectangle(cornerRadius: 80))
-                }
-                
-                SwipeButton(translation: $translation, sucess: $success)
-                    .animation(.spring(),value: self.translation)
-                    .gesture(DragGesture().onChanged({ value in
-                        if(value.translation.width < 0){
-                            self.translation = CGSize.zero.width
-                            self.success = false
-                        }else {
-                            if(value.translation.width > 250) {
-                                self.translation = screen.width - 100
-                                self.success = true
-                            }else{
-                                self.translation = value.translation.width
-                            }
-                        }
-                        
-                    })
-                        .onEnded({ value in
-                            if(value.translation.width < 200) {
+                        .foregroundColor(.clear).opacity(0.1)
+                        .frame(height: 80, alignment: .center)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 100, style: .continuous)
+                            .stroke(lineWidth: 4).opacity(0.1)
+                            .shadow(color: .gray, radius: 3, x: -3, y: -5)
+                            .clipShape(RoundedRectangle(cornerRadius: 80))
+                            .shadow(color: .gray, radius: 3, x: -2, y: 5 )
+                            .clipShape(RoundedRectangle(cornerRadius: 80))
+                    }
+                    
+                    SwipeButton(translation: $translation, sucess: $success)
+                        .animation(.linear(duration: 0.1),value: self.translation)
+                        .gesture(DragGesture().onChanged({ value in
+                            startPlayer()
+                            if(value.translation.width < 0){
                                 self.translation = CGSize.zero.width
                                 self.success = false
-                            }else{
-                                self.translation = screen.width - 100
-                                self.success = true
                                 
-                                let hapSuccess = UIImpactFeedbackGenerator(style: .medium)
-                                hapSuccess.impactOccurred(intensity: 0.8)
+                            }else {
+                                if(value.translation.width > screen.width - 150) {
+                                    self.translation = geometry.size.width - 100
+                                    sharpness = 0.8
+                                    dynamicPattern()
+                                    self.success = true
+                                }else{
+                                    self.translation = value.translation.width
+                                    sharpness = Float(self.translation) / 300
+                                    print(sharpness)
+                                    dynamicPattern()
+                                }
                             }
                             
                         })
-                    )
-                    
-            }
-        }
-        
+                            .onEnded({ value in
+                                if(value.translation.width < screen.width - 150) {
+                                    self.translation = CGSize.zero.width
+                                    self.success = false
+                                    stopPlayer()
+                                }else{
+                                    self.translation = geometry.size.width - 100
+                                    self.success = true
+                                    stopPlayer()
+                                    let hapSuccess = UINotificationFeedbackGenerator()
+                                    hapSuccess.notificationOccurred(.success)
+                                }
+                                
+                            })
+                        )
+                        
+                }.onAppear{
+                    prepareHaptics()
+                }
+            }.frame(height: 80, alignment: .center)
+
+        }.frame(height: 80, alignment: .center)
+                
     }
     func prepareHaptics() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {return }
@@ -71,13 +92,50 @@ struct SliderButton: View {
         do {
             engine = try CHHapticEngine()
             try engine?.start()
+            playerCreate()
         }catch {
             print(error)
         }
     }
-//    func complexSucess() {
-//        guard
-//    }
+    func playerCreate() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {return }
+        
+        let normalIntensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 0.5)
+        let normalSharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
+        
+        let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [normalIntensity,normalSharpness], relativeTime: 0, duration: 0.1)
+        do{
+            let pattern =  try CHHapticPattern(events: [event], parameters: [])
+            self.Player =  try engine?.makeAdvancedPlayer(with: pattern)
+        }catch{
+            print(error)
+        }
+
+
+    }
+    func dynamicPattern() {
+
+        var dynamicSharpness = CHHapticDynamicParameter(parameterID: .hapticSharpnessControl, value: sharpness, relativeTime: 0)
+        do{
+            try Player?.sendParameters([dynamicSharpness], atTime: CHHapticTimeImmediate)
+        }catch{
+            print(error)
+        }
+    }
+    func startPlayer(){
+        do{
+            try Player?.start(atTime: CHHapticTimeImmediate)
+        }catch{
+            print(error)
+        }
+    }
+    func stopPlayer(){
+        do{
+            try Player?.stop(atTime: CHHapticTimeImmediate)
+        }catch{
+            print(error)
+        }
+    }
 }
 
 struct SwipeButton: View {
