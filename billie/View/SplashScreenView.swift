@@ -24,6 +24,8 @@ struct SplashScreenView: View {
                 ZStack(){ //embed here so a 2nd animation can come on top of the 1st
                     LottieView(isEnded: $isEndedFirst, filename: "moneyNewVersion")
                         .shadow(color: .indigo, radius: 2, x: 1, y: 2)
+                        .position(x: 202, y: 210)
+                        
 
                     LottieView(isEnded: $isEndedLast, filename: colorScheme == .dark ? "billieLightMode" : "billieFinalAppearing")
                         .shadow(color: .indigo, radius: 2, x: 1, y: 2)
