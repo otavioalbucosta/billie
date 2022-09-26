@@ -12,8 +12,7 @@ struct SplashScreenView: View {
     @ObservedObject var recognizedContent = RecognizedContent()
     @State var showScanner = false
     @State private var isRecognized: Bool = false
-    @State var isEndedFirst: Bool = false
-    @State var isEndedLast: Bool = false
+    @State var isEnded: Bool = false
     @State var itens: [TabItem] = []
     @State var alertHelpButton = false
     
@@ -22,10 +21,7 @@ struct SplashScreenView: View {
             VStack (alignment: .center) {
                
                 ZStack(){ //embed here so a 2nd animation can come on top of the 1st
-                    LottieView(isEnded: $isEndedFirst, filename: "moneyNewVersion")
-                        .shadow(color: .indigo, radius: 2, x: 1, y: 2)
-
-                    LottieView(isEnded: $isEndedLast, filename: colorScheme == .dark ? "billieLightMode" : "billieFinalAppearing")
+                    LottieView(isEnded: $isEnded, filename: "BillieMoneySupposedlyFinal")
                         .shadow(color: .indigo, radius: 2, x: 1, y: 2)
                 }
                 .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.midY)
@@ -48,13 +44,13 @@ struct SplashScreenView: View {
                     .padding(.all, 12)
                     .padding([.leading,.trailing])
                     
-                    .opacity(isEndedLast ? 1
-                             : 0).animation(.easeInOut(duration: 1), value: isEndedLast)
+                    .opacity(isEnded ? 1
+                             : 0).animation(.easeInOut(duration: 1), value: isEnded)
                     .background(colorScheme == .dark ? .white : .teal
-                    ).opacity(isEndedLast ? 1 : 0).animation(.easeOut(duration: 1), value: isEndedLast)
+                    ).opacity(isEnded ? 1 : 0).animation(.easeOut(duration: 1), value: isEnded)
                         
                 }
-                .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEndedLast)
+                .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEnded)
                 
             }
             .toolbar {
