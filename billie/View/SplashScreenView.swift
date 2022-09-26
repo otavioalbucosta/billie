@@ -40,7 +40,7 @@ struct SplashScreenView: View {
                             .fontWeight(.semibold)
                             .font(Font.title3)
                     }
-                    .foregroundColor( colorScheme == .dark ? .blue:
+                    .foregroundColor(colorScheme == .dark ? .blue:
                                         Color(red: 36/255, green: 123/255, blue: 160/255))
                     .padding(.all, 12)
                     .padding([.leading,.trailing])
