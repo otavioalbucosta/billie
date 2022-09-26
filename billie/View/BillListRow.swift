@@ -9,7 +9,8 @@ import SwiftUI
 
 struct billListRow: View {
     @Binding var item: TabItem
-    @State var isEditing: Bool = false
+//    @Binding var isEditing: Bool
+    var closure: (() -> Void)?
     let formatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
@@ -60,7 +61,7 @@ struct billListRow: View {
             .buttonStyle(.borderless)
         }
         .buttonStyle(.borderless)
-        .sheet(isPresented: $isEditing){
+        .sheet(isPresented: $item.isEditing){
             VStack{
                 TextField("Nome do Item",text: $item.name)
                     .textFieldStyle(.roundedBorder)
@@ -71,7 +72,9 @@ struct billListRow: View {
             }
         }
         .onLongPressGesture{
-            isEditing.toggle()
+            let pressedHap = UISelectionFeedbackGenerator()
+            pressedHap.selectionChanged()
+            item.isEditing.toggle()
         }
     }
 //    func updateitemName() {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct BillListView: View {
     @State private var slide = 50.0
@@ -27,9 +28,8 @@ struct BillListView: View {
     
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack{
-                
                 List {
                     Section{
                         Button {
@@ -55,49 +55,54 @@ struct BillListView: View {
                     
                     ForEach($items, id: \.id) { $item in
                         billListRow(item: $item)
+                            .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
+                                Button {
+                                    items.removeAll(where: {$0.id == $item.id})
+                                } label: {
+                                    Text("Delete")
+                                        .foregroundColor(.white)
+                                }
+                                .tint(.red)
+
+                            })
+                            .swipeActions(edge: .trailing,allowsFullSwipe: false, content: {
+                                Button {
+                                    item.isEditing.toggle()
+                                } label: {
+                                    Text("Edit")
+                                        .foregroundColor(.white)
+                                }
+                               .tint(.yellow)
+
+                            })
+                            
                     }
-                    .onDelete(perform: removeItems)
                     .listRowSeparator(.hidden)
                 }
                 .listStyle(.grouped)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Resume Tabs")
                 .toolbar {
-                    ToolbarItem (placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                        } label: {
-                            Text("Edit")
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            let newItem = TabItem(name: "random", quantity: 2, unitPrice: 2.0)
+                            let newItem = TabItem(name: "Please edit this item", quantity: 0, unitPrice: 0.0)
                             items.append(newItem)
                         } label: {
                             Image(systemName: "text.badge.plus")
                         }
                     }
                 }
+                .background(Color.clear)
                 TotalOverView(totalPrice: sumOfAllItems)
             }
-            
+            .navigationBarBackButtonHidden(true)
         }
-    }
-    
-    func removeItems(at offsets: IndexSet) {
-        items.remove(atOffsets: offsets)
     }
 }
 
 //struct BillListView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        
-//    @State var items: [TabItem] = [
-//        TabItem(name: "AGUACATE", quantity: 2, unitPrice: 5),
-//        TabItem(name: "VVatermelon", quantity: 1, unitPrice: 5),
-//        TabItem(name: "EarthMelon", quantity: 1, unitPrice: 5),
-//        TabItem(name: "Firemelon", quantity: 1, unitPrice: 5),
-//        TabItem(name: "Airmelon", quantity: 1, unitPrice: 5)
-//    ]
+//
+//    BillListView(items: $items)
 //}
 

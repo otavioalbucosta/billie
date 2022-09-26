@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct billieApp: App {
+    @State var items: [TabItem] = [
+    TabItem(),
+    TabItem()
+    ]
     var body: some Scene {
         WindowGroup {
             ContentView()
