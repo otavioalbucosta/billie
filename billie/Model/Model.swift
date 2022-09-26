@@ -21,3 +21,28 @@ class TextItem: Identifiable {
 class RecognizedContent: ObservableObject {
     @Published var items = [TextItem]()
 }
+
+
+struct TabItem: Identifiable, Hashable, Equatable {
+    var id = UUID()
+    var name: String
+    var quantity: Int
+    var unitPrice: Double
+    var totalPrice: Double {
+        get {
+            return Double(quantity) * (unitPrice)
+        }
+    }
+    var isEditing: Bool = false
+    
+    
+    var _totalPrice: Double?
+    
+    init(id: UUID = UUID(), name: String = "Erro na leitura", quantity: Int = 0, unitPrice: Double = 0) {
+        self.id = id
+        self.name = name
+        self.quantity = quantity
+        self.unitPrice = unitPrice
+    }
+
+}
