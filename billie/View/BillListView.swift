@@ -28,7 +28,7 @@ struct BillListView: View {
     
     
     var body: some View {
-            VStack{
+        ZStack(alignment: .bottom){
                 List {
                     Section{
                         Button {
@@ -79,6 +79,7 @@ struct BillListView: View {
                     }
                     .listRowSeparator(.hidden)
                 }
+                .frame(maxHeight: UIScreen.main.bounds.height - UIScreen.main.bounds.height/9, alignment: .top )
                 .listStyle(.grouped)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Resume Tabs")
@@ -95,20 +96,19 @@ struct BillListView: View {
                     }
                 }
                 .background(Color.clear)
-                Spacer()
                 TotalOverView(totalPrice: sumOfAllItems)
-                    .frame(height: UIScreen.main.bounds.height/9)
-                    .ignoresSafeArea(.keyboard,edges: [.bottom])
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                    .ignoresSafeArea(.keyboard)
+                    
             }
             .navigationBarBackButtonHidden(true)
-
+            .scrollDismissesKeyboard(.interactively)
 
             
         }
-        .scrollDismissesKeyboard(.immediately)
+
     }
     
-}
 
 //struct BillListView_Previews: PreviewProvider {
 //    static var previews: some View {
