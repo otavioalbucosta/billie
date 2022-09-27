@@ -33,17 +33,22 @@ struct TotalOverView: View {
                         }
                         .foregroundColor(.secondary)
                     }
+                    
                     SliderButton()
                 }.zIndex(0)
+                    .ignoresSafeArea(.keyboard)
             }
             .padding(.all, 20)
+            .ignoresSafeArea(.keyboard)
+            Spacer()
             Rectangle()
+                .ignoresSafeArea(.keyboard)
                 .foregroundColor(Color(UIColor.systemGroupedBackground))
                 .shadow(radius: 4)
                 .zIndex(-1)
+
         }
-        .frame(height: UIScreen.main.bounds.height/10)
-        .ignoresSafeArea(edges: .bottom)
+        .ignoresSafeArea(.keyboard)
     }
 }
 

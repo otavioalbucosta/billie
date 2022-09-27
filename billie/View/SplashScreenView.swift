@@ -15,6 +15,7 @@ struct SplashScreenView: View {
     @State var isEnded: Bool = false
     @State var itens: [TabItem] = []
     @State var alertHelpButton = false
+    @State var alertError = false
     
     var body: some View {
         NavigationStack {
@@ -88,6 +89,11 @@ struct SplashScreenView: View {
             .navigationDestination(isPresented: $isRecognized) {
                 BillListView(items: $itens)
             }
+            .alert(isPresented: $alertError){
+                Alert(title: Text("Scan error"),
+                      message: Text("There was an error scanning your receipt, please try to frame only the important parts of the bill"),
+                      dismissButton: .default(Text("Try again")))
+            }
         }
         .sheet(isPresented: $showScanner, content: {
             ScannerView { result in
@@ -107,10 +113,14 @@ struct SplashScreenView: View {
                             print(itens)
                             if !itens.isEmpty {
                                 isRecognized.toggle()
+                                
+                            }else{
+                                alertError.toggle()
                             }
                     }.recognizeText()
                     case .failure(let error):
-                    print(error.localizedDescription)
+                        print(error.localizedDescription)
+                    alertError.toggle()
                 }
                 
                 showScanner = false

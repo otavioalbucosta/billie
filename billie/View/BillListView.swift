@@ -55,6 +55,7 @@ struct BillListView: View {
                     
                     ForEach($items, id: \.id) { $item in
                         billListRow(item: $item)
+                            .buttonStyle(.plain)
                             .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
                                 Button {
                                     items.removeAll(where: {$0.id == $item.id})
@@ -93,11 +94,19 @@ struct BillListView: View {
                     }
                 }
                 .background(Color.clear)
+                Spacer()
                 TotalOverView(totalPrice: sumOfAllItems)
+                    .frame(height: UIScreen.main.bounds.height/9)
+                    .ignoresSafeArea(.keyboard,edges: [.bottom])
             }
             .navigationBarBackButtonHidden(true)
+
+
+            
         }
+        .scrollDismissesKeyboard(.immediately)
     }
+    
 }
 
 //struct BillListView_Previews: PreviewProvider {
