@@ -7,21 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D762B5128E1E3A700A65797 /* BillieMoneySupposedlyFinal.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */; };
 		1D89BCA328D0D22800357248 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1D89BCA228D0D22800357248 /* Lottie */; };
-		1D89BCAD28D0DEB300357248 /* billieDarkMode.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAA28D0DEB300357248 /* billieDarkMode.json */; };
-		1D89BCAE28D0DEB300357248 /* billieDarkMode.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAA28D0DEB300357248 /* billieDarkMode.json */; };
-		1D89BCAF28D0DEB300357248 /* billieDarkMode.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAA28D0DEB300357248 /* billieDarkMode.json */; };
-		1D89BCB028D0DEB300357248 /* billieLightMode.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAB28D0DEB300357248 /* billieLightMode.json */; };
-		1D89BCB128D0DEB300357248 /* billieLightMode.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAB28D0DEB300357248 /* billieLightMode.json */; };
-		1D89BCB228D0DEB300357248 /* billieLightMode.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAB28D0DEB300357248 /* billieLightMode.json */; };
-		1D89BCB328D0DEB300357248 /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAC28D0DEB300357248 /* money.json */; };
-		1D89BCB428D0DEB300357248 /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAC28D0DEB300357248 /* money.json */; };
-		1D89BCB528D0DEB300357248 /* money.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCAC28D0DEB300357248 /* money.json */; };
 		1D89BCB728D21BA800357248 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB628D21BA800357248 /* LottieView.swift */; };
 		1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB828D2459100357248 /* SplashScreenView.swift */; };
-		1D89BCBB28D257D300357248 /* moneyNewVersion.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCBA28D257D300357248 /* moneyNewVersion.json */; };
-		1D89BCBC28D257D300357248 /* moneyNewVersion.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCBA28D257D300357248 /* moneyNewVersion.json */; };
-		1D89BCBD28D257D300357248 /* moneyNewVersion.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D89BCBA28D257D300357248 /* moneyNewVersion.json */; };
 		2913F17A28D0B40D000CE54F /* RegexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17928D0B40D000CE54F /* RegexBuilder.swift */; };
 		2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17D28D0C4E1000CE54F /* BillListView.swift */; };
 		2913F18028D21B9F000CE54F /* SliderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17F28D21B9F000CE54F /* SliderButton.swift */; };
@@ -37,10 +26,9 @@
 		2969FCE128CA13D6009FBB4F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCE028CA13D6009FBB4F /* Model.swift */; };
 		29EF982728CF742A0000E300 /* TextPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982628CF742A0000E300 /* TextPreviewView.swift */; };
 		29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982B28CF7AEB0000E300 /* BillListRow.swift */; };
+		4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943E16928DE320800803CB7 /* LottieSuccessView.swift */; };
+		7E1A7A9628E22E0B00C61FD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */; };
 		7E26326A28D7C4F600FD049B /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326928D7C4F600FD049B /* ActionButton.swift */; };
-		7E26326C28D8A47900FD049B /* billieFinalAppearing.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E26326B28D8A47900FD049B /* billieFinalAppearing.json */; };
-		7E26326D28D8A47900FD049B /* billieFinalAppearing.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E26326B28D8A47900FD049B /* billieFinalAppearing.json */; };
-		7E26326E28D8A47900FD049B /* billieFinalAppearing.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E26326B28D8A47900FD049B /* billieFinalAppearing.json */; };
 		7E26327028D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
 		7E26327128D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
 		7E26327228D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
@@ -65,12 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D89BCAA28D0DEB300357248 /* billieDarkMode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billieDarkMode.json; sourceTree = "<group>"; };
-		1D89BCAB28D0DEB300357248 /* billieLightMode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billieLightMode.json; sourceTree = "<group>"; };
-		1D89BCAC28D0DEB300357248 /* money.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = money.json; sourceTree = "<group>"; };
+		1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BillieMoneySupposedlyFinal.json; sourceTree = "<group>"; };
 		1D89BCB628D21BA800357248 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		1D89BCB828D2459100357248 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		1D89BCBA28D257D300357248 /* moneyNewVersion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = moneyNewVersion.json; sourceTree = "<group>"; };
 		2913F17928D0B40D000CE54F /* RegexBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexBuilder.swift; sourceTree = "<group>"; };
 		2913F17D28D0C4E1000CE54F /* BillListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListView.swift; sourceTree = "<group>"; };
 		2913F17F28D21B9F000CE54F /* SliderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButton.swift; sourceTree = "<group>"; };
@@ -89,8 +74,9 @@
 		2969FCE028CA13D6009FBB4F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		29EF982628CF742A0000E300 /* TextPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewView.swift; sourceTree = "<group>"; };
 		29EF982B28CF7AEB0000E300 /* BillListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListRow.swift; sourceTree = "<group>"; };
+		4943E16928DE320800803CB7 /* LottieSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSuccessView.swift; sourceTree = "<group>"; };
+		7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7E26326928D7C4F600FD049B /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
-		7E26326B28D8A47900FD049B /* billieFinalAppearing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billieFinalAppearing.json; sourceTree = "<group>"; };
 		7E26326F28D8FDE500FD049B /* TotalOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalOverView.swift; sourceTree = "<group>"; };
 		7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,11 +110,7 @@
 		1D89BCA928D0DEB300357248 /* All Splash Screen animations */ = {
 			isa = PBXGroup;
 			children = (
-				7E26326B28D8A47900FD049B /* billieFinalAppearing.json */,
-				1D89BCAA28D0DEB300357248 /* billieDarkMode.json */,
-				1D89BCAB28D0DEB300357248 /* billieLightMode.json */,
-				1D89BCBA28D257D300357248 /* moneyNewVersion.json */,
-				1D89BCAC28D0DEB300357248 /* money.json */,
+				1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */,
 			);
 			path = "All Splash Screen animations";
 			sourceTree = "<group>";
@@ -206,6 +188,7 @@
 				2913F17F28D21B9F000CE54F /* SliderButton.swift */,
 				7E26326928D7C4F600FD049B /* ActionButton.swift */,
 				7E26326F28D8FDE500FD049B /* TotalOverView.swift */,
+				4943E16928DE320800803CB7 /* LottieSuccessView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */,
+				7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */,
 				2913F17928D0B40D000CE54F /* RegexBuilder.swift */,
 			);
 			path = Service;
@@ -339,11 +323,7 @@
 			files = (
 				2969FCBA28CA1353009FBB4F /* Preview Assets.xcassets in Resources */,
 				2969FCB728CA1353009FBB4F /* Assets.xcassets in Resources */,
-				1D89BCBB28D257D300357248 /* moneyNewVersion.json in Resources */,
-				1D89BCB328D0DEB300357248 /* money.json in Resources */,
-				7E26326C28D8A47900FD049B /* billieFinalAppearing.json in Resources */,
-				1D89BCB028D0DEB300357248 /* billieLightMode.json in Resources */,
-				1D89BCAD28D0DEB300357248 /* billieDarkMode.json in Resources */,
+				1D762B5128E1E3A700A65797 /* BillieMoneySupposedlyFinal.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,11 +331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D89BCBC28D257D300357248 /* moneyNewVersion.json in Resources */,
-				1D89BCB128D0DEB300357248 /* billieLightMode.json in Resources */,
-				7E26326D28D8A47900FD049B /* billieFinalAppearing.json in Resources */,
-				1D89BCAE28D0DEB300357248 /* billieDarkMode.json in Resources */,
-				1D89BCB428D0DEB300357248 /* money.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,11 +338,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D89BCBD28D257D300357248 /* moneyNewVersion.json in Resources */,
-				1D89BCB228D0DEB300357248 /* billieLightMode.json in Resources */,
-				7E26326E28D8A47900FD049B /* billieFinalAppearing.json in Resources */,
-				1D89BCAF28D0DEB300357248 /* billieDarkMode.json in Resources */,
-				1D89BCB528D0DEB300357248 /* money.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +351,8 @@
 				2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */,
 				2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */,
 				7E26326A28D7C4F600FD049B /* ActionButton.swift in Sources */,
+				7E1A7A9628E22E0B00C61FD6 /* Extensions.swift in Sources */,
+				4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */,
 				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,

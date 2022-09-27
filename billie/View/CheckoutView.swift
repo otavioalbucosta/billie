@@ -2,7 +2,7 @@
 //  SwiftUIView.swift
 //  billie
 //
-//  Created by Otávio Albuquerque on 22/09/22.
+//  Created by Thaynara Andrade on 23/09/22.
 //
 
 import SwiftUI
@@ -13,26 +13,53 @@ struct CheckoutView: View {
     @State private var item = TabItem()
     
     var body: some View {
-        VStack{
-            HStack{
-                TextField("R$ \(item.unitPrice,specifier: "%.2f")", text: $username)
-                    .focused($isUsernameFocused)
-                    .foregroundColor(item.unitPrice == 0.0 ? Color.red : Color.primary)
-                Spacer()
-                Button {
-                    isUsernameFocused.toggle()
-
-                } label: {
-                    Image(systemName: "star")
-                }
-            }
+        NavigationView {
             
-        }.navigationTitle(Text("Sua conta:"))
-    }
-}
+            VStack{
+                Spacer(minLength: 20)
+                Section(header: Text("Formas de pagamento")
+                    .bold()
+                    .font(.title3)
+                ){
+                    
+                    List{
+                        Label ( "Pix", image: "IconPix")
+                        Label ( "Dinheiro", image: "IconMoney")
+                        Label ( "Apple pay", image: "IconApplePay")
+                        Label ( "Add forma de pagamento", systemImage: "plus")
+                        
+                    }
+                    Spacer(minLength: 20)
+                    
+                }
+                HStack{
+                    Button {
+                        // nada
+                    } label: {
+                        Text("Fazer pagamento")
+                            .padding()
+                            .font(.title2)
+                            .foregroundColor(.white)
+                            .background(Color.green)
+                            .cornerRadius(20)
+                            .bold()
+                            .buttonStyle(.plain)
+                    }
 
-struct CheckoutView_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckoutView()
+                    
+                }
+                }.navigationTitle("")
+            }.navigationBarBackButtonHidden()
+            
+            
+            
+            
+            
+            
+        }
     }
-}
+    struct CheckoutView_Previews: PreviewProvider {
+        static var previews: some View {
+            CheckoutView()
+        }
+    }

@@ -17,7 +17,7 @@ struct billieApp: App {
         WindowGroup {
             BillListView(items: $items)
 //            SplashScreenView()
-//            CheckoutView()
+            
         }
     }
 }

@@ -16,24 +16,20 @@ struct TotalOverView: View {
         ZStack(alignment: .center) {
             VStack(alignment: .leading) {
                 Group {
-                    Group{
-                        HStack{
-                            Image(systemName: "person.fill")
-                            Text("Total")
-                            Spacer()
-                            Text("R$ \(totalPrice, specifier: "%.2f")")
-                        }
-                        .font(Font.title3.bold())
-                        Group {
-                            HStack{
-                                Image(systemName: "dollarsign.circle")
-                                Text("10% Tip")
-                                Spacer()
-                                Text("R$ \(totalPrice*0.1, specifier: "%.2f")")
-                            }
-                        }
-                        .foregroundColor(.secondary)
+                    HStack{
+                        Image(systemName: "person.fill")
+                        Text("Total")
+                        Spacer()
+                        Text("R$ \(totalPrice, specifier: "%.2f")")
                     }
+                    .font(Font.title3.bold())
+                    HStack{
+                        Image(systemName: "dollarsign.circle")
+                        Text("10% Tip")
+                        Spacer()
+                        Text("R$ \(totalPrice*0.1, specifier: "%.2f")")
+                    }
+                    .foregroundColor(.secondary)
                     SliderButton()
                         .frame(maxHeight: 70)
                         .padding([.bottom], 30)

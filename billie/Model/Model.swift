@@ -38,7 +38,7 @@ struct TabItem: Identifiable, Hashable, Equatable {
     
     var _totalPrice: Double?
     
-    init(id: UUID = UUID(), name: String = "Erro na leitura", quantity: Int = 0, unitPrice: Double = 0) {
+    init(id: UUID = UUID(), name: String = "Error fetching data", quantity: Int = 0, unitPrice: Double = 0) {
         self.id = id
         self.name = name
         self.quantity = quantity

@@ -9,13 +9,11 @@ import SwiftUI
 
 struct billListRow: View {
     @Binding var item: TabItem
-    var closure: (() -> Void)?
     let formatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             return formatter
         }()
-    
     
     var body: some View {
         
@@ -47,11 +45,8 @@ struct billListRow: View {
                 } label: {
                     Image(systemName: "minus.circle")
                 }
-                
                 Text("\(item.quantity)x")
-                
                 Button {
-                    // plus the actual value.
                     item.quantity = item.quantity + 1
                 } label: {
                     Image(systemName: "plus.circle")
@@ -70,21 +65,11 @@ struct billListRow: View {
                 Spacer()
             }
         }
-        .onLongPressGesture{
-            let pressedHap = UISelectionFeedbackGenerator()
-            pressedHap.selectionChanged()
-            item.isEditing.toggle()
-        }
     }
-//    func updateitemName() {
-//        item.name = newName
-//        item.unitPrice = newUnitPrice
-//    }
 }
 
 struct billListRow_Previews: PreviewProvider {
     static var previews: some View {
-        
         billListRow(item:  .constant(TabItem()))
     }
 }

@@ -28,7 +28,6 @@ struct BillListView: View {
     
     
     var body: some View {
-        NavigationView {
             VStack{
                 List {
                     Section{
@@ -97,8 +96,6 @@ struct BillListView: View {
                 .background(Color.clear)
                 TotalOverView(totalPrice: sumOfAllItems)
             }
-            .navigationBarBackButtonHidden(true)
-        }
     }
 }
 
