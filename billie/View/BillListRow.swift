@@ -43,6 +43,7 @@ struct billListRow: View {
                             .font(Font.title2.bold())
                             .lineLimit(1)
                             .padding([.trailing],15)
+                            .padding([.bottom],23)
                     }
                     if !item.isEditing{
                         Spacer()
@@ -52,7 +53,7 @@ struct billListRow: View {
                     }
 
                 }
-                .padding([.bottom],5)
+
                 HStack{
                     if item.isEditing {
                         TextField("Edite o valor unitário", value: $item.unitPrice, formatter: formatter)
@@ -98,18 +99,6 @@ struct billListRow: View {
                 }
             }
         }
-        
-        
-//        .sheet(isPresented: $item.isEditing){
-//            VStack{
-//                TextField("Nome do Item",text: $item.name)
-//                    .textFieldStyle(.roundedBorder)
-//                TextField("Valor Unitário", value: $item.unitPrice, formatter: formatter)
-//                    .keyboardType(.decimalPad)
-//                    .textFieldStyle(.roundedBorder)
-//                Spacer()
-//            }
-//        }
     }
 }
 

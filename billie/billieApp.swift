@@ -11,7 +11,12 @@ import SwiftUI
 struct billieApp: App {
     @State var items: [TabItem] = [
     TabItem(),
-    TabItem()
+    TabItem(),
+    TabItem(),
+    TabItem(),
+    TabItem(),
+    TabItem(),
+    TabItem(),
     ]
     var body: some Scene {
         WindowGroup {

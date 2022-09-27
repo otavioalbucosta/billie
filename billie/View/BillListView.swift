@@ -28,7 +28,8 @@ struct BillListView: View {
     
     
     var body: some View {
-        ZStack(alignment: .bottom){
+        ZStack(alignment: .top){
+            GeometryReader{ _ in
                 List {
                     Section{
                         Button {
@@ -68,6 +69,8 @@ struct BillListView: View {
                             .swipeActions(edge: .trailing,allowsFullSwipe: false, content: {
                                 Button {
                                     item.isEditing.toggle()
+                                    print(UIScreen.main.bounds.height/9)
+
                                 } label: {
                                     Text("Edit")
                                         .foregroundColor(.white)
@@ -79,7 +82,6 @@ struct BillListView: View {
                     }
                     .listRowSeparator(.hidden)
                 }
-                .frame(maxHeight: UIScreen.main.bounds.height - UIScreen.main.bounds.height/9, alignment: .top )
                 .listStyle(.grouped)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Resume Tabs")
@@ -96,6 +98,9 @@ struct BillListView: View {
                     }
                 }
                 .background(Color.clear)
+            }
+            .frame(maxHeight:UIScreen.main.bounds.height - UIScreen.main.bounds.height/3.5, alignment: .top)
+            
                 TotalOverView(totalPrice: sumOfAllItems)
                     .frame(maxHeight: .infinity, alignment: .bottom)
                     .ignoresSafeArea(.keyboard)
