@@ -20,7 +20,7 @@ struct SplashScreenView: View {
     var body: some View {
         NavigationStack {
             VStack (alignment: .center) {
-               
+                
                 ZStack(){ //embed here so a 2nd animation can come on top of the 1st
                     LottieView(isEnded: $isEnded, filename: "BillieMoneySupposedlyFinal")
                         .shadow(color: .indigo, radius: 2, x: 1, y: 2)
@@ -30,14 +30,14 @@ struct SplashScreenView: View {
                 
                 Button (action: {
                     showScanner = true
-
+                    
                     let impactGen = UIImpactFeedbackGenerator(style: .medium)
                     impactGen.impactOccurred()
                     
                 }){
                     HStack{
                         Image(systemName: "doc.text.viewfinder")
-                        Text("Scan the receipt")
+                        Text("Scan receipt")
                             .fontWeight(.semibold)
                             .font(Font.title3)
                     }
@@ -47,13 +47,13 @@ struct SplashScreenView: View {
                     .padding([.leading,.trailing])
                     .opacity(isEnded ? 1
                              : 0).animation(.easeInOut(duration: 1), value: isEnded)
-                    .background(colorScheme == .dark ? .white : .teal
-                    ).opacity(isEnded ? 1 : 0).animation(.easeOut(duration: 1), value: isEnded)
-                        
+                        .background(.white
+                        ).opacity(isEnded ? 1 : 0).animation(.easeOut(duration: 1), value: isEnded)
+                    
                 }
                 .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEnded)
                 
-
+                
             }
             .toolbar {
                 ToolbarItem {
@@ -62,23 +62,23 @@ struct SplashScreenView: View {
                         
                     }label: {
                         
-                            Image(systemName: "questionmark.circle.fill")
-                                .foregroundColor(Color.white)
-                                .font(Font.body)
-                                .padding(.all, 10)
+                        Image(systemName: "questionmark.circle.fill")
+                            .foregroundColor(Color.white)
+                            .font(Font.body)
+                            .padding(.all, 10)
                     } .alert(isPresented: $alertHelpButton) {
-                        Alert(title: Text("Let me help you"),
-                              message: Text("Billie uses the camera to scan for the receipt so you can edit and pay everything with your phone in one simple app"),
-                              dismissButton: .default(Text("Start scanning")))
+                        Alert(title: Text("Let me help you! 😃"),
+                              message: Text("You can use Billie to scan you table's receipt, edit the itens or values, and send the payment to the restaurant on your phone. All in one simple app!"),
+                              dismissButton: .default(Text("Ok, I got it!")))
                     }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(colorScheme == .light ?
                         LinearGradient(gradient: Gradient(colors: [
-                            Color(red: 126/255, green: 184/255, blue: 231/255),
-                            Color(red: 184/255, green: 216/255, blue: 242/255),
-                            Color(red: 184/255, green: 216/255, blue: 242/255).opacity(0.7),]),
+                            Color.backgroundTopColor,
+                            Color.backgroundBottomColor,
+                            Color.backgroundBottomColor.opacity(0.7),]),
                                        startPoint: .top,
                                        endPoint: .bottom):
                             LinearGradient(gradient: Gradient(colors: [

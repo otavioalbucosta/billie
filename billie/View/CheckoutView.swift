@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+struct CheckoutView: View {
+    @FocusState private var isUsernameFocused : Bool
+    @State private var username = "Random name"
+    @State private var item = TabItem()
+    
     var body: some View {
         NavigationView {
             
@@ -54,8 +58,8 @@ struct SwiftUIView: View {
             
         }
     }
-    struct SwiftUIView_Previews: PreviewProvider {
+    struct CheckoutView_Previews: PreviewProvider {
         static var previews: some View {
-            SwiftUIView()
+            CheckoutView()
         }
     }

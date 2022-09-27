@@ -94,15 +94,10 @@ struct billListRow: View {
 //            }
 //        }
     }
-//    func updateitemName() {
-//        item.name = newName
-//        item.unitPrice = newUnitPrice
-//    }
 }
 
 struct billListRow_Previews: PreviewProvider {
     static var previews: some View {
-        
         billListRow(item:  .constant(TabItem()))
     }
 }
