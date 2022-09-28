@@ -15,7 +15,6 @@
 		2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17D28D0C4E1000CE54F /* BillListView.swift */; };
 		2913F18028D21B9F000CE54F /* SliderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17F28D21B9F000CE54F /* SliderButton.swift */; };
 		2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCB228CA1351009FBB4F /* billieApp.swift */; };
-		2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCB428CA1351009FBB4F /* ContentView.swift */; };
 		2969FCB728CA1353009FBB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2969FCB628CA1353009FBB4F /* Assets.xcassets */; };
 		2969FCBA28CA1353009FBB4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2969FCB928CA1353009FBB4F /* Preview Assets.xcassets */; };
 		2969FCC428CA1353009FBB4F /* billieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCC328CA1353009FBB4F /* billieTests.swift */; };
@@ -24,7 +23,6 @@
 		2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCDC28CA139C009FBB4F /* ScannerView.swift */; };
 		2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */; };
 		2969FCE128CA13D6009FBB4F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCE028CA13D6009FBB4F /* Model.swift */; };
-		29EF982728CF742A0000E300 /* TextPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982628CF742A0000E300 /* TextPreviewView.swift */; };
 		29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982B28CF7AEB0000E300 /* BillListRow.swift */; };
 		4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943E16928DE320800803CB7 /* LottieSuccessView.swift */; };
 		7E1A7A9628E22E0B00C61FD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */; };
@@ -66,7 +64,6 @@
 		2913F17F28D21B9F000CE54F /* SliderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButton.swift; sourceTree = "<group>"; };
 		2969FCAF28CA1351009FBB4F /* billie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = billie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2969FCB228CA1351009FBB4F /* billieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = billieApp.swift; sourceTree = "<group>"; };
-		2969FCB428CA1351009FBB4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2969FCB628CA1353009FBB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2969FCB928CA1353009FBB4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2969FCBF28CA1353009FBB4F /* billieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = billieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +74,6 @@
 		2969FCDC28CA139C009FBB4F /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognition.swift; sourceTree = "<group>"; };
 		2969FCE028CA13D6009FBB4F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		29EF982628CF742A0000E300 /* TextPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPreviewView.swift; sourceTree = "<group>"; };
 		29EF982B28CF7AEB0000E300 /* BillListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListRow.swift; sourceTree = "<group>"; };
 		4943E16928DE320800803CB7 /* LottieSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSuccessView.swift; sourceTree = "<group>"; };
 		7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -396,7 +392,6 @@
 				7E1A7A9A28E3664000C61FD6 /* ItemListView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */,
-				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
 				7E1A7A9F28E3A96D00C61FD6 /* ItemModel.swift in Sources */,
 				7E1A7AA128E3B00200C61FD6 /* TotalOverlay.swift in Sources */,
