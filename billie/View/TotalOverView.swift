@@ -11,6 +11,7 @@ struct TotalOverView: View {
     
     @Environment(\.colorScheme) var colorScheme
     var totalPrice: Double
+    @Binding var slideSuceeded: Bool
     
     var body: some View {
         ZStack(alignment: .center) {
@@ -30,7 +31,7 @@ struct TotalOverView: View {
                         Text("R$ \(totalPrice*0.1, specifier: "%.2f")")
                     }
                     .foregroundColor(.secondary)
-                    SliderButton()
+                    SliderButton(success: $slideSuceeded)
                         .frame(maxHeight: 70)
                         .padding([.bottom], 30)
                 }
@@ -51,6 +52,6 @@ struct TotalOverView: View {
 
 struct TotalOverView_Previews: PreviewProvider {
     static var previews: some View {
-        TotalOverView(totalPrice: 20)
+        TotalOverView(totalPrice: 20, slideSuceeded: .constant(false))
     }
 }
