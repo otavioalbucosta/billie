@@ -20,9 +20,8 @@ struct billieApp: App {
     ]
     var body: some Scene {
         WindowGroup {
-//            BillListView(items: $items)
+//                        BillListView(items: $items)
             SplashScreenView()
-//            Some_test()
         }
     }
     

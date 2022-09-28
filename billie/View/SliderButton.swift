@@ -10,6 +10,8 @@ import CoreHaptics
 
 struct SliderButton: View {
     
+    @Environment(\.scenePhase) var scenePhase
+    
     @State var engine: CHHapticEngine?
     var screen: CGRect {
         get{
@@ -90,6 +92,10 @@ struct SliderButton: View {
                         
                 }.onAppear{
                     prepareHaptics()
+                }.onChange(of: scenePhase) { newValue in
+                    if newValue == .active {
+                        prepareHaptics()
+                    }
                 }
             }.frame(height: 80, alignment: .center)
 
