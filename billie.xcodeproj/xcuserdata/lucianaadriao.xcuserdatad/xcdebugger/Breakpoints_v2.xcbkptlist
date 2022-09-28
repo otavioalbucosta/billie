@@ -3,4 +3,54 @@
    uuid = "E2A51244-721E-430A-989D-7FE55F46C6D0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68697C41-3CB1-401A-9E9A-6C7D7695F0D0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "billie/View/BillListRow.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "68697C41-3CB1-401A-9E9A-6C7D7695F0D0 - 87c602202f2c2b2c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;SwiftUI.Image&gt;, SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Text)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;SwiftUI.Image&gt;, SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Text)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;SwiftUI.Image&gt;, SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt;&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0&gt;&gt;)&gt; in billie.billListRow.body.getter : some"
+                  moduleName = "billie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucianaadriao/Documents/Challenges/DetailsMatterChallenge/billie/billie/View/BillListRow.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "3336">
+               </Location>
+               <Location
+                  uuid = "68697C41-3CB1-401A-9E9A-6C7D7695F0D0 - 87c602202f2c2b2c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;SwiftUI.Image&gt;, SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Text)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;SwiftUI.Image&gt;, SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Text)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.focused&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: SwiftUI.FocusState&lt;&#x3c4;_1_0&gt;.Binding, equals: &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.Text&gt;, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, SwiftUI.Button&lt;SwiftUI.Image&gt;, SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PrimitiveButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt;&gt;)&gt;&gt;, Swift.Optional&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0&gt;&gt;)&gt; in billie.billListRow.body.getter : some"
+                  moduleName = "billie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lucianaadriao/Documents/Challenges/DetailsMatterChallenge/billie/billie/View/BillListRow.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "4300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -87,7 +87,8 @@ struct SplashScreenView: View {
                                            startPoint: .top,
                                            endPoint: .bottom))
             .navigationDestination(isPresented: $isRecognized) {
-                BillListView(items: $itens)
+//                BillListView(items: $itens)
+                CheckView(itemData: $itens)
             }
             .alert(isPresented: $alertError){
                 Alert(title: Text("Scan error"),

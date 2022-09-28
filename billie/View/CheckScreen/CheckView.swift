@@ -20,15 +20,29 @@ struct CheckView: View {
             VStack {
                 ItemListView(items: $itemData)
                 
-//                TotalOverlay(sumTotalPrice: itemData.map(\.totalPrice).reduce(0, +))
-//                    .background(Color(uiColor: .tertiarySystemBackground))
+                TotalOverlay(sumTotalPrice: sumOfAllItems)
+                    .background(Color(uiColor: .secondarySystemGroupedBackground))
             }
+            .ignoresSafeArea(.keyboard)
+            .scrollDismissesKeyboard(.interactively)
         }
     }
 }
 
 struct CheckView_Previews: PreviewProvider {
     @State static var items:[TabItem] = [
+        TabItem(name: "Batilisk Wings", quantity: 1, unitPrice: 37.2),
+        TabItem(name: "Veggie burger", quantity: 1, unitPrice: 27.9),
+        
+        TabItem(name: "Batilisk Wings", quantity: 1, unitPrice: 37.2),
+        TabItem(name: "Veggie burger", quantity: 1, unitPrice: 27.9),
+        
+        TabItem(name: "Batilisk Wings", quantity: 1, unitPrice: 37.2),
+        TabItem(name: "Veggie burger", quantity: 1, unitPrice: 27.9),
+        
+        TabItem(name: "Batilisk Wings", quantity: 1, unitPrice: 37.2),
+        TabItem(name: "Veggie burger", quantity: 1, unitPrice: 27.9),
+        
         TabItem(name: "Batilisk Wings", quantity: 1, unitPrice: 37.2),
         TabItem(name: "Veggie burger", quantity: 1, unitPrice: 27.9),
     ]

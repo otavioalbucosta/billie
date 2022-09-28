@@ -7,33 +7,64 @@
 
 import SwiftUI
 
+
 struct ItemListView: View {
     @Binding var items: [TabItem]
-    
-    var sumOfAllItems: Double {
-        let totalPrices = items.map(\.totalPrice)
-        return totalPrices.reduce(0, +)
-    }
+    @State private var isEditing = false
     
     var body: some View {
-        List {
-            Section {
-                ForEach(items, id: \.self) { item in
-                    ItemBillCell(itemModel: item)
+        let itemModel = TabItem()
+        NavigationView {
+            List {
+                Section {
+                    ForEach($items, id: \.self) { $item in
+                        ItemBillCell(itemModel: $item)
+                            .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
+                                Button {
+                                    items.removeAll(where: {$0.id == $item.id})
+                                } label: {
+                                    Text("Delete")
+                                        .foregroundColor(.white)
+                                }
+                                .tint(.red)
+                                
+                            })
+                            .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
+                                Button {
+                                    item.isEditing.toggle()
+                                } label: {
+                                    Text("Edit")
+                                        .foregroundColor(.white)
+                                }
+                                .tint(.yellow)
+                                
+                            })
+                    }
+                } header: {
+                    Text("successfully scanned, you can modify your tab below")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }.headerProminence(.increased)
+            }
+            .listStyle(.grouped)
+            .scrollIndicators(.hidden)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Resume Tabs")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        let newItem = itemModel.addNewItem()
+                        items.append(newItem)
+                    } label: {
+                        Image(systemName: "text.badge.plus")
+                    }
                 }
-                Text("\(sumOfAllItems)")
-            } header: {
-                Text("successfully scanned, you can modify your tab below")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }.headerProminence(.increased)
-        }.listStyle(.grouped)
-        
+            }
+        }
     }
 }
 
 struct ItemListView_Previews: PreviewProvider {
-    
     @State static var items2: [TabItem] = [
         TabItem(quantity: 2, unitPrice: 2.0),
         TabItem(),
@@ -45,3 +76,7 @@ struct ItemListView_Previews: PreviewProvider {
         ItemListView(items: $items2)
     }
 }
+
+
+
+

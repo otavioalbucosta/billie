@@ -32,16 +32,6 @@ struct BillListView: View {
             GeometryReader{ _ in
                 List {
                     Section{
-//                        Button {
-//                            // Takes to the data saved
-//                            // The photo taken if possible, otherwise take the header off. =D
-//                        } label: {
-//                            HStack {
-//                                Text("Your tab")
-//                                Spacer()
-//                                Image(systemName: "photo")
-//                            }
-//                        }.padding([.leading,.trailing])
                         
                     } header: {
                         Text("successfully scanned, you can modify your tab below")
@@ -64,21 +54,21 @@ struct BillListView: View {
                                         .foregroundColor(.white)
                                 }
                                 .tint(.red)
-
+                                
                             })
                             .swipeActions(edge: .trailing,allowsFullSwipe: false, content: {
                                 Button {
                                     item.isEditing.toggle()
                                     print(UIScreen.main.bounds.height/9)
-
+                                    
                                 } label: {
                                     Text("Edit")
                                         .foregroundColor(.white)
                                 }
-                               .tint(.yellow)
-
+                                .tint(.yellow)
+                                
                             })
-                            
+                        
                     }
                     .listRowSeparator(.hidden)
                 }
@@ -101,23 +91,28 @@ struct BillListView: View {
             }
             .frame(maxHeight:UIScreen.main.bounds.height - UIScreen.main.bounds.height/3.5, alignment: .top)
             
-                TotalOverView(totalPrice: sumOfAllItems)
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-                    .ignoresSafeArea(.keyboard)
-                    
-            }
-            .navigationBarBackButtonHidden(true)
-            .scrollDismissesKeyboard(.interactively)
-
+            TotalOverView(totalPrice: sumOfAllItems)
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .ignoresSafeArea(.keyboard)
             
         }
-
+        .navigationBarBackButtonHidden(true)
+        .scrollDismissesKeyboard(.interactively)
+        
+        
     }
     
+}
 
-//struct BillListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//    BillListView(items: $items)
-//}
 
+struct BillListView_Previews: PreviewProvider {
+    @State static var items: [TabItem] = [
+        TabItem(),
+        TabItem()
+    ]
+    
+    static var previews: some View {
+        
+        BillListView(items: $items)
+    }
+}

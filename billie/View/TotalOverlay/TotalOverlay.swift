@@ -11,34 +11,36 @@ struct TotalOverlay: View {
     var sumTotalPrice: Double
     
     var body: some View {
+        let itemModel = TabItem()
+        
         VStack(alignment: .leading) {
             Group {
                 HStack{
                     Image(systemName: "person.fill")
                     Text("Total")
                     Spacer()
-                    Text(sumTotalPrice, format: .currency(code: "BRL"))
+                    Text(sumTotalPrice, format: .currency(code: itemModel.localeCode))
                 }
-                .font(Font.title3.bold())
+                .font(.TotalOverlayFont)
                 HStack{
                     Image(systemName: "dollarsign.circle")
                     Text("10% Tip")
                     Spacer()
-                    Text(sumTotalPrice*0.1, format: .currency(code: "BRL"))
+                    Text(sumTotalPrice*0.1, format: .currency(code: itemModel.localeCode))
                 }
                 .foregroundColor(.secondary)
-            }.zIndex(0)
+            }
             SliderButton()
                 .scenePadding([.top])
         }
-        .padding(.all, 20)
+        .padding([.leading, .trailing, .top], 20)
     }
 }
 
-//struct TotalOverlay_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        
-//        TotalOverlay(sumTotalPrice: 20)
-//    }
-//}
+struct TotalOverlay_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        
+        TotalOverlay(sumTotalPrice: 20)
+    }
+}

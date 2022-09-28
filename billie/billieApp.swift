@@ -22,7 +22,8 @@ struct billieApp: App {
         WindowGroup {
 //            BillListView(items: $items)
             SplashScreenView()
-//            Some_test()
+//            ItemListView(items: $items)
+//            CheckView(itemData: $items)
         }
     }
     

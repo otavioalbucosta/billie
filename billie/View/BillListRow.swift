@@ -15,8 +15,6 @@ enum Field{
 struct billListRow: View {
     @Binding var item: TabItem
     @FocusState private var field: Field?
-//    @Binding var isEditing: Bool
-    var closure: (() -> Void)?
     let formatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
@@ -24,23 +22,23 @@ struct billListRow: View {
         }()
     
     
-    @State var isFocused: Bool = false
+//    @State var isFocused: Bool = false
     
     var body: some View {
         HStack{
             VStack(alignment: .leading) {
                 HStack{
                     if item.isEditing {
-                        TextField("Edite o nome", text: $item.name)
+                        TextField("Edit name", text: $item.name)
                             .textFieldStyle(.roundedBorder)
-                            .font(Font.title2.bold())
+                            .font(.nameCellFont)
                             .lineLimit(1)
                             .padding([.trailing],15)
                             .focused($field, equals: .name)
                             
                     }else{
                         Text(item.name)
-                            .font(Font.title2.bold())
+                            .font(.nameCellFont)
                             .lineLimit(1)
                             .padding([.trailing],15)
                             .padding([.bottom],23)
@@ -87,7 +85,6 @@ struct billListRow: View {
                         .buttonStyle(.borderless)
                     }
                 }
-                
             }
             if item.isEditing{
                 Button{

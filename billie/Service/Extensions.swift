@@ -14,7 +14,7 @@ extension Color {
 }
 
 extension Font {
+    static let TotalOverlayFont = Font.title3.bold()
     static let nameCellFont = Font.title2.bold()
-//    static let totalPriceCellFont = Font.body.bold()
     static let anyCellFont = Font.body
 }

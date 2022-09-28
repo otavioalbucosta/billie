@@ -39,9 +39,26 @@ struct quantityButton:ButtonStyle {
             .foregroundColor(Color.accentColor)
             .scaleEffect(configuration.isPressed ? 0.8: 1)
             .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
-            .onChange(of: self.nameString.hashValue) { newValue in
-                print("quantity update")
-            }
+    }
+}
+
+struct swipeButton:ButtonStyle {
+    var nameString:String
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        Image(systemName: nameString)
+            .foregroundColor(.purple)
+            .animation(.easeInOut(duration: 0.4), value: configuration.isPressed)
+        
+    }
+}
+
+struct doneEditingButton:ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        Image(systemName: "checkmark.circle")
+            .foregroundColor(.accentColor)
+            .font(.title2)
     }
 }
 
