@@ -10,7 +10,7 @@
 		1D762B5128E1E3A700A65797 /* BillieMoneySupposedlyFinal.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */; };
 		1D89BCA328D0D22800357248 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 1D89BCA228D0D22800357248 /* Lottie */; };
 		1D89BCB728D21BA800357248 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB628D21BA800357248 /* LottieView.swift */; };
-		1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB828D2459100357248 /* SplashScreenView.swift */; };
+		1D89BCB928D2459100357248 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BCB828D2459100357248 /* HomeScreenView.swift */; };
 		2913F17A28D0B40D000CE54F /* RegexBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17928D0B40D000CE54F /* RegexBuilder.swift */; };
 		2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17D28D0C4E1000CE54F /* BillListView.swift */; };
 		2913F18028D21B9F000CE54F /* SliderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2913F17F28D21B9F000CE54F /* SliderButton.swift */; };
@@ -58,7 +58,7 @@
 /* Begin PBXFileReference section */
 		1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BillieMoneySupposedlyFinal.json; sourceTree = "<group>"; };
 		1D89BCB628D21BA800357248 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		1D89BCB828D2459100357248 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		1D89BCB828D2459100357248 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		2913F17928D0B40D000CE54F /* RegexBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexBuilder.swift; sourceTree = "<group>"; };
 		2913F17D28D0C4E1000CE54F /* BillListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListView.swift; sourceTree = "<group>"; };
 		2913F17F28D21B9F000CE54F /* SliderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButton.swift; sourceTree = "<group>"; };
@@ -191,6 +191,7 @@
 				29EF982B28CF7AEB0000E300 /* BillListRow.swift */,
 				2913F17D28D0C4E1000CE54F /* BillListView.swift */,
 				1D89BCB628D21BA800357248 /* LottieView.swift */,
+				1D89BCB828D2459100357248 /* HomeScreenView.swift */,
 				7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */,
 				2913F17F28D21B9F000CE54F /* SliderButton.swift */,
 				7E26326928D7C4F600FD049B /* ActionButton.swift */,
@@ -389,7 +390,8 @@
 				4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */,
 				7E1A7A9A28E3664000C61FD6 /* ItemListView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
-				1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */,
+				1D89BCB928D2459100357248 /* HomeScreenView.swift in Sources */,
+				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
 				7E1A7A9F28E3A96D00C61FD6 /* ItemModel.swift in Sources */,
 				7E1A7AA128E3B00200C61FD6 /* TotalOverlay.swift in Sources */,

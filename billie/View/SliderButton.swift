@@ -10,7 +10,9 @@ import CoreHaptics
 
 struct SliderButton: View {
     
+    @State private var shimmer = false // first step to create the shimmering sliding effect
     @Environment(\.scenePhase) var scenePhase
+    @Environment(\.colorScheme) var schemeColor
     
     @State var engine: CHHapticEngine?
     var screen: CGRect {
@@ -29,16 +31,33 @@ struct SliderButton: View {
             HStack {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 100, style: .continuous)
-                        .foregroundColor(Color(UIColor.secondarySystemBackground))
+                        .foregroundColor(Color(UIColor.systemGray5))
                         .frame(height: 80, alignment: .center)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 100, style: .continuous)
-                            .stroke(lineWidth: 4).opacity(0.1)
-                            .shadow(color: .gray, radius: 3, x: -3, y: -5)
-                            .clipShape(RoundedRectangle(cornerRadius: 80))
-                            .shadow(color: .gray, radius: 3, x: -2, y: 5 )
-                            .clipShape(RoundedRectangle(cornerRadius: 80))
-                    }
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 100, style: .continuous)
+                                .stroke(lineWidth: 4).opacity(0.1)
+                                .shadow(color: .gray, radius: 3, x: -3, y: -5)
+                                .clipShape(RoundedRectangle(cornerRadius: 80))
+                                .shadow(color: .gray, radius: 3, x: -2, y: 5 )
+                                .clipShape(RoundedRectangle(cornerRadius: 80))
+                            if #available(iOS 15.0, *) {
+                                Text("Slide to pay")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                                    .padding([.leading], 74)
+                                    .font(.title2)
+                                    .bold()
+                              //  (condicao)? 1: 0
+                                    .foregroundStyle(schemeColor == .dark ?
+                                                     LinearGradient(gradient: Gradient(colors: [Color.primary, Color.blue]), startPoint: .leading, endPoint: shimmer ? .trailing : .leading):
+                                                        LinearGradient(gradient: Gradient(colors: [Color(UIColor.white), Color.blue]), startPoint: .leading, endPoint: shimmer ? .trailing : .leading))
+                                    .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: false))
+                                    .task {
+                                        shimmer.toggle()
+                                    }
+                            } else {
+                                // no need for anything here
+                            }
+                        }
                     
                     SwipeButton(translation: $translation, sucess: $success)
                         .animation(.linear(duration: 0.1),value: self.translation)

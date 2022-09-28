@@ -1,5 +1,5 @@
 //
-//  SplashScreenView.swift
+//  HomeScreenView.swift
 //  billie
 //
 //  Created by Pedro Muniz on 14/09/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SplashScreenView: View {
+struct HomeScreenView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var recognizedContent = RecognizedContent()
     @State var showScanner = false
@@ -41,7 +41,7 @@ struct SplashScreenView: View {
                 
             }
             .toolbar {
-                ToolbarItem {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button() {
                         alertHelpButton = true
                     }label: {
@@ -49,10 +49,10 @@ struct SplashScreenView: View {
                             .foregroundColor(Color.white)
                             .font(Font.body)
                             .padding(.all, 10)
-                    } .alert(isPresented: $alertHelpButton) {
+                    }.alert(isPresented: $alertHelpButton) {
                         Alert(title: Text("Let me help you! 😃"),
                               message: Text("You can use Billie to scan you table's receipt, edit the itens or values, and send the payment to the restaurant on your phone. All in one simple app!"),
-                              dismissButton: .default(Text("Ok, I got it!")))
+                              dismissButton: .default(Text("Ok, got it!")))
                     }
                 }
             }
@@ -107,9 +107,9 @@ struct SplashScreenView: View {
     }
 }
 
-struct SplashScreenView_Previews: PreviewProvider {
+struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
         
-        SplashScreenView()
+        HomeScreenView()
     }
 }
