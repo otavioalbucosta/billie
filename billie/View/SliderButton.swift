@@ -54,8 +54,6 @@ struct SliderButton: View {
                                     .task {
                                         shimmer.toggle()
                                     }
-                            } else {
-                                // no need for anything here
                             }
                         }
                     
