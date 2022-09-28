@@ -34,15 +34,23 @@ struct TabItem: Identifiable, Hashable, Equatable {
         }
     }
     var isEditing: Bool = false
+    var localeCode: String = "BRL"
     
-    
-    var _totalPrice: Double?
-    
+
     init(id: UUID = UUID(), name: String = "Error fetching data", quantity: Int = 0, unitPrice: Double = 0) {
         self.id = id
         self.name = name
         self.quantity = quantity
         self.unitPrice = unitPrice
+    }
+
+    func invalidDoubleValue(value: Double) -> Color {
+        return value == 0 ? Color.red: Color.primary
+    }
+
+    func quantityControl(quantityValue: Int) -> Int {
+        return (quantityValue == 0 ? quantityValue: quantityValue - 1)
+
     }
 
 }

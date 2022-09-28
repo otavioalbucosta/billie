@@ -11,5 +11,10 @@ import SwiftUI
 extension Color {
     static let backgroundTopColor = Color("background1")
     static let backgroundBottomColor = Color("background2")
-    
+}
+
+extension Font {
+    static let nameCellFont = Font.title2.bold()
+//    static let totalPriceCellFont = Font.body.bold()
+    static let anyCellFont = Font.body
 }

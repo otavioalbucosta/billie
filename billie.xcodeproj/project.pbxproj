@@ -28,6 +28,11 @@
 		29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982B28CF7AEB0000E300 /* BillListRow.swift */; };
 		4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943E16928DE320800803CB7 /* LottieSuccessView.swift */; };
 		7E1A7A9628E22E0B00C61FD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */; };
+		7E1A7A9828E34E6C00C61FD6 /* ItemBillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9728E34E6C00C61FD6 /* ItemBillCell.swift */; };
+		7E1A7A9A28E3664000C61FD6 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9928E3664000C61FD6 /* ItemListView.swift */; };
+		7E1A7A9F28E3A96D00C61FD6 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9E28E3A96D00C61FD6 /* ItemModel.swift */; };
+		7E1A7AA128E3B00200C61FD6 /* TotalOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7AA028E3B00200C61FD6 /* TotalOverlay.swift */; };
+		7E1A7AA428E3B84700C61FD6 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7AA328E3B84700C61FD6 /* CheckView.swift */; };
 		7E26326A28D7C4F600FD049B /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326928D7C4F600FD049B /* ActionButton.swift */; };
 		7E26327028D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
 		7E26327128D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
@@ -76,6 +81,11 @@
 		29EF982B28CF7AEB0000E300 /* BillListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListRow.swift; sourceTree = "<group>"; };
 		4943E16928DE320800803CB7 /* LottieSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSuccessView.swift; sourceTree = "<group>"; };
 		7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7E1A7A9728E34E6C00C61FD6 /* ItemBillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBillCell.swift; sourceTree = "<group>"; };
+		7E1A7A9928E3664000C61FD6 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		7E1A7A9E28E3A96D00C61FD6 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		7E1A7AA028E3B00200C61FD6 /* TotalOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalOverlay.swift; sourceTree = "<group>"; };
+		7E1A7AA328E3B84700C61FD6 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		7E26326928D7C4F600FD049B /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		7E26326F28D8FDE500FD049B /* TotalOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalOverView.swift; sourceTree = "<group>"; };
 		7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
@@ -177,9 +187,12 @@
 		29EF982828CF77CD0000E300 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				29EF982628CF742A0000E300 /* TextPreviewView.swift */,
-				2969FCB428CA1351009FBB4F /* ContentView.swift */,
+				7E1A7A9B28E3682300C61FD6 /* List */,
+				7E1A7AA228E3B00B00C61FD6 /* TotalOverlay */,
+				7E1A7AA528E3BCFD00C61FD6 /* CheckScreen */,
 				2969FCDC28CA139C009FBB4F /* ScannerView.swift */,
+				2969FCB428CA1351009FBB4F /* ContentView.swift */,
+				29EF982628CF742A0000E300 /* TextPreviewView.swift */,
 				29EF982B28CF7AEB0000E300 /* BillListRow.swift */,
 				2913F17D28D0C4E1000CE54F /* BillListView.swift */,
 				1D89BCB628D21BA800357248 /* LottieView.swift */,
@@ -197,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				2969FCE028CA13D6009FBB4F /* Model.swift */,
+				7E1A7A9E28E3A96D00C61FD6 /* ItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +223,31 @@
 				2913F17928D0B40D000CE54F /* RegexBuilder.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		7E1A7A9B28E3682300C61FD6 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7E1A7A9728E34E6C00C61FD6 /* ItemBillCell.swift */,
+				7E1A7A9928E3664000C61FD6 /* ItemListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		7E1A7AA228E3B00B00C61FD6 /* TotalOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				7E1A7AA028E3B00200C61FD6 /* TotalOverlay.swift */,
+			);
+			path = TotalOverlay;
+			sourceTree = "<group>";
+		};
+		7E1A7AA528E3BCFD00C61FD6 /* CheckScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7E1A7AA328E3B84700C61FD6 /* CheckView.swift */,
+			);
+			path = CheckScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,14 +390,19 @@
 				2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */,
 				2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */,
 				7E26326A28D7C4F600FD049B /* ActionButton.swift in Sources */,
+				7E1A7AA428E3B84700C61FD6 /* CheckView.swift in Sources */,
 				7E1A7A9628E22E0B00C61FD6 /* Extensions.swift in Sources */,
 				4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */,
+				7E1A7A9A28E3664000C61FD6 /* ItemListView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				1D89BCB928D2459100357248 /* SplashScreenView.swift in Sources */,
 				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
+				7E1A7A9F28E3A96D00C61FD6 /* ItemModel.swift in Sources */,
+				7E1A7AA128E3B00200C61FD6 /* TotalOverlay.swift in Sources */,
 				29EF982728CF742A0000E300 /* TextPreviewView.swift in Sources */,
 				2913F18028D21B9F000CE54F /* SliderButton.swift in Sources */,
+				7E1A7A9828E34E6C00C61FD6 /* ItemBillCell.swift in Sources */,
 				2969FCE128CA13D6009FBB4F /* Model.swift in Sources */,
 				1D89BCB728D21BA800357248 /* LottieView.swift in Sources */,
 				29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */,

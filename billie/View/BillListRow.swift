@@ -9,6 +9,7 @@ import SwiftUI
 
 struct billListRow: View {
     @Binding var item: TabItem
+    
     let formatter: NumberFormatter = {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal

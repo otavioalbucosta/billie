@@ -31,16 +31,16 @@ struct BillListView: View {
             VStack{
                 List {
                     Section{
-                        Button {
-                            // Takes to the data saved
-                            // The photo taken if possible, otherwise take the header off. =D
-                        } label: {
-                            HStack {
-                                Text("Your tab")
-                                Spacer()
-                                Image(systemName: "photo")
-                            }
-                        }.padding([.leading,.trailing])
+//                        Button {
+//                            // Takes to the data saved
+//                            // The photo taken if possible, otherwise take the header off. =D
+//                        } label: {
+//                            HStack {
+//                                Text("Your tab")
+//                                Spacer()
+//                                Image(systemName: "photo")
+//                            }
+//                        }.padding([.leading,.trailing])
                         
                     } header: {
                         Text("successfully scanned, you can modify your tab below")
@@ -98,10 +98,3 @@ struct BillListView: View {
             }
     }
 }
-
-//struct BillListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//    BillListView(items: $items)
-//}
-

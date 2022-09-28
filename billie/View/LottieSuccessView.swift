@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LottieSucessView: View {
     
-    @State var isEndedFirst: Bool = false
+    @State var isEndedFirst: Bool = true
     
     var body: some View {
         ZStack {

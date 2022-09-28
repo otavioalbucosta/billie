@@ -12,8 +12,8 @@ import CoreHaptics
 struct GrowingButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-//            .background(Color.accentColor)
-//            .foregroundColor(.primary)
+        //            .background(Color.accentColor)
+        //            .foregroundColor(.primary)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .scaleEffect(configuration.isPressed ? 0.8: 1)
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
@@ -30,3 +30,18 @@ struct GradientButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
     }
 }
+
+struct quantityButton:ButtonStyle {
+    var nameString: String
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        Image(systemName: nameString)
+            .foregroundColor(Color.accentColor)
+            .scaleEffect(configuration.isPressed ? 0.8: 1)
+            .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
+            .onChange(of: self.nameString.hashValue) { newValue in
+                print("quantity update")
+            }
+    }
+}
+
