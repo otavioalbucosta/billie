@@ -11,5 +11,7 @@ import SwiftUI
 extension Color {
     static let backgroundTopColor = Color("background1")
     static let backgroundBottomColor = Color("background2")
+    static let backgroundSliderButtonColor = Color("sliderButtonColor")
+    
     
 }
