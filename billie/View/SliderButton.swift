@@ -42,7 +42,7 @@ struct SliderButton: View {
                                 .shadow(color: .gray, radius: 3, x: -2, y: 5 )
                                 .clipShape(RoundedRectangle(cornerRadius: 80))
                             if #available(iOS 15.0, *) {
-                                Text("Slide to pay the check")
+                                Text("Slide to pay the bill")
                                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                                     .padding([.leading], 74)
                                     .font(.title2)
