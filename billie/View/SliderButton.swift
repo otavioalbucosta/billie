@@ -32,7 +32,7 @@ struct SliderButton: View {
             HStack {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 100, style: .continuous)
-                        .foregroundColor(Color(UIColor.secondarySystemBackground))
+                        .foregroundColor(Color(UIColor.systemGray5))
                         .frame(height: 80, alignment: .center)
                         .overlay {
                             RoundedRectangle(cornerRadius: 100, style: .continuous)
@@ -42,7 +42,7 @@ struct SliderButton: View {
                                 .shadow(color: .gray, radius: 3, x: -2, y: 5 )
                                 .clipShape(RoundedRectangle(cornerRadius: 80))
                             if #available(iOS 15.0, *) {
-                                Text("Slide to pay the bill")
+                                Text("Slide to pay the check")
                                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
                                     .padding([.leading], 74)
                                     .font(.title2)
@@ -56,7 +56,7 @@ struct SliderButton: View {
                                         shimmer.toggle()
                                     }
                             } else {
-                                // something goes here
+                                // no need for anything here
                             }
                         }
                     
