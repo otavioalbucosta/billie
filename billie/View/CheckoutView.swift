@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @FocusState private var isUsernameFocused : Bool
-    @State private var username = "Random name"
-    @State private var item = TabItem()
+    var totalPrice: Double
+    var tip: Double {
+        get{
+            return totalPrice*0.1
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -60,6 +63,6 @@ struct CheckoutView: View {
     }
     struct CheckoutView_Previews: PreviewProvider {
         static var previews: some View {
-            CheckoutView()
+            CheckoutView(totalPrice: 100)
         }
     }

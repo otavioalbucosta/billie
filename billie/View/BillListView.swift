@@ -12,6 +12,7 @@ struct BillListView: View {
     @State private var slide = 50.0
     @State private var isEditing = false
     @Binding var items: [TabItem]
+    @State var slideSuceeded: Bool = false
     
     let alignment: Alignment = .bottom
     let width: CGFloat = 0.0
@@ -101,16 +102,19 @@ struct BillListView: View {
             }
             .frame(maxHeight:UIScreen.main.bounds.height - UIScreen.main.bounds.height/3.5, alignment: .top)
             
-                TotalOverView(totalPrice: sumOfAllItems)
+            TotalOverView(totalPrice: sumOfAllItems, slideSuceeded: $slideSuceeded)
                     .frame(maxHeight: .infinity, alignment: .bottom)
                     .ignoresSafeArea(.keyboard)
                     
             }
             .navigationBarBackButtonHidden(true)
             .scrollDismissesKeyboard(.interactively)
+            .sheet(isPresented: $slideSuceeded){
+                CheckoutView(totalPrice: sumOfAllItems)
+            }
 
             
-        }
+    }
 
     }
     

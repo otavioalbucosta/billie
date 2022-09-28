@@ -18,7 +18,7 @@ struct SliderButton: View {
     }
     @State var Player: CHHapticAdvancedPatternPlayer?
     @State var translation = CGSize.zero.width
-    @State var success = false
+    @Binding var success: Bool
     @State var intensity: Float = 0.8
     @State var sharpness: Float = 0.0
     
@@ -41,6 +41,13 @@ struct SliderButton: View {
                     
                     SwipeButton(translation: $translation, sucess: $success)
                         .animation(.linear(duration: 0.1),value: self.translation)
+                        .onChange(of: success){ success in
+                            if !success{
+                                self.translation = CGSize.zero.width
+
+                            }
+                            
+                        }
                         .gesture(DragGesture().onChanged({ value in
                             startPlayer()
                             if(value.translation.width < 0){
@@ -52,7 +59,7 @@ struct SliderButton: View {
                                     self.translation = geometry.size.width - 100
                                     sharpness = 0.8
                                     dynamicPattern()
-                                    self.success = true
+
                                 }else{
                                     self.translation = value.translation.width
                                     sharpness = Float(self.translation) / 300
@@ -70,6 +77,9 @@ struct SliderButton: View {
                                 }else{
                                     self.translation = geometry.size.width - 100
                                     self.success = true
+                                    if self.success == false{
+                                        self.translation = CGSize.zero.width
+                                    }
                                     stopPlayer()
                                     let hapSuccess = UINotificationFeedbackGenerator()
                                     hapSuccess.notificationOccurred(.success)
@@ -169,6 +179,6 @@ struct SwipeButton: View {
 
 struct SliderButton_Previews: PreviewProvider {
     static var previews: some View {
-        SliderButton()
+        SliderButton(success: .constant(false))
     }
 }
