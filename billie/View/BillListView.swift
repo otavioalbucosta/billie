@@ -28,7 +28,8 @@ struct BillListView: View {
     
     
     var body: some View {
-            VStack{
+        ZStack(alignment: .top){
+            GeometryReader{ _ in
                 List {
                     Section{
 //                        Button {
@@ -54,6 +55,7 @@ struct BillListView: View {
                     
                     ForEach($items, id: \.id) { $item in
                         billListRow(item: $item)
+                            .buttonStyle(.plain)
                             .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
                                 Button {
                                     items.removeAll(where: {$0.id == $item.id})
@@ -67,6 +69,8 @@ struct BillListView: View {
                             .swipeActions(edge: .trailing,allowsFullSwipe: false, content: {
                                 Button {
                                     item.isEditing.toggle()
+                                    print(UIScreen.main.bounds.height/9)
+
                                 } label: {
                                     Text("Edit")
                                         .foregroundColor(.white)
@@ -94,7 +98,26 @@ struct BillListView: View {
                     }
                 }
                 .background(Color.clear)
-                TotalOverView(totalPrice: sumOfAllItems)
             }
+            .frame(maxHeight:UIScreen.main.bounds.height - UIScreen.main.bounds.height/3.5, alignment: .top)
+            
+                TotalOverView(totalPrice: sumOfAllItems)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                    .ignoresSafeArea(.keyboard)
+                    
+            }
+            .navigationBarBackButtonHidden(true)
+            .scrollDismissesKeyboard(.interactively)
+
+            
+        }
+
     }
-}
+    
+
+//struct BillListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//    BillListView(items: $items)
+//}
+

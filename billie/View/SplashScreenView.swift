@@ -15,6 +15,7 @@ struct SplashScreenView: View {
     @State var isEnded: Bool = false
     @State var itens: [TabItem] = []
     @State var alertHelpButton = false
+    @State var alertError = false
     
     var body: some View {
         NavigationStack {
@@ -88,6 +89,11 @@ struct SplashScreenView: View {
             .navigationDestination(isPresented: $isRecognized) {
                 BillListView(items: $itens)
             }
+            .alert(isPresented: $alertError){
+                Alert(title: Text("Scan error"),
+                      message: Text("There was an error scanning your receipt, please try to frame only the important parts of the bill"),
+                      dismissButton: .default(Text("Try again")))
+            }
         }
         .sheet(isPresented: $showScanner, content: {
             ScannerView { result in
@@ -95,22 +101,26 @@ struct SplashScreenView: View {
                 switch result {
                 case .success(let scannedImages):
                     recognizedContent.items.removeAll()
-                    TextRecognition(scannedImages: scannedImages,
-                                    recognizedContent: recognizedContent) {
-                        // Text recognition is finished, hide the progress indicator.
-                        print("RESULTADO:")
-                        print(recognizedContent.items[0].text)
-                        print("REGEX:")
-                        var res = RegexNF().RegexToItem(str: recognizedContent.items[0].text)
-                        self.itens.removeAll()
-                        self.itens.append(contentsOf: res)
-                        print(itens)
-                        if !itens.isEmpty {
-                            isRecognized.toggle()
-                        }
+                        TextRecognition(scannedImages: scannedImages,
+                                        recognizedContent: recognizedContent) {
+                            // Text recognition is finished, hide the progress indicator.
+                            print("RESULTADO:")
+                            print(recognizedContent.items[0].text)
+                            print("REGEX:")
+                            var res = RegexNF().RegexToItem(str: recognizedContent.items[0].text)
+                            self.itens.removeAll()
+                            self.itens.append(contentsOf: res)
+                            print(itens)
+                            if !itens.isEmpty {
+                                isRecognized.toggle()
+                                
+                            }else{
+                                alertError.toggle()
+                            }
                     }.recognizeText()
-                case .failure(let error):
-                    print(error.localizedDescription)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    alertError.toggle()
                 }
                 
                 showScanner = false

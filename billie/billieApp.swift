@@ -20,9 +20,18 @@ struct billieApp: App {
     ]
     var body: some Scene {
         WindowGroup {
-            BillListView(items: $items)
-//            SplashScreenView()
-//            CheckView(itemData: $items)
+//            BillListView(items: $items)
+            SplashScreenView()
+//            Some_test()
         }
     }
+    
 }
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif

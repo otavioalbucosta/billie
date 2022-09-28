@@ -84,6 +84,7 @@ struct SliderButton: View {
             }.frame(height: 80, alignment: .center)
 
         }.frame(height: 80, alignment: .center)
+            .ignoresSafeArea(.keyboard)
                 
     }
     func prepareHaptics() {

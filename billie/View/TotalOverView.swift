@@ -33,18 +33,21 @@ struct TotalOverView: View {
                     SliderButton()
                         .frame(maxHeight: 70)
                         .padding([.bottom], 30)
-                }.zIndex(0)
+                }
+                .zIndex(0)
             }
+            .ignoresSafeArea(.keyboard)
             .padding(.all, 20)
             Rectangle()
                 .foregroundColor(colorScheme == .light ? Color(UIColor.white): Color(UIColor.systemGray6) )
                 .shadow(radius: 4)
                 .zIndex(-1)
         }
-        .frame(height: UIScreen.main.bounds.height/10)
-        .ignoresSafeArea(edges: [.bottom, .leading, .trailing])
+        .frame(height: UIScreen.main.bounds.height/9)
+
     }
 }
+
 
 struct TotalOverView_Previews: PreviewProvider {
     static var previews: some View {
