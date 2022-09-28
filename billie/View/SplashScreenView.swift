@@ -13,7 +13,7 @@ struct SplashScreenView: View {
     @State var showScanner = false
     @State private var isRecognized: Bool = false
     @State var isEnded: Bool = false
-    @State var itens: [TabItem] = []
+    @State var items: [TabItem] = []
     @State var alertHelpButton = false
     @State var alertError = false
     
@@ -28,40 +28,23 @@ struct SplashScreenView: View {
                 .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.midY)
                 .ignoresSafeArea(.all)
                 
-                Button (action: {
+                
+                Button("") {
                     showScanner = true
-                    
                     let impactGen = UIImpactFeedbackGenerator(style: .medium)
                     impactGen.impactOccurred()
-                    
-                }){
-                    HStack{
-                        Image(systemName: "doc.text.viewfinder")
-                        Text("Scan receipt")
-                            .fontWeight(.semibold)
-                            .font(Font.title3)
-                    }
-                    .foregroundColor(colorScheme == .dark ? .blue:
-                                        Color(red: 36/255, green: 123/255, blue: 160/255))
-                    .padding(.all, 12)
-                    .padding([.leading,.trailing])
-                    .opacity(isEnded ? 1
-                             : 0).animation(.easeInOut(duration: 1), value: isEnded)
-                        .background(.white
-                        ).opacity(isEnded ? 1 : 0).animation(.easeOut(duration: 1), value: isEnded)
-                    
-                }
-                .buttonStyle(GrowingButton()).animation(.easeOut(duration: 1), value: isEnded)
+                }.buttonStyle(scanButton(isEnded: isEnded))
                 
+                Button("") {
+                    isRecognized.toggle()
+                }.buttonStyle(manualEnterButton(isEnded: isEnded))
                 
             }
             .toolbar {
                 ToolbarItem {
                     Button() {
                         alertHelpButton = true
-                        
                     }label: {
-                        
                         Image(systemName: "questionmark.circle.fill")
                             .foregroundColor(Color.white)
                             .font(Font.body)
@@ -74,21 +57,10 @@ struct SplashScreenView: View {
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(colorScheme == .light ?
-                        LinearGradient(gradient: Gradient(colors: [
-                            Color.backgroundTopColor,
-                            Color.backgroundBottomColor,
-                            Color.backgroundBottomColor.opacity(0.7),]),
-                                       startPoint: .top,
-                                       endPoint: .bottom):
-                            LinearGradient(gradient: Gradient(colors: [
-                                .blue,
-                                .clear]),
-                                           startPoint: .top,
-                                           endPoint: .bottom))
+            .background(colorScheme == .light ? LinearGradient.backgroundGradientLight:
+                            LinearGradient.backgroundGradientDark)
             .navigationDestination(isPresented: $isRecognized) {
-//                BillListView(items: $itens)
-                CheckView(itemData: $itens)
+                CheckView(itemData: $items)
             }
             .alert(isPresented: $alertError){
                 Alert(title: Text("Scan error"),
@@ -102,32 +74,28 @@ struct SplashScreenView: View {
                 switch result {
                 case .success(let scannedImages):
                     recognizedContent.items.removeAll()
-                        TextRecognition(scannedImages: scannedImages,
-                                        recognizedContent: recognizedContent) {
-                            // Text recognition is finished, hide the progress indicator.
-                            print("RESULTADO:")
-                            print(recognizedContent.items[0].text)
-                            print("REGEX:")
-                            var res = RegexNF().RegexToItem(str: recognizedContent.items[0].text)
-                            self.itens.removeAll()
-                            self.itens.append(contentsOf: res)
-                            print(itens)
-                            if !itens.isEmpty {
-                                isRecognized.toggle()
-                                
-                            }else{
-                                alertError.toggle()
-                            }
+                    TextRecognition(scannedImages: scannedImages,
+                                    recognizedContent: recognizedContent) {
+                        // Text recognition is finished, hide the progress indicator.
+                        print("RESULTADO:")
+                        print(recognizedContent.items[0].text)
+                        print("REGEX:")
+                        var res = RegexNF().RegexToItem(str: recognizedContent.items[0].text)
+                        self.items.removeAll()
+                        self.items.append(contentsOf: res)
+                        print(items)
+                        if !items.isEmpty {
+                            isRecognized.toggle()
+                            
+                        }else{
+                            alertError.toggle()
+                        }
                     }.recognizeText()
-                    case .failure(let error):
-                        print(error.localizedDescription)
+                case .failure(let error):
+                    print(error.localizedDescription)
                     alertError.toggle()
                 }
-                
                 showScanner = false
-                
-                
-                
             } didCancelScanning: {
                 // Dismiss the scanner controller and the sheet.
                 showScanner = false

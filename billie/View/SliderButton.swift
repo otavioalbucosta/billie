@@ -20,17 +20,16 @@ struct SliderButton: View {
     }
     @State var Player: CHHapticAdvancedPatternPlayer?
     @State var translation = CGSize.zero.width
-    @Binding var success: Bool
     @State var intensity: Float = 0.8
     @State var sharpness: Float = 0.0
-    
+    @Binding var success: Bool
     
     var body: some View {
         GeometryReader{ geometry in
             HStack {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 100, style: .continuous)
-                        .foregroundColor(.clear).opacity(0.1)
+                        .foregroundColor(Color(UIColor.secondarySystemBackground))
                         .frame(height: 80, alignment: .center)
                     .overlay {
                         RoundedRectangle(cornerRadius: 100, style: .continuous)

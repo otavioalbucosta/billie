@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TotalOverlay: View {
     var sumTotalPrice: Double
+    @Binding var slideSuceeded: Bool
     
     var body: some View {
         let itemModel = TabItem()
@@ -30,17 +31,17 @@ struct TotalOverlay: View {
                 }
                 .foregroundColor(.secondary)
             }
-            SliderButton()
+            SliderButton(success: $slideSuceeded)
                 .scenePadding([.top])
         }
         .padding([.leading, .trailing, .top], 20)
     }
 }
 
-struct TotalOverlay_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        
-        TotalOverlay(sumTotalPrice: 20)
-    }
-}
+//struct TotalOverlay_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        
+//        TotalOverlay(sumTotalPrice: 20, slideSuceeded: .constant(false))
+//    }
+//}

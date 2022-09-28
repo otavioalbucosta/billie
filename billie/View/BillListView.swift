@@ -93,24 +93,20 @@ struct BillListView: View {
             .frame(maxHeight:UIScreen.main.bounds.height - UIScreen.main.bounds.height/3.5, alignment: .top)
             
             TotalOverView(totalPrice: sumOfAllItems, slideSuceeded: $slideSuceeded)
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-                    .ignoresSafeArea(.keyboard)
-                    
-            }
-            .navigationBarBackButtonHidden(true)
-            .scrollDismissesKeyboard(.interactively)
-            .sheet(isPresented: $slideSuceeded){
-                CheckoutView(totalPrice: sumOfAllItems)
-            }
-
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .ignoresSafeArea(.keyboard)
             
         }
         .navigationBarBackButtonHidden(true)
         .scrollDismissesKeyboard(.interactively)
+        .sheet(isPresented: $slideSuceeded){
+            CheckoutView(totalPrice: sumOfAllItems)
+        }
         
         
     }
-    
+//        .navigationBarBackButtonHidden(true)
+//        .scrollDismissesKeyboard(.interactively)
 }
 
 

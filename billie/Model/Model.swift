@@ -60,7 +60,7 @@ struct TabItem: Identifiable, Hashable, Equatable {
     }
     
     func addNewItem() -> TabItem{
-        var newItem = TabItem(name:"Edit new item", quantity: 0, unitPrice: 0.0)
+        var newItem = TabItem(name:"", quantity: 0, unitPrice: 0.0)
         newItem.isEditing.toggle()
         newItem.quantity = 1
         return newItem

@@ -17,7 +17,7 @@ struct ItemListView: View {
         NavigationView {
             List {
                 Section {
-                    ForEach($items, id: \.self) { $item in
+                    ForEach($items, id: \.id) { $item in
                         ItemBillCell(itemModel: $item)
                             .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
                                 Button {
@@ -48,8 +48,6 @@ struct ItemListView: View {
             }
             .listStyle(.grouped)
             .scrollIndicators(.hidden)
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Resume Tabs")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {

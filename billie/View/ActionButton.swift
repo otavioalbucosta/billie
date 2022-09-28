@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreHaptics
 
+
 struct GrowingButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -42,23 +43,48 @@ struct quantityButton:ButtonStyle {
     }
 }
 
-struct swipeButton:ButtonStyle {
-    var nameString:String
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-        Image(systemName: nameString)
-            .foregroundColor(.purple)
-            .animation(.easeInOut(duration: 0.4), value: configuration.isPressed)
-        
-    }
-}
-
 struct doneEditingButton:ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
         Image(systemName: "checkmark.circle")
             .foregroundColor(.accentColor)
             .font(.title2)
+    }
+}
+
+struct scanButton: ButtonStyle {
+    @Environment(\.colorScheme) var colorScheme
+    var isEnded: Bool
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        HStack {
+            Image(systemName: "doc.text.viewfinder")
+            Text("Scan receipt")
+                .fontWeight(.semibold)
+                .font(Font.title3)
+        }
+        .scaleEffect(configuration.isPressed ? 0.8: 1)
+        .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+        .foregroundColor(colorScheme == .dark ? .blue:
+                            Color.scanButtonTextColor)
+        .padding(.all, 12)
+        .padding([.leading,.trailing])
+        .opacity(isEnded ? 1: 0).animation(.easeInOut(duration: 0.1), value: isEnded).background(.white).opacity(isEnded ? 1 :0).animation(.easeOut(duration: 0.1), value: isEnded)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
+    }
+}
+
+struct manualEnterButton: ButtonStyle {
+    @Environment(\.colorScheme) var colorScheme
+    var isEnded: Bool
+    func makeBody(configuration: Configuration) -> some View {
+        var animationSpeed: Double = 0.4
+        configuration.label
+        if isEnded{
+            Text("Enter manually")
+                .foregroundColor(colorScheme == .dark ? Color.white: Color.accentColor)
+                .transition(.scale)
+        }
     }
 }
 

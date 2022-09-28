@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CheckView: View {
     @Binding var itemData: [TabItem]
+    @State var slideSuceeded: Bool = false
     
     var sumOfAllItems: Double {
         let totalPrices = itemData.map(\.totalPrice)
@@ -20,11 +21,17 @@ struct CheckView: View {
             VStack {
                 ItemListView(items: $itemData)
                 
-                TotalOverlay(sumTotalPrice: sumOfAllItems)
+                TotalOverlay(sumTotalPrice: sumOfAllItems, slideSuceeded: $slideSuceeded)
                     .background(Color(uiColor: .secondarySystemGroupedBackground))
             }
             .ignoresSafeArea(.keyboard)
             .scrollDismissesKeyboard(.interactively)
+        }
+        .sheet(isPresented: $slideSuceeded){
+            CheckoutView(totalPrice: sumOfAllItems)
+        }
+        .onDisappear{
+            itemData.removeAll()
         }
     }
 }
@@ -48,7 +55,7 @@ struct CheckView_Previews: PreviewProvider {
     ]
     static var previews: some View {
         
-        CheckView(itemData: $items)
+        CheckView(itemData: $items, slideSuceeded: false )
     }
 }
 
