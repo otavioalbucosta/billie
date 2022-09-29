@@ -28,7 +28,8 @@ struct CheckView: View {
             .scrollDismissesKeyboard(.interactively)
         }
         .sheet(isPresented: $slideSuceeded){
-            CheckoutView(totalPrice: sumOfAllItems)
+//            CheckoutView(totalPrice: sumOfAllItems)
+            PaymentView()
         }
         .onDisappear{
             itemData.removeAll()
