@@ -197,13 +197,10 @@
 				7EF5327428E53EC30017C31D /* AnimationTextView.swift */,
 				2913F17F28D21B9F000CE54F /* SliderButton.swift */,
 				7E26326928D7C4F600FD049B /* ActionButton.swift */,
-<<<<<<< HEAD
 				7E26326F28D8FDE500FD049B /* TotalOverView.swift */,
 				4974503228E5D54300CCC8D8 /* PickerRowView.swift */,
 				4974503428E5D57300CCC8D8 /* PaymentView.swift */,
-=======
 				1D89BCB628D21BA800357248 /* LottieView.swift */,
->>>>>>> 60ba53a (sliderButton opacityFix,  accentColor changed,  shimmerTextSlider, bug fix)
 				4943E16928DE320800803CB7 /* LottieSuccessView.swift */,
 				29EF982B28CF7AEB0000E300 /* BillListRow.swift */,
 				2913F17D28D0C4E1000CE54F /* BillListView.swift */,
@@ -405,10 +402,7 @@
 				7E1A7A9A28E3664000C61FD6 /* ItemListView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				1D89BCB928D2459100357248 /* HomeScreenView.swift in Sources */,
-<<<<<<< HEAD
-=======
 				7EF5327528E53EC30017C31D /* AnimationTextView.swift in Sources */,
->>>>>>> 60ba53a (sliderButton opacityFix,  accentColor changed,  shimmerTextSlider, bug fix)
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
 				7E1A7A9F28E3A96D00C61FD6 /* ItemModel.swift in Sources */,
 				7E1A7AA128E3B00200C61FD6 /* TotalOverlay.swift in Sources */,
