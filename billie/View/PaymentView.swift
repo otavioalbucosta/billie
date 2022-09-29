@@ -1,20 +1,21 @@
 import SwiftUI
 
 struct PaymentView: View {
-    private var PaymentIndex = ["Dinheiro", "Pix",  "Apple pay"]
+    @Environment(\.dismiss) private var dismiss
+     var PaymentIndex = ["Dinheiro", "Pix",  "Apple pay"]
     @State var selectedIndex = 0
-    @State private var images: [Image] = [Image("IconMoney"), Image("IconPix"), Image("IconApplePay")]
+    @State  var images: [Image] = [Image("IconMoney"), Image("IconPix"), Image("IconApplePay")]
     let alignment: Alignment = .bottom
     @State var alertButton = false
-    @State var shouldPop = false
+    @Binding var shouldPop: Bool
     
     
     
     var body: some View {
         
-        NavigationView {
             
-            ZStack(alignment: .bottom) {
+        ZStack(alignment: .bottom) {
+            NavigationStack{
                 Form {
                     Section("") {
                         Picker(selection: $selectedIndex,label: EmptyView()){
@@ -45,6 +46,8 @@ struct PaymentView: View {
                 } else {
                     Button {
                         shouldPop.toggle()
+                        print(shouldPop)
+                        dismiss()
                     } label: {
                         Text("Pagar com \(PaymentIndex[selectedIndex])")
                             .padding([.leading, .trailing], 20).padding(.all)
@@ -55,19 +58,14 @@ struct PaymentView: View {
                         
                     }
                 }
-                
-            }
-            .navigationDestination(isPresented: $shouldPop){
-                LottieSucessView()
             }
         }
     }
-    
 }
 
 struct TestePaymentView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentView()
+        PaymentView(shouldPop: .constant(false))
     }
 }
 

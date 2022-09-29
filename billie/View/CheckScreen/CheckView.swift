@@ -11,6 +11,7 @@ struct CheckView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var itemData: [TabItem]
     @State var slideSuceeded: Bool = false
+    @State var shouldPop: Bool = false
     
     var sumOfAllItems: Double {
         let totalPrices = itemData.map(\.totalPrice)
@@ -30,15 +31,18 @@ struct CheckView: View {
         }
         .sheet(isPresented: $slideSuceeded){
 //            CheckoutView(totalPrice: sumOfAllItems)
-            PaymentView()
-            .onDisappear{
-                dismiss()
-            }
+            PaymentView(shouldPop: $shouldPop)
         }
         .onDisappear{
             itemData.removeAll()
         }
         .navigationTitle("Resume tabs")
+        .navigationDestination(isPresented: $shouldPop) {
+            LottieSucessView()
+                .onDisappear{
+                 dismiss()
+                }
+        }
     }
 }
 

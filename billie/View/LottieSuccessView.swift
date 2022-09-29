@@ -18,6 +18,7 @@ struct LottieSucessView: View {
             LottieView(isEnded: $isEndedFirst, filename: "success")
                 
         }
+        .navigationBarBackButtonHidden(true)
         .onChange(of: isEndedFirst) { newValue in
             dismiss()
         }
