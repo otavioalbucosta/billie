@@ -23,6 +23,7 @@
 		2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCDC28CA139C009FBB4F /* ScannerView.swift */; };
 		2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */; };
 		2969FCE128CA13D6009FBB4F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCE028CA13D6009FBB4F /* Model.swift */; };
+		29EF1C9028E625430027B167 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 29EF1C8F28E625430027B167 /* success.json */; };
 		29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982B28CF7AEB0000E300 /* BillListRow.swift */; };
 		4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943E16928DE320800803CB7 /* LottieSuccessView.swift */; };
 		4974503328E5D54300CCC8D8 /* PickerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974503228E5D54300CCC8D8 /* PickerRowView.swift */; };
@@ -77,6 +78,7 @@
 		2969FCDC28CA139C009FBB4F /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		2969FCDE28CA13BA009FBB4F /* TextRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognition.swift; sourceTree = "<group>"; };
 		2969FCE028CA13D6009FBB4F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		29EF1C8F28E625430027B167 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		29EF982B28CF7AEB0000E300 /* BillListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListRow.swift; sourceTree = "<group>"; };
 		4943E16928DE320800803CB7 /* LottieSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSuccessView.swift; sourceTree = "<group>"; };
 		4974503228E5D54300CCC8D8 /* PickerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRowView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				1D762B5028E1E3A700A65797 /* BillieMoneySupposedlyFinal.json */,
+				29EF1C8F28E625430027B167 /* success.json */,
 			);
 			path = "All Splash Screen animations";
 			sourceTree = "<group>";
@@ -197,7 +200,6 @@
 				7EF5327428E53EC30017C31D /* AnimationTextView.swift */,
 				2913F17F28D21B9F000CE54F /* SliderButton.swift */,
 				7E26326928D7C4F600FD049B /* ActionButton.swift */,
-				7E26326F28D8FDE500FD049B /* TotalOverView.swift */,
 				4974503228E5D54300CCC8D8 /* PickerRowView.swift */,
 				4974503428E5D57300CCC8D8 /* PaymentView.swift */,
 				1D89BCB628D21BA800357248 /* LottieView.swift */,
@@ -365,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2969FCBA28CA1353009FBB4F /* Preview Assets.xcassets in Resources */,
+				29EF1C9028E625430027B167 /* success.json in Resources */,
 				2969FCB728CA1353009FBB4F /* Assets.xcassets in Resources */,
 				1D762B5128E1E3A700A65797 /* BillieMoneySupposedlyFinal.json in Resources */,
 			);

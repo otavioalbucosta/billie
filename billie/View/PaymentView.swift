@@ -6,6 +6,7 @@ struct PaymentView: View {
     @State private var images: [Image] = [Image("IconMoney"), Image("IconPix"), Image("IconApplePay")]
     let alignment: Alignment = .bottom
     @State var alertButton = false
+    @State var shouldPop = false
     
     
     
@@ -43,7 +44,7 @@ struct PaymentView: View {
                     //
                 } else {
                     Button {
-                        //
+                        shouldPop.toggle()
                     } label: {
                         Text("Pagar com \(PaymentIndex[selectedIndex])")
                             .padding([.leading, .trailing], 20).padding(.all)
@@ -55,6 +56,9 @@ struct PaymentView: View {
                     }
                 }
                 
+            }
+            .navigationDestination(isPresented: $shouldPop){
+                LottieSucessView()
             }
         }
     }

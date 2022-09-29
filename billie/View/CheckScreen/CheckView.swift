@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CheckView: View {
+    @Environment(\.dismiss) private var dismiss
     @Binding var itemData: [TabItem]
     @State var slideSuceeded: Bool = false
     
@@ -30,6 +31,9 @@ struct CheckView: View {
         .sheet(isPresented: $slideSuceeded){
 //            CheckoutView(totalPrice: sumOfAllItems)
             PaymentView()
+            .onDisappear{
+                dismiss()
+            }
         }
         .onDisappear{
             itemData.removeAll()

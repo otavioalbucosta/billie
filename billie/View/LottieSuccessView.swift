@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct LottieSucessView: View {
+    @Environment(\.dismiss) private var dismiss
+
     
     @State var isEndedFirst: Bool = true
     
     var body: some View {
         ZStack {
-            LottieView(isEnded: $isEndedFirst, filename: "Success")
+            LottieView(isEnded: $isEndedFirst, filename: "success")
+                
+        }
+        .onChange(of: isEndedFirst) { newValue in
+            dismiss()
         }
     }
     
