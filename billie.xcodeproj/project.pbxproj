@@ -25,6 +25,8 @@
 		2969FCE128CA13D6009FBB4F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969FCE028CA13D6009FBB4F /* Model.swift */; };
 		29EF982C28CF7AEB0000E300 /* BillListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EF982B28CF7AEB0000E300 /* BillListRow.swift */; };
 		4943E16A28DE320800803CB7 /* LottieSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943E16928DE320800803CB7 /* LottieSuccessView.swift */; };
+		4974503328E5D54300CCC8D8 /* PickerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974503228E5D54300CCC8D8 /* PickerRowView.swift */; };
+		4974503528E5D57300CCC8D8 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4974503428E5D57300CCC8D8 /* PaymentView.swift */; };
 		7E1A7A9628E22E0B00C61FD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */; };
 		7E1A7A9828E34E6C00C61FD6 /* ItemBillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9728E34E6C00C61FD6 /* ItemBillCell.swift */; };
 		7E1A7A9A28E3664000C61FD6 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1A7A9928E3664000C61FD6 /* ItemListView.swift */; };
@@ -76,6 +78,8 @@
 		2969FCE028CA13D6009FBB4F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		29EF982B28CF7AEB0000E300 /* BillListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListRow.swift; sourceTree = "<group>"; };
 		4943E16928DE320800803CB7 /* LottieSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSuccessView.swift; sourceTree = "<group>"; };
+		4974503228E5D54300CCC8D8 /* PickerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRowView.swift; sourceTree = "<group>"; };
+		4974503428E5D57300CCC8D8 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		7E1A7A9528E22E0B00C61FD6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7E1A7A9728E34E6C00C61FD6 /* ItemBillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBillCell.swift; sourceTree = "<group>"; };
 		7E1A7A9928E3664000C61FD6 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
@@ -186,7 +190,6 @@
 				7E1A7A9B28E3682300C61FD6 /* List */,
 				7E1A7AA228E3B00B00C61FD6 /* TotalOverlay */,
 				7E1A7AA528E3BCFD00C61FD6 /* CheckScreen */,
-				1D89BCB828D2459100357248 /* SplashScreenView.swift */,
 				2969FCDC28CA139C009FBB4F /* ScannerView.swift */,
 				29EF982B28CF7AEB0000E300 /* BillListRow.swift */,
 				2913F17D28D0C4E1000CE54F /* BillListView.swift */,
@@ -196,6 +199,8 @@
 				2913F17F28D21B9F000CE54F /* SliderButton.swift */,
 				7E26326928D7C4F600FD049B /* ActionButton.swift */,
 				7E26326F28D8FDE500FD049B /* TotalOverView.swift */,
+				4974503228E5D54300CCC8D8 /* PickerRowView.swift */,
+				4974503428E5D57300CCC8D8 /* PaymentView.swift */,
 				4943E16928DE320800803CB7 /* LottieSuccessView.swift */,
 			);
 			path = View;
@@ -383,7 +388,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2969FCDF28CA13BA009FBB4F /* TextRecognition.swift in Sources */,
+				4974503528E5D57300CCC8D8 /* PaymentView.swift in Sources */,
 				2913F17E28D0C4E1000CE54F /* BillListView.swift in Sources */,
+				4974503328E5D54300CCC8D8 /* PickerRowView.swift in Sources */,
 				7E26326A28D7C4F600FD049B /* ActionButton.swift in Sources */,
 				7E1A7AA428E3B84700C61FD6 /* CheckView.swift in Sources */,
 				7E1A7A9628E22E0B00C61FD6 /* Extensions.swift in Sources */,
@@ -391,7 +398,6 @@
 				7E1A7A9A28E3664000C61FD6 /* ItemListView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				1D89BCB928D2459100357248 /* HomeScreenView.swift in Sources */,
-				2969FCB528CA1351009FBB4F /* ContentView.swift in Sources */,
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
 				7E1A7A9F28E3A96D00C61FD6 /* ItemModel.swift in Sources */,
 				7E1A7AA128E3B00200C61FD6 /* TotalOverlay.swift in Sources */,
