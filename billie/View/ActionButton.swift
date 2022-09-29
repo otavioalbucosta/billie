@@ -37,7 +37,7 @@ struct quantityButton:ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
         Image(systemName: nameString)
-            .foregroundColor(Color.accentColor)
+            .foregroundColor(Color.actionColor)
             .scaleEffect(configuration.isPressed ? 0.8: 1)
             .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
     }
@@ -47,7 +47,7 @@ struct doneEditingButton:ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
         Image(systemName: "checkmark.circle")
-            .foregroundColor(.accentColor)
+            .foregroundColor(.actionColor)
             .font(.title2)
     }
 }
@@ -66,7 +66,7 @@ struct scanButton: ButtonStyle {
         .scaleEffect(configuration.isPressed ? 0.8: 1)
         .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
         .foregroundColor(colorScheme == .dark ? .blue:
-                            Color.scanButtonTextColor)
+                            Color.actionColor)
         .padding(.all, 12)
         .padding([.leading,.trailing])
         .opacity(isEnded ? 1: 0).animation(.easeInOut(duration: 0.1), value: isEnded).background(.white).opacity(isEnded ? 1 :0).animation(.easeOut(duration: 0.1), value: isEnded)
@@ -82,8 +82,9 @@ struct manualEnterButton: ButtonStyle {
         configuration.label
         if isEnded{
             Text("Enter manually")
-                .foregroundColor(colorScheme == .dark ? Color.white: Color.accentColor)
+                .foregroundColor(colorScheme == .dark ? Color.white: Color.actionColor)
                 .transition(.scale)
+                .padding([.leading, .trailing, .bottom], 10)
         }
     }
 }

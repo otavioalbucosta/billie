@@ -33,28 +33,9 @@ struct SliderButton: View {
                     RoundedRectangle(cornerRadius: 100, style: .continuous)
                         .foregroundColor(Color(UIColor.systemGray5))
                         .frame(height: 80, alignment: .center)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 100, style: .continuous)
-                                .stroke(lineWidth: 4).opacity(0.1)
-                                .shadow(color: .gray, radius: 3, x: -3, y: -5)
-                                .clipShape(RoundedRectangle(cornerRadius: 80))
-                                .shadow(color: .gray, radius: 3, x: -2, y: 5 )
-                                .clipShape(RoundedRectangle(cornerRadius: 80))
-                            if #available(iOS 15.0, *) {
-                                Text("Slide to pay")
-                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                                    .padding([.leading], 74)
-                                    .font(.title2)
-                                    .bold()
-                              //  (condicao)? 1: 0
-                                    .foregroundStyle(schemeColor == .dark ?
-                                                     LinearGradient(gradient: Gradient(colors: [Color.primary, Color.blue]), startPoint: .leading, endPoint: shimmer ? .trailing : .leading):
-                                                        LinearGradient(gradient: Gradient(colors: [Color(UIColor.white), Color.blue]), startPoint: .leading, endPoint: shimmer ? .trailing : .leading))
-                                    .animation(Animation.easeInOut(duration: 2).repeatForever(autoreverses: false))
-                                    .task {
-                                        shimmer.toggle()
-                                    }
-                            }
+                        .overlay(alignment: .center) {
+                            textShimmer(text: "Slide to pay")
+                                .padding([.leading],30)
                         }
                     
                     SwipeButton(translation: $translation, sucess: $success)
@@ -62,9 +43,7 @@ struct SliderButton: View {
                         .onChange(of: success){ success in
                             if !success{
                                 self.translation = CGSize.zero.width
-
                             }
-                            
                         }
                         .gesture(DragGesture().onChanged({ value in
                             startPlayer()
@@ -77,7 +56,7 @@ struct SliderButton: View {
                                     self.translation = geometry.size.width - 100
                                     sharpness = 0.8
                                     dynamicPattern()
-
+                                    
                                 }else{
                                     self.translation = value.translation.width
                                     sharpness = Float(self.translation) / 300
@@ -105,7 +84,7 @@ struct SliderButton: View {
                                 
                             })
                         )
-                        
+                    
                 }.onAppear{
                     prepareHaptics()
                 }.onChange(of: scenePhase) { newValue in
@@ -114,10 +93,10 @@ struct SliderButton: View {
                     }
                 }
             }.frame(height: 80, alignment: .center)
-
+            
         }.frame(height: 80, alignment: .center)
             .ignoresSafeArea(.keyboard)
-                
+        
     }
     func prepareHaptics() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else {return }
@@ -143,11 +122,11 @@ struct SliderButton: View {
         }catch{
             print(error)
         }
-
-
+        
+        
     }
     func dynamicPattern() {
-
+        
         var dynamicSharpness = CHHapticDynamicParameter(parameterID: .hapticSharpnessControl, value: sharpness, relativeTime: 0)
         do{
             try Player?.sendParameters([dynamicSharpness], atTime: CHHapticTimeImmediate)
@@ -178,7 +157,7 @@ struct SwipeButton: View {
     var body: some View {
         ZStack(alignment: .trailing){
             
-            Color.accentColor
+            Color.actionColor
                 .frame(width: 100 + translation, height: 80, alignment: .center)
                 .mask({
                     RoundedRectangle(cornerRadius: 60, style: .circular)
@@ -188,13 +167,13 @@ struct SwipeButton: View {
                         .foregroundColor(.white)
                         .padding()
                         .opacity(self.sucess ? 0 : 1)
-
+                    
                     Image(systemName: "ruler.fill").font(.custom( "grande", size: 50))
                         .foregroundColor(.white)
                         .padding()
                         .opacity(self.sucess ? 1 : 0)
                 }
-                
+            
         }
     }
 }

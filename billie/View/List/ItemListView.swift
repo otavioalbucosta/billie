@@ -14,7 +14,7 @@ struct ItemListView: View {
     
     var body: some View {
         let itemModel = TabItem()
-        NavigationView {
+        Group {
             List {
                 Section {
                     ForEach($items, id: \.id) { $item in
@@ -48,14 +48,16 @@ struct ItemListView: View {
             }
             .listStyle(.grouped)
             .scrollIndicators(.hidden)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        let newItem = itemModel.addNewItem()
-                        items.append(newItem)
-                    } label: {
-                        Image(systemName: "text.badge.plus")
-                    }
+            
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    let newItem = itemModel.addNewItem()
+                    items.append(newItem)
+                } label: {
+                    Image(systemName: "text.badge.plus")
+                        .foregroundColor(.actionColor)
                 }
             }
         }

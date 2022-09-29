@@ -1,10 +1,3 @@
-//
-//  HomeScreenView.swift
-//  billie
-//
-//  Created by Pedro Muniz on 14/09/22.
-//
-
 import SwiftUI
 
 struct HomeScreenView: View {
@@ -21,7 +14,7 @@ struct HomeScreenView: View {
         NavigationStack {
             VStack (alignment: .center) {
                 
-                ZStack(){ //embed here so a 2nd animation can come on top of the 1st
+                ZStack(){
                     LottieView(isEnded: $isEnded, filename: "BillieMoneySupposedlyFinal")
                         .shadow(color: .indigo, radius: 2, x: 1, y: 2)
                 }
@@ -68,6 +61,7 @@ struct HomeScreenView: View {
                       dismissButton: .default(Text("Try again")))
             }
         }
+        .accentColor(.actionColor)
         .sheet(isPresented: $showScanner, content: {
             ScannerView { result in
                 recognizedContent.items.removeAll()

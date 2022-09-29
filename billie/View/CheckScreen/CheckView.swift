@@ -33,6 +33,7 @@ struct CheckView: View {
         .onDisappear{
             itemData.removeAll()
         }
+        .navigationTitle("Resume tabs")
     }
 }
 
@@ -53,9 +54,9 @@ struct CheckView_Previews: PreviewProvider {
         TabItem(name: "Batilisk Wings", quantity: 1, unitPrice: 37.2),
         TabItem(name: "Veggie burger", quantity: 1, unitPrice: 27.9),
     ]
+    
     static var previews: some View {
-        
-        CheckView(itemData: $items, slideSuceeded: false )
+        CheckView(itemData: $items, slideSuceeded: false)
     }
 }
 

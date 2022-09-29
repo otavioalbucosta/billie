@@ -11,13 +11,14 @@ import SwiftUI
 extension Color {
     static let backgroundTopColor = Color("background1")
     static let backgroundBottomColor = Color("background2")
-    static let scanButtonTextColor = Color(red: 36/255, green: 123/255, blue: 160/255)
+    static let actionColor = Color(red: 36/255, green: 123/255, blue: 160/255)
 }
 
 extension Font {
     static let TotalOverlayFont = Font.title3.bold()
     static let nameCellFont = Font.title2.bold()
     static let anyCellFont = Font.body
+    static let sliderFont = Font.system(size: 25, weight: .bold, design: .rounded)
 }
 
 extension LinearGradient {

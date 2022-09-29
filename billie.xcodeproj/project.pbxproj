@@ -38,6 +38,7 @@
 		7E26327128D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
 		7E26327228D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
 		7EECF22C28E1E5B6005AF6E7 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */; };
+		7EF5327528E53EC30017C31D /* AnimationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5327428E53EC30017C31D /* AnimationTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		7E26326928D7C4F600FD049B /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		7E26326F28D8FDE500FD049B /* TotalOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalOverView.swift; sourceTree = "<group>"; };
 		7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		7EF5327428E53EC30017C31D /* AnimationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,17 +193,22 @@
 				7E1A7AA228E3B00B00C61FD6 /* TotalOverlay */,
 				7E1A7AA528E3BCFD00C61FD6 /* CheckScreen */,
 				2969FCDC28CA139C009FBB4F /* ScannerView.swift */,
-				29EF982B28CF7AEB0000E300 /* BillListRow.swift */,
-				2913F17D28D0C4E1000CE54F /* BillListView.swift */,
-				1D89BCB628D21BA800357248 /* LottieView.swift */,
 				1D89BCB828D2459100357248 /* HomeScreenView.swift */,
-				7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */,
+				7EF5327428E53EC30017C31D /* AnimationTextView.swift */,
 				2913F17F28D21B9F000CE54F /* SliderButton.swift */,
 				7E26326928D7C4F600FD049B /* ActionButton.swift */,
+<<<<<<< HEAD
 				7E26326F28D8FDE500FD049B /* TotalOverView.swift */,
 				4974503228E5D54300CCC8D8 /* PickerRowView.swift */,
 				4974503428E5D57300CCC8D8 /* PaymentView.swift */,
+=======
+				1D89BCB628D21BA800357248 /* LottieView.swift */,
+>>>>>>> 60ba53a (sliderButton opacityFix,  accentColor changed,  shimmerTextSlider, bug fix)
 				4943E16928DE320800803CB7 /* LottieSuccessView.swift */,
+				29EF982B28CF7AEB0000E300 /* BillListRow.swift */,
+				2913F17D28D0C4E1000CE54F /* BillListView.swift */,
+				7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */,
+				7E26326F28D8FDE500FD049B /* TotalOverView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +405,10 @@
 				7E1A7A9A28E3664000C61FD6 /* ItemListView.swift in Sources */,
 				2969FCDD28CA139C009FBB4F /* ScannerView.swift in Sources */,
 				1D89BCB928D2459100357248 /* HomeScreenView.swift in Sources */,
+<<<<<<< HEAD
+=======
+				7EF5327528E53EC30017C31D /* AnimationTextView.swift in Sources */,
+>>>>>>> 60ba53a (sliderButton opacityFix,  accentColor changed,  shimmerTextSlider, bug fix)
 				2969FCB328CA1351009FBB4F /* billieApp.swift in Sources */,
 				7E1A7A9F28E3A96D00C61FD6 /* ItemModel.swift in Sources */,
 				7E1A7AA128E3B00200C61FD6 /* TotalOverlay.swift in Sources */,
@@ -567,7 +578,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"billie/Preview Content\"";
 				DEVELOPMENT_TEAM = 44U668YQTW;
 				ENABLE_PREVIEWS = YES;
@@ -598,7 +609,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"billie/Preview Content\"";
 				DEVELOPMENT_TEAM = 44U668YQTW;
 				ENABLE_PREVIEWS = YES;

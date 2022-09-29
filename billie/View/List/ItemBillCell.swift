@@ -77,6 +77,12 @@ struct ItemBillCell: View {
                 }.buttonStyle(doneEditingButton())
             }
         }
+        .onTapGesture {
+            if itemModel.isEditing == false{
+                itemModel.isEditing.toggle()
+            }
+
+        }
     }
 }
 
