@@ -69,7 +69,7 @@ struct scanButton: ButtonStyle {
                             Color.actionColor)
         .padding(.all, 12)
         .padding([.leading,.trailing])
-        .opacity(isEnded ? 1: 0).animation(.easeInOut(duration: 0.1), value: isEnded).background(.white).opacity(isEnded ? 1 :0).animation(.easeOut(duration: 0.1), value: isEnded)
+        .opacity(isEnded ? 1: 0).animation(.easeInOut(duration: 0.2), value: isEnded).background(.white).opacity(isEnded ? 1 :0).animation(.easeOut(duration: 0.2), value: isEnded)
         .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }

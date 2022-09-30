@@ -39,8 +39,8 @@ struct CheckView: View {
         .navigationTitle("Resume tabs")
         .navigationDestination(isPresented: $shouldPop) {
             LottieSucessView()
-                .onDisappear{
-                 dismiss()
+                .onDisappear {
+                    dismiss()
                 }
         }
     }

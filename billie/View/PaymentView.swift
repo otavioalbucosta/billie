@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PaymentView: View {
     @Environment(\.dismiss) private var dismiss
-     var PaymentIndex = ["Dinheiro", "Pix",  "Apple pay"]
+     var PaymentIndex = ["Cash", "Pix",  "Apple pay"]
     @State var selectedIndex = 0
     @State  var images: [Image] = [Image("IconMoney"), Image("IconPix"), Image("IconApplePay")]
     let alignment: Alignment = .bottom
@@ -46,10 +46,9 @@ struct PaymentView: View {
                 } else {
                     Button {
                         shouldPop.toggle()
-                        print(shouldPop)
                         dismiss()
                     } label: {
-                        Text("Pagar com \(PaymentIndex[selectedIndex])")
+                        Text("Pay with \(PaymentIndex[selectedIndex])")
                             .padding([.leading, .trailing], 20).padding(.all)
                             .foregroundColor(.white)
                             .font(.title2.bold())
