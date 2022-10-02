@@ -45,7 +45,7 @@ struct PaymentView: View {
                     //
                 } else {
                     Button {
-                        shouldPop.toggle()
+                        shouldPop.toggle ()
                         dismiss()
                     } label: {
                         Text("Pay with \(PaymentIndex[selectedIndex])")
