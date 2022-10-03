@@ -8,6 +8,8 @@
 import SwiftUI
 
 
+
+
 struct ItemListView: View {
     @Binding var items: [TabItem]
     @State private var isEditing = false
@@ -18,33 +20,12 @@ struct ItemListView: View {
             List {
                 Section {
                     ForEach($items, id: \.id) { $item in
-                        ItemBillCell(itemModel: $item)
-                            .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
-                                Button {
-                                    items.removeAll(where: {$0.id == $item.id})
-                                } label: {
-                                    Text("Delete")
-                                        .foregroundColor(.white)
-                                }
-                                .tint(.red)
-                                
-                            })
-                            .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
-                                Button {
-                                    item.isEditing.toggle()
-                                } label: {
-                                    Text("Edit")
-                                        .foregroundColor(.white)
-                                }
-                                .tint(.yellow)
-                                
-                            })
+                        makeCell(for: $item)
                     }
                 } header: {
-                    Text("successfully scanned, you can modify your tab below")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }.headerProminence(.increased)
+                    header
+                }
+                .headerProminence(.increased)
             }
             .listStyle(.grouped)
             .scrollIndicators(.hidden)
@@ -62,6 +43,36 @@ struct ItemListView: View {
             }
         }
     }
+    
+    var header: some View {
+        Text("SUCCESS")
+            .font(.subheadline)
+            .foregroundColor(.secondary)
+    }
+    
+    func makeCell(for item: Binding<TabItem>) -> some View {
+        ItemBillCell(itemModel: item)
+            .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
+                Button {
+                    items.removeAll(where: {$0.id == item.id})
+                } label: {
+                    Text("Delete")
+                        .foregroundColor(.white)
+                }
+                .tint(.red)
+                
+            })
+            .swipeActions(edge: .trailing,allowsFullSwipe: true, content: {
+                Button {
+                    item.wrappedValue.isEditing.toggle()
+                } label: {
+                    Text("Edit")
+                        .foregroundColor(.white)
+                }
+                .tint(.yellow)
+            })
+    }
+    
 }
 
 struct ItemListView_Previews: PreviewProvider {

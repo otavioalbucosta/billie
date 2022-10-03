@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-enum field {
-    case name
-    case unitPrice
-}
-
 struct ItemBillCell: View {
     @Binding var itemModel: TabItem
     @FocusState private var field: Field?
@@ -21,15 +16,15 @@ struct ItemBillCell: View {
     var body: some View {
         HStack(alignment: .center) {
             VStack( alignment: .leading) {
+//                if itemModel.isEditing {
+//                    editItemView
+//                } else {
+//                    plainItemView
+//                }
                 HStack(alignment: .center) {
                     
                     if itemModel.isEditing {
-                        TextField("Edit name", text: $itemModel.name)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.nameCellFont)
-                            .lineLimit(1)
-                            .focused($field, equals: .name)
-                        
+                        editTextField
                     } else {
                         Text(itemModel.name)
                             .font(.nameCellFont)
@@ -84,7 +79,17 @@ struct ItemBillCell: View {
 
         }
     }
+    
+    var editTextField: some View {
+        TextField("Edit name", text: $itemModel.name)
+            .textFieldStyle(.roundedBorder)
+            .font(.nameCellFont)
+            .lineLimit(1)
+            .focused($field, equals: .name)
+    }
+    
 }
+
 
 //struct ItemBillCell_Previews: PreviewProvider {
 //    @State static var ab1 = TabItem(name: "ABOBRINHA", quantity: 10, unitPrice: 22.0 )

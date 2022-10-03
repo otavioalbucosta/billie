@@ -38,6 +38,8 @@
 		7E26327028D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
 		7E26327128D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
 		7E26327228D8FDE500FD049B /* TotalOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E26326F28D8FDE500FD049B /* TotalOverView.swift */; };
+		7E4714E928EB27B3006573D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4714EB28EB27B3006573D4 /* Localizable.strings */; };
+		7E4714EE28EB27CF006573D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E4714F028EB27CF006573D4 /* Localizable.strings */; };
 		7EECF22C28E1E5B6005AF6E7 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */; };
 		7EF5327528E53EC30017C31D /* AnimationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5327428E53EC30017C31D /* AnimationTextView.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,8 @@
 		7E1A7AA328E3B84700C61FD6 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		7E26326928D7C4F600FD049B /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		7E26326F28D8FDE500FD049B /* TotalOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalOverView.swift; sourceTree = "<group>"; };
+		7E4714EA28EB27B3006573D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7E4714EF28EB27CF006573D4 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7EECF22B28E1E5B6005AF6E7 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		7EF5327428E53EC30017C31D /* AnimationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +164,8 @@
 				2969FCB628CA1353009FBB4F /* Assets.xcassets */,
 				1D89BCA928D0DEB300357248 /* All Splash Screen animations */,
 				2969FCB828CA1353009FBB4F /* Preview Content */,
+				7E4714EB28EB27B3006573D4 /* Localizable.strings */,
+				7E4714F028EB27CF006573D4 /* Localizable.strings */,
 			);
 			path = billie;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 2969FCA628CA1351009FBB4F;
 			packageReferences = (
@@ -367,6 +374,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2969FCBA28CA1353009FBB4F /* Preview Assets.xcassets in Resources */,
+				7E4714EE28EB27CF006573D4 /* Localizable.strings in Resources */,
+				7E4714E928EB27B3006573D4 /* Localizable.strings in Resources */,
 				29EF1C9028E625430027B167 /* success.json in Resources */,
 				2969FCB728CA1353009FBB4F /* Assets.xcassets in Resources */,
 				1D762B5128E1E3A700A65797 /* BillieMoneySupposedlyFinal.json in Resources */,
@@ -453,6 +462,25 @@
 			targetProxy = 2969FCCA28CA1353009FBB4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E4714EB28EB27B3006573D4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E4714EA28EB27B3006573D4 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7E4714F028EB27CF006573D4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E4714EF28EB27CF006573D4 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2969FCD128CA1353009FBB4F /* Debug */ = {
