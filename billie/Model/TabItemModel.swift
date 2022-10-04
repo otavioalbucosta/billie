@@ -1,27 +1,12 @@
 //
-//  ScanData.swift
+//  ItemModel.swift
 //  billie
 //
-//  Created by Otávio Albuquerque on 08/09/22.
+//  Created by Luciana Adrião on 27/09/22.
 //
 
 import Foundation
 import SwiftUI
-
-class TextItem: Identifiable {
-    var id: String
-    var text: String = ""
-    
-    init() {
-        id = UUID().uuidString
-    }
-}
-
-
-class RecognizedContent: ObservableObject {
-    @Published var items = [TextItem]()
-}
-
 
 struct TabItem: Identifiable, Hashable, Equatable {
     var id = UUID()
@@ -48,7 +33,7 @@ struct TabItem: Identifiable, Hashable, Equatable {
         self.name = name
         self.quantity = quantity
         self.unitPrice = unitPrice
-    }
+    } // Here are values initially atributted to those variables, and these initial values only appear if there is some kind of error and no value is passed to the variables.
     
     func invalidDoubleValue(value: Double) -> Color {
         return value == 0 ? Color.red: Color.primary
@@ -60,11 +45,10 @@ struct TabItem: Identifiable, Hashable, Equatable {
     }
     
     func addNewItem() -> TabItem{
-        var newItem = TabItem(name:"", quantity: 0, unitPrice: 0.0)
+        var newItem = TabItem(name:"", quantity: 1, unitPrice: 0.0)
         newItem.isEditing.toggle()
-        newItem.quantity = 1
         return newItem
     }
-    
 
 }
+

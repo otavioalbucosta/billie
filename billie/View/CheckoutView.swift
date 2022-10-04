@@ -4,6 +4,7 @@
 //
 //  Created by Thaynara Andrade on 23/09/22.
 //
+//  File currently not in use
 
 import SwiftUI
 

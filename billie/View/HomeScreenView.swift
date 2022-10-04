@@ -57,7 +57,7 @@ struct HomeScreenView: View {
             }
             .alert(isPresented: $alertError){
                 Alert(title: Text("Scan error"),
-                      message: Text("There was an error scanning your receipt, please try to frame only the important parts of the bill"),
+                      message: Text("There was an error scanning your receipt, please try to frame only its important (the itens and the prices)"),
                       dismissButton: .default(Text("Try again")))
             }
         }
@@ -71,7 +71,7 @@ struct HomeScreenView: View {
                     TextRecognition(scannedImages: scannedImages,
                                     recognizedContent: recognizedContent) {
                         // Text recognition is finished, hide the progress indicator.
-                        print("RESULTADO:")
+                        print("RESULT:")
                         print(recognizedContent.items[0].text)
                         print("REGEX:")
                         var res = RegexNF().RegexToItem(str: recognizedContent.items[0].text)
