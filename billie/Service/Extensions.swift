@@ -4,6 +4,7 @@
 //
 //  Created by Luciana Adrião on 26/09/22.
 //
+//  Here are some visual characteristics customized to this app, such as specific colors, font styles.
 
 import Foundation
 import SwiftUI

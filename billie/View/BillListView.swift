@@ -4,6 +4,7 @@
 //
 //  Created by Otávio Albuquerque on 13/09/22.
 //
+//  File currently not in use
 
 import SwiftUI
 import Foundation
