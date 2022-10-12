@@ -55,7 +55,7 @@ struct billListRow: View {
 
                 HStack{
                     if item.isEditing {
-                        TextField("Edite o valor unitário", value: $item.unitPrice, formatter: formatter)
+                        TextField("Edit price", value: $item.unitPrice, formatter: formatter)
                             .foregroundColor(item.unitPrice == 0.0 ? Color.red : Color.primary)
                             .keyboardType(.decimalPad)
                             .textFieldStyle(.roundedBorder)

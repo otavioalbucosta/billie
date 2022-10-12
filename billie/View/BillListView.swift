@@ -36,7 +36,7 @@ struct BillListView: View {
                     Section{
                         
                     } header: {
-                        Text("successfully scanned, you can modify your tab below")
+                        Text("The scanning was successful! You can edit your receipt below if you want to")
                             .font(.subheadline)
                             .listRowBackground(Color(.clear))
                             .listRowSeparator(.hidden)
@@ -76,7 +76,7 @@ struct BillListView: View {
                 }
                 .listStyle(.grouped)
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("Resume Tabs")
+                .navigationTitle("Here is your receipt")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {

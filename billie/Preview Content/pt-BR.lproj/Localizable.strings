@@ -6,5 +6,30 @@
   
 */
 
-"Let me help you! 😃" = "Deixa eu te ajudar! 😃"
-
+"10% Tip" = "10% da gorgeta";
+"Error fetching data" = "Erro ao capturar os dados";
+"Please enter the price per unit" = "Por favor, digite o preço por unidade";
+"Success!" = "Sucesso!";
+"Let me help you 😃" = "Deixa eu te ajudar 😃";
+"You can use Billie to scan you table's receipt, edit the itens or values captured by the scan (in case you need to), add up your share of the expenses, and send the payment to the restaurant." = "Você pode usar o Billie para escanear a nota fiscal da sua mesa, editar os itens ou valores escaneados (caso você precise), somar sua parte dos gastos, e enviar o pagamento para o restaurante.";
+"Got it" = "Entendi";
+"Scan error" = "Erro ao escanear";
+"There was an error scanning your receipt 😟 You can try again framing only its most important parts (the itens and the prices)" = "Aconteceu um erro ao escanear sua nota. Você pode tentar de novo enquadrando apenas a parte mais importante (os itens e preços)";
+"Try again" = "Tentar de novo";
+"Slide to pay" = "Deslize para pagar";
+"Scan receipt" = "Escanear a nota";
+"Enter manually" = "Digitar manualmente";
+"Cash" = "Dinheiro";
+"This payment method isn't available yet" = "Este método de pagamento ainda não está disponível";
+"Sorry! Our team is working to make this feature available as soon as possible." = "Desculpe, nosso time está trabalhando para disponibilizar esta funcionalidade o quanto antes.";
+"Pay with \(PaymentIndex[selectedIndex])" = "Pagar com \(PaymentIndex[selectedIndex])";
+"Edit name" = "Editar o nome";
+"Edit price" = "Editar o preço";
+"The scanning was successful! You can edit your receipt below if you want to" = "O scanner foi bem sucedido! Você pode editar sua conta abaixo se você quiser";
+"Delete" = "Deletar";
+"Edit" = "Editar";
+"Here is your receipt" = "Aqui está sua conta";
+"Please edit this item" = "Por favor, edite este item";
+"Payment methods" = "Formas de pagamento";
+"Add payment method" = "Adicionar forma de pagamento";
+"Pay now" = "Pagar agora";

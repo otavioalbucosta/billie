@@ -42,7 +42,7 @@ struct ItemBillCell: View {
                 HStack(alignment: .bottom) {
                     
                     if itemModel.isEditing {
-                        TextField("Please enter price per unit", value: $itemModel.unitPrice, formatter: itemModel.formatter)
+                        TextField("Please enter the price per unit", value: $itemModel.unitPrice, formatter: itemModel.formatter)
                             .textFieldStyle(.roundedBorder)
                             .foregroundColor(itemModel.invalidDoubleValue(value: itemModel.unitPrice))
                             .keyboardType(.decimalPad)

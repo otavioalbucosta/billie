@@ -19,16 +19,16 @@ struct CheckoutView: View {
     var body: some View {
         VStack{
             Spacer(minLength: 20)
-            Section(header: Text("Formas de pagamento")
+            Section(header: Text("Payment methods")
                 .bold()
                 .font(.title3)
             ){
                 
                 List{
                     Label ( "Pix", image: "IconPix")
-                    Label ( "Dinheiro", image: "IconMoney")
+                    Label ( "Cash", image: "IconMoney")
                     Label ( "Apple pay", image: "IconApplePay")
-                    Label ( "Add forma de pagamento", systemImage: "plus")
+                    Label ( "Add payment method", systemImage: "plus")
                     
                 }
                 Spacer(minLength: 20)
@@ -38,7 +38,7 @@ struct CheckoutView: View {
                 Button {
                     // nada
                 } label: {
-                    Text("Fazer pagamento")
+                    Text("Pay now")
                         .padding()
                         .font(.title2)
                         .foregroundColor(.white)

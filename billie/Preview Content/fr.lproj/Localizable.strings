@@ -6,5 +6,30 @@
   
 */
 
-"Let me help you! 😃" = "Laisse-moi t'aider ! 😃"
-
+"10% Tip" = "10% du pourboire";
+"Error fetching data" = "Une erreur s'est produite pendant l'extraction des données";
+"Please enter the price per unit" = "Saisie le prix unitaire, s'il te plait";
+"Success!" = "Succès !";
+"Let me help you! 😃" = "Laisse-moi t'aider ! 😃";
+"You can use Billie to scan you table's receipt, edit the itens or values captured by the scan (in case you need to), add up your share of the expenses, and send the payment to the restaurant." = "Tu peux utiliser Billie pour scanner l'addition dans un bar ou restaurant, éditer les informations ou les prix (en cas de besoin), calculer ta part des dépenses, et envoyer le payment au restaurant.";
+"Got it" = "Ok";
+"Scan error" = "Erreur de numérisation";
+"There was an error scanning your receipt 😟 You can try again framing only its most important parts (the itens and the prices)" = "Il y a eu un erreur pendant la numérisation de la facture 😟 Tu peux réessayer en encadrant juste les informations les plus importantes (les articles et les prix)";
+"Try again" = "Réessayer";
+"Slide to pay" = "Glisser pour payer";
+"Scan receipt" = "Scanner l'addition";
+"Enter manually" = "Saisir manuellement";
+"Cash" = "Espèces";
+"This payment method isn't available yet" = "Cette méthode de payment n'est pas encore disponible";
+"Sorry! Our team is working to make this feature available as soon as possible." = "Désolé! Notre équipe travaille maintenant pour mettre cette fonctionalité à disposition aussitôt que possible";
+"Pay with \(PaymentIndex[selectedIndex])" = "Payer avec \(PaymentIndex[selectedIndex])";
+"Edit name" = "Éditer le nom";
+"Edit price" = "Éditer le prix";
+"The scanning was successful! You can edit your receipt below if you want to" = "Le scanner a bien marché ! Tu peux aussi éditer la facture en bas si tu veux";
+"Delete" = "Effacer";
+"Edit" = "Éditer";
+"Here is your receipt" = "Voici la facture";
+"Please edit this item" = "Édite cet article, s'il te plait";
+"Payment methods" = "Méthodes de payment";
+"Add payment method" = "Ajouter une méthode de payment";
+"Pay now" = "Payer maintenant";
