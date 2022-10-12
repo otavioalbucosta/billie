@@ -10,7 +10,7 @@
 "Error fetching data" = "Une erreur s'est produite pendant l'extraction des données";
 "Please enter the price per unit" = "Saisie le prix unitaire, s'il te plait";
 "Success!" = "Succès !";
-"Let me help you! 😃" = "Laisse-moi t'aider ! 😃";
+"Let me help you 😃" = "Laisse-moi t'aider 😃";
 "You can use Billie to scan you table's receipt, edit the itens or values captured by the scan (in case you need to), add up your share of the expenses, and send the payment to the restaurant." = "Tu peux utiliser Billie pour scanner l'addition dans un bar ou restaurant, éditer les informations ou les prix (en cas de besoin), calculer ta part des dépenses, et envoyer le payment au restaurant.";
 "Got it" = "Ok";
 "Scan error" = "Erreur de numérisation";
