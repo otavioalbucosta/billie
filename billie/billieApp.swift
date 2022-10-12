@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Below, ladies and gentleman, the best mockup names ever invented XD (by Otávio, of course)
 @main
 struct billieApp: App {
     @State var items: [TabItem] = [

@@ -45,7 +45,7 @@ struct ItemListView: View {
     }
     
     var header: some View {
-        Text("SUCCESS")
+        Text("Success!")
             .font(.subheadline)
             .foregroundColor(.secondary)
     }

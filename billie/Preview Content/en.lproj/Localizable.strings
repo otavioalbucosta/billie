@@ -6,5 +6,30 @@
   
 */
 
-"Let me help you! 😃" = "Let me help you! 😃"
-
+"10% Tip" = "10% Tip";
+"Error fetching data" = "Error fetching data";
+"Please enter the price per unit" = "Please enter the price per unit";
+"Success!" = "Success!";
+"Let me help you 😃" = "Let me help you 😃";
+"You can use Billie to scan you table's receipt, edit the itens or values captured by the scan (in case you need to), add up your share of the expenses, and send the payment to the restaurant." = "You can use Billie to scan you table's receipt, edit the itens or values captured by the scan (in case you need to), add up your share of the expenses, and send the payment to the restaurant.";
+"Got it" = "Got it";
+"Scan error" = "Scan error";
+"There was an error scanning your receipt 😟 You can try again framing only its most important parts (the itens and the prices)" = "There was an error scanning your receipt 😟 You can try again framing only its most important parts (the itens and the prices)";
+"Try again" = "Try again";
+"Slide to pay" = "Slide to pay";
+"Scan receipt" = "Scan receipt";
+"Enter manually" = "Enter manually";
+"Cash" = "Cash";
+"This payment method isn't available yet" = "This payment method isn't available yet";
+"Sorry! Our team is working to make this feature available as soon as possible." = "Sorry! Our team is working to make this feature available as soon as possible.";
+"Pay with \(PaymentIndex[selectedIndex])" = "Pay with \(PaymentIndex[selectedIndex])";
+"Edit name" = "Edit name";
+"Edit price" = "Edit price";
+"The scanning was successful! You can edit your receipt below if you want to" = "The scanning was successful! You can edit your receipt below if you want to";
+"Delete" = "Delete";
+"Edit" = "Edit";
+"Here is your receipt" = "Here is your receipt";
+"Please edit this item" = "Please edit this item";
+"Payment methods" = "Payment methods";
+"Add payment method" = "Add payment method";
+"Pay now" = "Pay now";

@@ -43,9 +43,9 @@ struct HomeScreenView: View {
                             .font(Font.body)
                             .padding(.all, 10)
                     }.alert(isPresented: $alertHelpButton) {
-                        Alert(title: Text("Let me help you! 😃"),
-                              message: Text("You can use Billie to scan you table's receipt, edit the itens or values, and send the payment to the restaurant on your phone. All in one simple app!"),
-                              dismissButton: .default(Text("Ok, got it!")))
+                        Alert(title: Text("Let me help you 😃"),
+                              message: Text("You can use Billie to scan you table's receipt, edit the itens or values captured by the scan (in case you need to), add up your share of the expenses, and send the payment to the restaurant."),
+                              dismissButton: .default(Text("Got it")))
                     }
                 }
             }
@@ -57,7 +57,7 @@ struct HomeScreenView: View {
             }
             .alert(isPresented: $alertError){
                 Alert(title: Text("Scan error"),
-                      message: Text("There was an error scanning your receipt, please try to frame only its important (the itens and the prices)"),
+                      message: Text("There was an error scanning your receipt 😟 You can try again framing only its most important parts (the itens and the prices)"),
                       dismissButton: .default(Text("Try again")))
             }
         }

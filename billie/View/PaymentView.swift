@@ -33,9 +33,9 @@ struct PaymentView: View {
                             selectedIndex > 0 ? alertButton.toggle(): nil
                         })
                         .alert(isPresented: $alertButton) {
-                            Alert(title: Text("Payment method not available"),
-                                  message: Text("We're sorry to inform this method is not avaible at the moment!"),
-                                  dismissButton: .default(Text("Ok, got it!")))
+                            Alert(title: Text("This payment method isn't available yet"),
+                                  message: Text("Sorry! Our team is working to make this feature available as soon as possible."),
+                                  dismissButton: .default(Text("Ok")))
                         }
                     
                 }
